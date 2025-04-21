@@ -265,7 +265,7 @@ Before deploying an ONNX format model, you must create the ONNX model zip file. 
       * `None` - This is the first dimension. It represents the number of rows. The number of rows is undefined as the the number of requested predictions is unknown at the time the model is converted.
       * `xtrain.shape[1]` - This is the second dimension. It represents the number of features (or input dimensions) for each data point.
 
-5. Now that we have defined the model inputs, run the following command to convert the xgboost model to ONNX format: 
+4. Now that we have defined the model inputs, run the following command to convert the xgboost model to ONNX format: 
     ```
     <copy>
     %python
@@ -276,9 +276,9 @@ Before deploying an ONNX format model, you must create the ONNX model zip file. 
 
   ![Define model inputs to the ONNX conversion function](images/convert-xgb-onnx-model.png)
 
-  In this example, we are using the `convert_xgboost` function from onnxmltools. The model is saved to the file `xgboost.onnx`. This completes the task of converting the xgboost model to ONNX format.
+  In this example, we are using the `convert_xgboost` function from onnxmltools. The model is saved to the file `xgboost_diabetes.onnx`. This completes the task of converting the xgboost model to ONNX format.
 
-## Task 5: Create metadata.json file, zip file and validate 
+## Task 4.1: Create metadata.json file, zip file and validate 
 
 1. Now, run the following command to create the `metadata.json` file and compress and create the zip file by the name `onnx_xgboost.model.zip`:
 
@@ -356,25 +356,11 @@ To know more about the the `metadata.json` file, see:  [Specifications for ONNX 
 
    ![View the content of the zip file](images/view-zipfile-content.png)
 
-
-
-5. Run the followng command to view and examine the string representation of the ONNX model. It contains the version of OnnxMLTools used to create the ONNX model, and a text representation of the graph structure, including the input types that you defined in step 3.
-
-    ```
-    <copy>
-    %python  
-    print(str(onnx_model))
-    </copy>
-    ```
-
-
-  ![Print and view the ONNX model](images/print-onnx-model.png)
-
-
 This completes the task of creating the metadata.json file, the zip file (containing the metadata.json file and xgboost model in onnx format), and validating the contents of these files.
 
-## Task 6: Run the model and compare predictions  
+## Task 4.2: Compare predictions made by the original XGboost model and the ONNX model 
 
+In this task, you will compare the original XGBoost prediction with the predictions made by the ONNX model. 
 
 1. Run the following command to import the ONNX runtime environment:
     ```
@@ -420,11 +406,13 @@ This completes the task of creating the metadata.json file, the zip file (contai
     ```
     ![Prediction Comparison](images/model-prediction-comparison.png)
 
-This completes the task of validating the ONNX model. 
+As you can see, the predictions made by the original XGBoost model and the ONNX model are almost similar. We can conclude that the XGBoost model has been converted to the ONNX format correctly. 
 
-## Task 7: Obtain autentication token for use with OML Services REST API 
+This completes the task of validating the predictions made by the ONNX model with the prediction made by the XGboost model. 
 
-Before deploying the model, you must store the ONNX model in the model repository in the database. 
+## Task 5: Obtain authentication token for use with OML Services REST API 
+
+Before deploying the ONNX model to OML Services, you must obtain an authentication token to access OML Services REST API, and store the ONNX model in the model repository in the database. 
 
 1. Obtain an authentication token by using your Oracle Machine Learning (OML) account credentials to send requests to OML Services. 
 
@@ -434,7 +422,7 @@ Before deploying the model, you must store the ONNX model in the model repositor
   import requests
 
   # Define variables. Replace OML_SERVICE with your URL
-  OML_SERVICE = "https://hmugvwhgda3dbym-omllabs137721.adb.sa-saopaulo-1.oraclecloudapps.com"
+  OML_SERVICE = "https://wp206m0hg0kgxod-omllabs138190.adb.ca-toronto-1.oraclecloudapps.com"
   USERNAME = "OMLUSER"
   PASSWORD = "AAbbcc123456"
 
@@ -469,9 +457,9 @@ Before deploying the model, you must store the ONNX model in the model repositor
   See **Lab 1 - Authenticate your OML Account with your Autonomous Database instance to use OML Services** in this workshop for details. 
 
 
-## Task 8: Store the model in the OML Services Model Repository
+## Task 5.1: Store the model in the OML Services Model Repository
 
-1. To store the ONNX model, send a POST request to the model repository Service. Here is an example of a `POST` request to store an ONNX format regression model: 
+1. To store the ONNX model, run the following command: 
 
 
     ```
@@ -514,7 +502,7 @@ Before deploying the model, you must store the ONNX model in the model repositor
 
     > **Note:** When you store the model in the repository, a unique ID is generated. This is the `modelId` that you use when creating the model endpoint.
   
-## Task 9:  Deploy the ONNX Format Model
+## Task 5.2:  Deploy the ONNX Format Model
 To deploy and score an ONNX format regression model: 
 
 1. Send a `POST` request to the `/omlmod/v1/deployment` endpoint to deploy the ONNX model. The inputs for this request are the `modelId` and `URI`.
@@ -547,10 +535,10 @@ To deploy and score an ONNX format regression model:
     </copy>
     ```
   ![ONNX Model deployed](images/onnx-model-deployed.png)
-    In this example: 
+     
       
 
-## Task 10:  Score the ONNX Model
+## Task 5.3:  Score the ONNX Model
 
 1. Score the model by sending a POST request to the `deployment/{uri}/score` endpoint. The `GET` response to `{uri}/api` provides detailed information about the model.
 
