@@ -72,7 +72,7 @@ This lab assumes you have:
     * Your OML password
     * `oml-cloud-service-location-url`
 
-   Here is the syntax:
+   Here is the syntax: 
 
      ```
      <copy>
