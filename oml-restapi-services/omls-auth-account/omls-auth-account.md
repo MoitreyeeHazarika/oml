@@ -59,7 +59,7 @@ This lab assumes you have:
 
    This completes the task of authenticating your OML user account with your Autonomous AI Database instance to use OML Services.
    
-## Task 2: Get the `oml-cloud-service-location-url` to Obtain Your REST Authentication Token
+## Task 2: Obtain Your REST Authentication Token
 
 You can obtain this URL information from **Oracle Machine Learning RESTful services** on the Database Actions page. To access **Database actions** and obtain the url:
 
@@ -87,7 +87,8 @@ You can obtain this URL information from **Oracle Machine Learning RESTful servi
 
     * OMLUSER is your OML user name.
     * AAbbcc123456 is your OML password.
-    * `oml-cloud-service-location-url` is the URL that you copied from the ADB console, without the /omlusers/ segment in it.
+    * `oml-cloud-service-location-url` is the URL that you copied from the ADB console. 
+    > **Note:** The URL must not have the `/omlusers/` segment in it.
 
   An example of `oml-cloud-service-location-url` is https://aabbcc123456xyz-omllabs.adb.us-ashburn-1.oraclecloudapps.com. In this URL:
     * `aabbcc123456xyz` is the tenancy ID (not to be confused with the very long tenancy OCID)

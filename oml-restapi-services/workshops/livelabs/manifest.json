@@ -21,7 +21,7 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Authenticate Your User Account with Your Autonomous Database Instance to Use OML Services",
+            "title": "Lab 1: Authenticate Your User Account with Your Autonomous AI Database Instance to Use OML Services",
             "type": "livelabs",
             "filename": "../../omls-auth-account/omls-auth-account.md"
         },
