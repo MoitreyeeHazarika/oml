@@ -79,7 +79,7 @@ To monitor your models:
 
     ```
     <copy>
-      $ curl -X POST "<oml-cloud-service-location-url>/omlmod/v1/jobs" \
+      $ curl -X POST "${omlservice}/omlmod/v1/jobs" \
           --header "Authorization: Bearer ${token}" \
           --header 'Content-Type: application/json' \
           --data '{
@@ -169,6 +169,8 @@ The optional parameters are:
   * `inputSchemaName`: The database schema that owns the input table or view. If not specified, the input schema will be the same as the username in the request token.
     * `jobServiceLevel`: The service level for the job, which can be LOW, MEDIUM, or HIGH.
 
+  ![Model Monitoring Job ID](images/mm-job-id.png)
+
 This completes the task of creating and running a model monitoring job. 
 
 ## Task 2: View Details of the Submitted Job
@@ -180,7 +182,7 @@ This completes the task of creating and running a model monitoring job.
 
     ```
     <copy>
-    $ export jobid='OML$736F509B_FC1A_400A_AC75_553F1D6C5D97'   # define the Job ID as a single-quoted variable 
+    $ export jobid='OML$EFDE71C9_595A_423F_845F_6B475AB674A3'   # define the Job ID as a single-quoted variable 
 
     $ curl -X GET "<oml-cloud-service-location-url>/omlmod/v1/jobs/${jobid}"  \
         --header 'Accept: application/json' \
@@ -249,6 +251,10 @@ This completes the task of creating and running a model monitoring job.
 
     </copy>
     ```
+  ![Model Monitoring Job details](images/mm-job-details1.png)
+  ![Model Monitoring Job details](images/mm-job-details2.png)
+  ![Model Monitoring Job details](images/mm-job-details3.png)
+
 
 ## Task 3: Query the Output Table to view the Model Monitoring Details  
 Once your job has run, either according to its schedule or by the RUN action, you can view its output in the table you specified in your job request with the `outputData` parameter. The full name of the table is in the format `{jobId}_{outputData}`.
