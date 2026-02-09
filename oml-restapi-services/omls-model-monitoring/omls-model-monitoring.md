@@ -56,7 +56,7 @@ To monitor your models:
 
     ```
     <copy>
-    $ curl -X GET "<oml-cloud-service-location-url>/omlmod/v1/deployment/HousePowerNN" \
+    $ curl -X GET "<oml-cloud-service-location-url>/omlmod/v1/deployment/<URI>" \
         --header "Authorization: Bearer ${token}" | jq '.modelId'
     </copy>
     ```
