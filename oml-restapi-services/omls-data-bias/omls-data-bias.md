@@ -35,30 +35,32 @@ This lab assumes you have:
 
 1. Run the following command to load the Adult dataset into Python memory:
 
+    ```
     <code>
-    %python
-
+    <copy>
+    
     import oml
-
     import pandas as pd
     import ssl
-
     ssl._create_default_https_context = ssl._create_unverified_context
-
+    
     # Load the dataset
     url = "https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data"
     columns = ['AGE', 'WORKCLASS', 'FNLWGT', 'EDUCATION', 'EDUCATION_NUM', 'MARITAL_STATUS',
-            'OCCUPATION', 'RELATIONSHIP', 'RACE', 'GENDER', 'CAPITAL_GAIN', 'CAPITAL_LOSS',
-            'HOURS_PER_WEEK', 'NATIVE_COUNTRY', 'INCOME']
+        'OCCUPATION', 'RELATIONSHIP', 'RACE', 'GENDER', 'CAPITAL_GAIN', 'CAPITAL_LOSS',
+        'HOURS_PER_WEEK', 'NATIVE_COUNTRY', 'INCOME']
     adult_df = pd.read_csv(url, names=columns, na_values=" ?", skipinitialspace=True)
-
+    
     # Create a table from the DataFrame
-    try: oml.drop(table="ADULT")
-    except: pass
-
+    try:
+        oml.drop(table="ADULT")
+    except:
+        pass
     oml.create(adult_df, table="ADULT")
-
+    
+    </copy>
     </code>
+    ```
 
 ## Task 1: Create and Run a Data Bias Detection Job in OML Services
 
@@ -73,24 +75,32 @@ To create and run a data bias detection job:
     _Example of a data bias detection job request:_
 
     ```
-      curl -v -X POST <oml-cloud-service-location-url>/-H "Content-Type: 
-      application/json" -H "accept: application/json" -d
-        '{"jobProperties":{
-	        "jobName":"jobNametest",
-	        "jobType":"DATA_BIAS",
-	        "jobServiceLevel":"MEDIUM",
-	        "inputSchemaName":"OMLUSER",
-	        "outputSchemaName":"OMLUSER",
-	        "outputData":"adultbias_tab",
-	        "jobDescription":"Data_Bias job,specify all parameters",
-	        "inputData":"ADULT",
-	        "sensitiveFeatures":["\"GENDER\""],
-	        "strata":["\"MARITAL_STATUS\""],
-	        "outcomeColumn":"INCOME",
-	        "positiveOutcome":">50K",
-	        "categoricalBinNum":6
-	        "numericalBinNum":10}}'
-            -H 'Authorization:Bearer <token>'
+    <code>
+    <copy>
+      -v -X POST ${omlservice} \
+    -H "Content-Type: application/json" \
+    -H "accept: application/json" \
+    -H "Authorization:Bearer ${token}" \
+    -d '{
+    "jobProperties": {
+        "jobName": "jobNametest",
+        "jobType": "DATA_BIAS",
+        "jobServiceLevel": "MEDIUM",
+        "inputSchemaName": "OMLUSER",
+        "outputSchemaName": "OMLUSER",
+        "outputData": "adultbias_tab",
+        "jobDescription": "Data_Bias job,specify all parameters",
+        "inputData": "ADULT",
+        "sensitiveFeatures": ["GENDER"],
+        "strata": ["MARITAL_STATUS"],
+        "outcomeColumn": "INCOME",
+        "positiveOutcome": ">50K",
+        "categoricalBinNum": 6,
+        "numericalBinNum": 10
+    }
+    }'
+    </copy>
+    </code>
       ```
 
 
@@ -131,8 +141,8 @@ To create and run a data bias detection job:
 
     ```
     <copy>
-    curl -v -X GET <oml-cloud-service-location-url>/omlmod/v1/jobs/'OML$53D60B34_A275_4B2B_831C_2C8AE40BCB53' 
-    -H "Content-Type: application/json" -H 'Authorization:Bearer <token>'
+    curl -v -X GET ${omlservice}/omlmod/v1/jobs/'OML$53D60B34_A275_4B2B_831C_2C8AE40BCB53' 
+    -H "Content-Type: application/json" -H 'Authorization:Bearer ${token}}$'
     </copy>
     ```
     In this example:

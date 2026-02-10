@@ -61,7 +61,9 @@ To monitor your models:
     </copy>
     ```
 
-    In this example, the model URI is `HousePowerNN`
+    In this example, the model URI is `NeuralNet`
+
+  ![Model ID from Deployment tab](images/mm-modelid.png)
 
   _Sample Response:_
 
@@ -69,6 +71,11 @@ To monitor your models:
     ```
     "modelId": "0bf13d1f-86a6-465d-93d1-8985afd1bbdb"
     ```
+  Alternatively, you can obtain the modelID from the Deployments tab. See screenshot here.
+
+  ![Model ID from Deployment tab](images/mm-modelid-ui.png)
+
+
 
 
 3. After obtaining the access token and the `modelId`, you can now create a model monitoring job by sending a POST request to the deployment endpoint and by specifying the model URI. 
@@ -184,7 +191,7 @@ This completes the task of creating and running a model monitoring job.
     <copy>
     $ export jobid='OML$EFDE71C9_595A_423F_845F_6B475AB674A3'   # define the Job ID as a single-quoted variable 
 
-    $ curl -X GET "<oml-cloud-service-location-url>/omlmod/v1/jobs/${jobid}"  \
+    $ curl -X GET "${omlservice}/omlmod/v1/jobs/${jobid}"  \
         --header 'Accept: application/json' \
         --header 'Content-Type: application/json' \
         --header "Authorization: Bearer ${token}" | jq
@@ -201,53 +208,56 @@ This completes the task of creating and running a model monitoring job.
     <copy>
     returns:
 
-  {
-    "jobId": "OML$736F509B_FC1A_400A_AC75_553F1D6C5D97",
-    "jobRequest": {
-      "jobSchedule": {
-        "jobStartDate": "2024-11-11T00:30:07Z",
-        "repeatInterval": "FREQ=DAILY",
-        "jobEndDate": "2024-11-19T00:30:07Z",
-        "maxRuns": 5
-      },
-      "jobProperties": {
-        "jobType": "MODEL_MONITORING",
-        "inputSchemaName": "OMLUSER",
-        "outputSchemaName": "OMLUSER",
-        "outputData": "Global_Active_Power_Monitor",
-        "jobDescription": "Global active power monitoring job",
-        "jobName": "MY_MODEL_MONITOR1",
-        "disableJob": false,
-        "jobServiceLevel": "LOW",
-        "baselineData": "HOUSEHOLD_POWER_BASE",
-        "newData": "HOUSEHOLD_POWER_NEW",
-        "timeColumn": "DATES",
-        "startDate": "2008-01-01T00:00:00Z",
-        "endDate": "2010-11-26T00:00:00Z",
-        "frequency": "Year",
-        "threshold": 0.15,
-        "recompute": false,
-        "caseidColumn": null,
-        "modelList": [
-          "0bf13d1f-86a6-465d-93d1-8985afd1bbdb"
-        ],
-        "performanceMetric": "MEAN_SQUARED_ERROR"
-      }
+   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1144  100  1144    0     0    429      0  0:00:02  0:00:02 --:--:--   429
+{
+  "jobId": "OML$F1C3A995_6411_4F33_ACD3_2C7F49E8BEF4",
+  "jobRequest": {
+    "jobSchedule": {
+      "jobStartDate": "2026-02-10T00:30:07Z",
+      "repeatInterval": "FREQ=HOURLY",
+      "jobEndDate": "2026-02-10T20:50:06Z",
+      "maxRuns": 5
     },
-    "jobStatus": "CREATED",
-    "dateSubmitted": "2024-11-11T00:26:16.127906Z",
-    "links": [
-      {
-        "rel": "self",
-        "href": "<OML Service URL>/omlmod/v1/jobs/OML%24736F509B_FC1A_400A_AC75_553F1D6C5D97"
-      }
-    ],
-    "jobFlags": [],
-    "state": "SCHEDULED",
-    "enabled": true,
-    "runCount": 0,
-    "nextRunDate": "2024-11-11T00:30:07Z"
-  }
+    "jobProperties": {
+      "jobType": "MODEL_MONITORING",
+      "inputSchemaName": "OMLUSER",
+      "outputSchemaName": "OMLUSER",
+      "outputData": "Global_Active_Power_Monitor",
+      "jobDescription": "Global active power monitoring job",
+      "jobName": "MY_MODEL_MONITOR1",
+      "disableJob": false,
+      "jobServiceLevel": "LOW",
+      "baselineData": "HOUSEHOLD_POWER_BASE",
+      "newData": "HOUSEHOLD_POWER_NEW",
+      "timeColumn": "DATES",
+      "startDate": "2008-01-01T00:00:00Z",
+      "endDate": "2010-11-26T00:00:00Z",
+      "frequency": "Year",
+      "threshold": 0.15,
+      "recompute": false,
+      "caseidColumn": null,
+      "modelList": [
+        "bca24320-f88a-4167-8f7c-871d8b03cec1"
+      ],
+      "performanceMetric": "MEAN_SQUARED_ERROR"
+    }
+  },
+  "jobStatus": "CREATED",
+  "dateSubmitted": "2026-02-10T13:16:20.251117Z",
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://g703dcfbfc5ff90-omllabs184823.adb.ap-hyderabad-1.oraclecloudapps.com/omlmod/v1/jobs/OML%24F1C3A995_6411_4F33_ACD3_2C7F49E8BEF4"
+    }
+  ],
+  "jobFlags": [],
+  "state": "SCHEDULED",
+  "enabled": true,
+  "nextRunDate": "2026-02-10T13:30:07.412753Z",
+  "runCount": 0
+}
 
     </copy>
     ```
