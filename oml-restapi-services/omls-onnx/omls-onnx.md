@@ -611,4 +611,4 @@ To deploy and score an ONNX format regression model:
 
 * **Author** : Moitreyee Hazarika, Consulting User Assistance Developer, Database User Assistance Development
 * **Contributors**: Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Consulting Member of Tech Staff, Machine Learning
-* **Last Updated By/Date**: Moitreyee Hazarika, March 2026
+* **Last Updated By/Date**: Moitreyee Hazarika, October 2025
