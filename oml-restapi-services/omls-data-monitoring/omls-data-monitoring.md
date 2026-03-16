@@ -252,7 +252,7 @@ This completes the task of creating and running a data monitoring job.
 
 ## Task 3: Query the Output Table to view the Data Monitoring Details 
 
-Once your job has run, either according to its schedule or by the RUN action, you can view its output in the output table. You must specify the table in your job request with the `outputData` parameter. The full name of the table is in the format `{jobid}_{outputData}`.
+Once your job has run, either either according to its schedule or by the RUN action, you can view its output in the output table. You must specify the table in your job request with the `outputData` parameter. The full name of the table is in the format `{jobid}_{outputData}`.
 
 1. Check if your job is complete by sending a request to view its details.
 
