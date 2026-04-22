@@ -62,7 +62,7 @@ To create a data monitoring job:
 
   ```
       <copy>
-      $ curl -X POST "<oml-cloud-service-location-url>/omlmod/v1/jobs" \
+      $ curl -X POST "${omlservice}/omlmod/v1/jobs" \
         --header "Authorization: Bearer ${token}" \
         --header 'Content-Type: application/json' \
         --data '{
