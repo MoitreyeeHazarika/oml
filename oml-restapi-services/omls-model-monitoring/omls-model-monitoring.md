@@ -87,39 +87,39 @@ To monitor your models:
     ```
     <copy>
       $ curl -X POST "${omlservice}/omlmod/v1/jobs" \
-          --header "Authorization: Bearer ${token}" \
-          --header 'Content-Type: application/json' \
-          --data '{
-              "jobSchedule": {
-              "jobStartDate": "2023-03-25T00:30:07Z",                  
-              "repeatInterval": "FREQ=DAILY",                         
-              "jobEndDate": "2023-03-30T20:50:06Z",                    
-              "maxRuns": "5"                                          
-          },
-          "jobProperties": {
-              "jobName": "MY_MODEL_MONITOR1",                         
-              "jobType": "MODEL_MONITORING",                          
-              "disableJob": false,                                    
-              "jobServiceLevel": "LOW",                                
-              "inputSchemaName": "OMLUSER",                           
-              "outputSchemaName": "OMLUSER",                          
-              "outputData": "Global_Active_Power_Monitor",            
-              "jobDescription": "Global active power monitoring job", 
-              "baselineData": "HOUSEHOLD_POWER_BASE",                 
-              "newData": "HOUSEHOLD_POWER_NEW",                       
-              "frequency": "Year",                                    
-              "threshold": 0.15,                                      
-              "timeColumn": "DATES",                                  
-              "startDate": "2008-01-01T00:00:00Z",                    
-              "endDate": "2010-11-26T00:00:00Z",                      
-              "caseidColumn": null,                                   
-              "performanceMetric": "MEAN_SQUARED_ERROR",              
-              "modelList": [                                          
-                  "0bf13d1f-86a6-465d-93d1-8985afd1bbdb"
-              ],
-              "recompute": false                                      
-          }
-      }' | jq
+      --header "Authorization: Bearer ${token}" \
+      --header 'Content-Type: application/json' \
+      --data '{
+          "jobSchedule": {
+          "jobStartDate": "2026-04-22T00:30:07Z",                  
+          "repeatInterval": "FREQ=HOURLY",                         
+          "jobEndDate": "2026-04-30T20:50:06Z",                    
+          "maxRuns": "5"                                          
+      },
+      "jobProperties": {
+          "jobName": "MY_MODEL_MONITOR1",                         
+          "jobType": "MODEL_MONITORING",                          
+          "disableJob": false,                                    
+          "jobServiceLevel": "LOW",                                
+          "inputSchemaName": "OMLUSER",                           
+          "outputSchemaName": "OMLUSER",                          
+          "outputData": "Global_Active_Power_Monitor",            
+          "jobDescription": "Global active power monitoring job", 
+          "baselineData": "HOUSEHOLD_POWER_BASE",                 
+          "newData": "HOUSEHOLD_POWER_NEW",                       
+          "frequency": "DAY",                                    
+          "threshold": 0.15,                                      
+          "timeColumn": "DATES",                                  
+          "startDate": "2007-12-21T00:00:00Z",                    
+          "endDate": "2007-12-31T00:00:00Z",                      
+          "caseidColumn": null,                                   
+          "performanceMetric": "MEAN_SQUARED_ERROR",              
+          "modelList": [                                          
+              "c6259091-97d1-4f62-bc01-425d23a4aca8"
+          ],
+          "recompute": false                                      
+      }
+  }' | jq
     </copy>
     ```
 
@@ -189,7 +189,7 @@ This completes the task of creating and running a model monitoring job.
 
     ```
     <copy>
-    $ export jobid='OML$EFDE71C9_595A_423F_845F_6B475AB674A3'   # define the Job ID as a single-quoted variable 
+    $ export jobid='OML$8A096AE3_E2D2_422A_B77E_3448D92DD5FE'   # define the Job ID as a single-quoted variable 
 
     $ curl -X GET "${omlservice}/omlmod/v1/jobs/${jobid}"  \
         --header 'Accept: application/json' \
@@ -309,4 +309,4 @@ To query the output table:
 
 * **Author** : Moitreyee Hazarika, Consulting User Assistance Developer, Database User Assistance Development
 * **Contributors**: Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Consulting Member of Tech Staff, Machine Learning
-* **Last Updated By/Date**: Moitreyee Hazarika, February 2026
+* **Last Updated By/Date**: Moitreyee Hazarika, April 2026
