@@ -56,12 +56,12 @@ To monitor your models:
 
     ```
     <copy>
-    $ curl -X GET "<oml-cloud-service-location-url>/omlmod/v1/deployment/<URI>" \
+    $ curl -X GET "${omlservice}/omlmod/v1/deployment/<URI>" \
         --header "Authorization: Bearer ${token}" | jq '.modelId'
     </copy>
     ```
 
-    In this example, the model URI is `NeuralNet`
+    In this example, the model URI is `NN`
 
   ![Model ID from Deployment tab](images/mm-modelid.png)
 
