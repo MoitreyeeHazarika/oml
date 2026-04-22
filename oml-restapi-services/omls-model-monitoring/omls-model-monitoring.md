@@ -262,12 +262,11 @@ This completes the task of creating and running a model monitoring job.
     ```
 
   ![Model Monitoring Job details](images/mm-job-details1.png)
-  ![Model Monitoring Job details](images/mm-job-details2.png)
-  ![Model Monitoring Job details](images/mm-job-details3.png)
+  
 
 2. Run this job after an hour. In Task 1 of this lab, we defined the `repeatInterval` of the model monitoring job to `HOURLY`. Hence, run this job after an hour to check the `jobRunStatus`.
 
-    >**Note:** Note the `jobRunStatus` parameter. The status now shows `SUCCEEDED`.
+    >**Note:** Note the parameters `runCount` and `jobRunStatus`. The `runCount` is `2` and the status shows `SUCCEEDED`.
 
  
   ![Model Monitoring Job details](images/mm-job-details4.png)
