@@ -37,11 +37,7 @@
         {
             "title": "Lab 4: Create and Run a Model Monitoring Job",
             "filename": "../../omls-model-monitoring/omls-model-monitoring.md"
-        },        
-        {
-            "title": "Lab 5: Create and Run a Data Bias Detection Job",
-            "filename": "../../omls-data-bias/omls-data-bias.md"
-        },
+        },           
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
