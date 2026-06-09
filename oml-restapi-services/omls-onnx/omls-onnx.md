@@ -607,6 +607,8 @@ To deploy and score an ONNX format regression model:
 * [Create the proper ONNX files that work with OML Services](https://github.com/oracle/oracle-db-examples/blob/main/machine-learning/oml-services/SKLearn%20kMeans%20and%20GMM%20export%20to%20ONNX.ipynb)
 
 
+You may now **proceed to the next lab.**
+
 ## Acknowledgements
 
 * **Author** : Moitreyee Hazarika, Consulting User Assistance Developer, Database User Assistance Development

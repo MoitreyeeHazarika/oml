@@ -309,6 +309,7 @@ You may now **proceed to the next lab.**
 * [REST API for Oracle Machine Learning Services](https://docs.oracle.com/en/database/oracle/machine-learning/omlss/omlss/index.html)
 * [Work with Data Bias Detection](https://docs.oracle.com/en/database/oracle/machine-learning/omlss/omlss/omls-data-bias-detector.html)
 
+You may now **proceed to the next lab.**
 
 ## Acknowledgements
 

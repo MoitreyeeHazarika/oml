@@ -233,7 +233,7 @@ The scoring result computes the probability of each label. This completes the ta
 * [REST API for Oracle Machine Learning Services](https://docs.oracle.com/en/database/oracle/machine-learning/omlss/omlss/index.html)
 * [Work with Batch Scoring](https://docs.oracle.com/en/database/oracle/machine-learning/omlss/omlss/omls-batch-scoring.html)
 
-
+You may now **proceed to the next lab.**
 
 ## Acknowledgements
 

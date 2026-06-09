@@ -170,7 +170,7 @@ You can also revoke a token. You cannot use or refresh a token you have revoked.
 
 * [REST API for Oracle Machine Learning Services](https://docs.oracle.com/en/database/oracle/machine-learning/omlss/omlss/index.html)
 
-
+You may now **proceed to the next lab.**
 
 ## Acknowledgements
 

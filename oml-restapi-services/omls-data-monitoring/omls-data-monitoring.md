@@ -291,7 +291,7 @@ This completes the task of creating and running a data monitoring job. You may n
 * [REST API for Oracle Machine Learning Services](https://docs.oracle.com/en/database/oracle/machine-learning/omlss/omlss/index.html)
 * [Work with Data Monitoring](https://docs.oracle.com/en/database/oracle/machine-learning/omlss/omlss/omls-data-monitoring.html)
 
-
+You may now **proceed to the next lab.**
 
 ## Acknowledgements
 
