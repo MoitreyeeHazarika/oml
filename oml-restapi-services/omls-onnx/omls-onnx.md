@@ -51,9 +51,9 @@ In this task, you will create a Conda environment by the name xgbenv and install
     </copy>
     ```
 
-  ![Commands to set up the Conda environment](images/conda-env-setup.png)
+    ![Commands to set up the Conda environment](images/conda-env-setup.png)
 
-  This command created the conda environment `xgbenv` as ADMIN with the libraries xgboost, onnxruntime, and onnxmltools for use with Python 3.12.6. This is Python version currently used in OML Notebooks. The command also uploads the environment to Object Storage for non-ADMIN users to download, activate, and use in OML Notebooks.
+    This command created the conda environment `xgbenv` as ADMIN with the libraries xgboost, onnxruntime, and onnxmltools for use with Python 3.12.6. This is Python version currently used in OML Notebooks. The command also uploads the environment to Object Storage for non-ADMIN users to download, activate, and use in OML Notebooks.
 
 
 2. Now, sign in as `OMLUSER` and download and activate the Conda environment `xgbenv`.
@@ -67,7 +67,7 @@ In this task, you will create a Conda environment by the name xgbenv and install
     </copy>
     ```
 
-  ![Commands to download and activate the Conda environment](images/download-activate-xgbenv.png)
+    ![Commands to download and activate the Conda environment](images/download-activate-xgbenv.png)
 
 3. In a Python paragraph, import the following Python packages:
 
@@ -95,7 +95,7 @@ To create and train the model:
 
 1. Import the Diabetes dataset and store it in a variable called `diabetes`. 
 
-  Run the following command to import the dataset:
+    Run the following command to import the dataset:
 
     ```
     <copy>
@@ -109,7 +109,7 @@ To create and train the model:
     </copy>
     ```
 
-  ![Commands to import the Diabetes dataset](images/import-diabetes-dataset.png)
+    ![Commands to import the Diabetes dataset](images/import-diabetes-dataset.png)
 
 2. Run the following command to view the description of the dataset. can be viewed by printing the contents of the .DESCR attribute.
 
@@ -143,9 +143,9 @@ In this task, you will perform the following tasks:
     xtrain, xtest, ytrain, ytest=train_test_split(x, y, test_size=0.30, random_state=99)
     </copy>
     ```
-  ![Commands to split the dataset](images/split-dataset.png)
+    ![Commands to split the dataset](images/split-dataset.png)
 
-  In this example, we are using the `train_test_split` function from sklearn's `model_selection` module. The test size equal to 30% of the data. A `random_state` is assigned for reproducibility.
+    In this example, we are using the `train_test_split` function from sklearn's `model_selection` module. The test size equal to 30% of the data. A `random_state` is assigned for reproducibility.
 
 2. Run the following command to: 
     * Build the regression model. Use the `XGBRegressor` class of the `xgboost` package with the hyper-parameter values passed as arguments. 
@@ -168,7 +168,7 @@ In this task, you will perform the following tasks:
     </copy>
     ```
 
-  ![XGboost model](images/model-xgbregressor.png)
+    ![XGboost model](images/model-xgbregressor.png)
 
 3. Run the following command to train the model using the _fit_ method and score data using the _predict_ method on the model:
 
@@ -180,7 +180,7 @@ In this task, you will perform the following tasks:
     </copy>
     ```
 
-  ![Fit model and predict](images/model-train-fit.png)
+    ![Fit model and predict](images/model-train-fit.png)
 
 4. Next, the model is ready to be evaluated. For this, run the following to compute the Root Mean Square error (RMSE) by using the `mean_squared_error` function. This function is available in the _metrics_ module of sklearn. 
 
@@ -246,7 +246,7 @@ Before deploying an ONNX format model, you must create the ONNX model zip file. 
 
 3. Now define the model inputs to the ONNX conversion function `convert_xgboost`. scikit-learn does not store information about the training data, so it is not always possible to retrieve the number of features or their types. For this reason, `convert_xgboost` contains an argument called `initial_types` to define the model input types.
 
-  For each numpy array (inpout tensor) passed to the model, choose a name and declare its data type and shape. Here, `float_input` is the name chosen for the input tensor.
+    For each numpy array (inpout tensor) passed to the model, choose a name and declare its data type and shape. Here, `float_input` is the name chosen for the input tensor.
 
     ```
     <copy>
@@ -254,7 +254,7 @@ Before deploying an ONNX format model, you must create the ONNX model zip file. 
     </copy>
     ```
 
-  ![Define model inputs to the ONNX conversion function](images/define-initial-types.png)
+    ![Define model inputs to the ONNX conversion function](images/define-initial-types.png)
 
     In this example:
 
@@ -299,28 +299,28 @@ Before deploying an ONNX format model, you must create the ONNX model zip file. 
     </copy>
     ```
 
-  ![Define model inputs to the ONNX conversion function](images/create-metadata-json.png)
+    ![Define model inputs to the ONNX conversion function](images/create-metadata-json.png)
 
-> **Note:** Ensure that the `metadata.json` file contains the following information:
+    > **Note:** Ensure that the `metadata.json` file contains the following information:
 
 
-  * `function` (mandatory for all models)
-  * `regressionOutput` 
-  * `classificationLabelOutput`
-  * `classificationProbOutput` 
-  * `inputTensorDimNames` 
-  * `height` 
-  * `width` 
-  * `channel` 
-  * `mean`
-  * `scale` 
-  * `inputChannel` 
-  * `clusteringDistanceOutput` 
-  * `clusteringProbOutput`
+    * `function` (mandatory for all models)
+    * `regressionOutput` 
+    * `classificationLabelOutput`
+    * `classificationProbOutput` 
+    * `inputTensorDimNames` 
+    * `height` 
+    * `width` 
+    * `channel` 
+    * `mean`
+    * `scale` 
+    * `inputChannel` 
+    * `clusteringDistanceOutput` 
+    * `clusteringProbOutput`
 
-To know more about the the `metadata.json` file, see:  [Specifications for ONNX Format Models](https://docs.oracle.com/en/database/oracle/machine-learning/omlss/omlss/onnx_spec.html)
+    To know more about the the `metadata.json` file, see:  [Specifications for ONNX Format Models](https://docs.oracle.com/en/database/oracle/machine-learning/omlss/omlss/onnx_spec.html)
 
-Steps 2 - 4 are optional steps. They are for validation only. 
+    Steps 2 - 4 are optional steps. They are for validation only. 
 
 2. Run the following command to view the zip file in the /tmp folder:
 
@@ -343,7 +343,7 @@ Steps 2 - 4 are optional steps. They are for validation only.
     </copy>
     ```
 
-   ![View the content of the metadata.json file](images/view-metadata-json.png)
+    ![View the content of the metadata.json file](images/view-metadata-json.png)
 
 
 4. Run the following commands to view the contents of the zip file: 
@@ -372,7 +372,7 @@ In this task, you will compare the original XGBoost prediction with the predicti
     </copy>
     ```
 
-  ![Import Runtime for ONNX](images/import-runtime-onnx.png)
+    ![Import Runtime for ONNX](images/import-runtime-onnx.png)
 
 
 2. Run the following command to set up the runtime:
@@ -388,7 +388,7 @@ In this task, you will compare the original XGBoost prediction with the predicti
     </copy>
     ```
 
-  ![Define inference session](images/inference-session.png)
+    ![Define inference session](images/inference-session.png)
 
 3. Run the following command to compare the original XGBoost prediction with the predictions made by the ONNX model:
 
@@ -419,17 +419,17 @@ Before deploying the ONNX model to OML Services, you must obtain an authenticati
 
 1. Obtain an authentication token by using your Oracle Machine Learning (OML) account credentials to send requests to OML Services. 
 
-  ```
-  <copy>
-  %python
-  import requests
+    ```
+    <copy>
+    %python
+    import requests
 
-  # Define variables. Replace the below URL with your URL. 
-  oml-cloud-service-location-url = "https://wp206m0hg0kgxod-omllabs138190.adb.ca-toronto-1.oraclecloudapps.com"
-  USERNAME = "OMLUSER"
-  PASSWORD = "AAbbcc123456"
+    # Define variables. Replace the below URL with your URL. 
+    oml-cloud-service-location-url = "https://wp206m0hg0kgxod-omllabs138190.adb.ca-toronto-1.oraclecloudapps.com"
+    USERNAME = "OMLUSER"
+    PASSWORD = "AAbbcc123456"
 
-  def get_token():
+    def get_token():
       url = f"{oml-cloud-service-location-url}/omlusers/api/oauth2/v1/token"
       payload = {
           "grant_type": "password",
@@ -446,10 +446,10 @@ Before deploying the ONNX model to OML Services, you must obtain an authenticati
       # Print token
       print("Token:", response.text)
       return response.json().get("accessToken")
-  # Get token
-  try:
+    # Get token
+    try:
       TOKEN = get_token()
-  except Exception as e:
+    except Exception as e:
       print("Error:", e)
     </copy>
     ```
@@ -495,13 +495,13 @@ Before deploying the ONNX model to OML Services, you must obtain an authenticati
         # Send the model upload request
         response = requests.post(url, headers=headers, files=files, data=data)
 
-  # Print the response status and message
-  print(response.status_code)
-  print(response.text)
-  </copy>
+    # Print the response status and message
+    print(response.status_code)
+    print(response.text)
+    </copy>
       ```
 
-  ![Model stored in OML Services model repository. Model ID generated](images/modelID-model-repo.png)
+  ![Model stored in OML Services model repository. Model ID generated](images/modelid-model-repo.png)
 
     > **Note:** When you store the model in the repository, a unique ID is generated. This is the `modelId` that you use when creating the model endpoint.
   

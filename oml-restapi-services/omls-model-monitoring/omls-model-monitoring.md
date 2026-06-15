@@ -51,7 +51,7 @@ To monitor your models:
 
 2. Now, obtain the modelId of the model that you want to monitor. To get the `modelId`, send a `GET` request to the deployment endpoint and specify the model `URI`. 
 
-  _Example of a `GET` Request to obtain the `modelId`:_
+    _Example of a `GET` Request to obtain the `modelId`:_
   
 
     ```
@@ -63,17 +63,17 @@ To monitor your models:
 
     In this example, the model URI is `NN`
 
-  ![Model ID from Deployment tab](images/mm-modelid.png)
+    ![Model ID from Deployment tab](images/mm-modelid.png)
 
-  _Sample Response:_
+    _Sample Response:_
 
     The GET request returns the following:
     ```
     "modelId": "c6259091-97d1-4f62-bc01-425d23a4aca8"
     ```
-  Alternatively, you can obtain the modelID from the Deployments tab. See screenshot here.
+    Alternatively, you can obtain the modelID from the Deployments tab. See screenshot here.
 
-  ![Model ID from Deployment tab](images/mm-modelid-ui.png)
+    ![Model ID from Deployment tab](images/mm-modelid-ui.png)
 
 
 
@@ -119,7 +119,7 @@ To monitor your models:
           ],
           "recompute": false                                      
       }
-  }' | jq
+    }' | jq
     </copy>
     ```
 
@@ -184,7 +184,7 @@ This completes the task of creating and running a model monitoring job.
 
 1. To view the details of your submitted job, send a `GET` request to the `/omlmod/v1/jobs/{jobId}` endpoint. Here, `jobId` is the ID provided in response to the successful submission of your model monitoring job. 
 
-  _Example of a GET request to view details of a submitted job:_
+    _Example of a GET request to view details of a submitted job:_
     
 
     ```
@@ -199,20 +199,20 @@ This completes the task of creating and running a model monitoring job.
 
     ```
   
-  _Sample Response of the GET request:_
+    _Sample Response of the GET request:_
   
-  Here is a sample output of the job details request. The `jobStatus` `CREATED` indicates that the job has been created. If your job has already run once, you will see information returned about the last job run.
+    Here is a sample output of the job details request. The `jobStatus` `CREATED` indicates that the job has been created. If your job has already run once, you will see information returned about the last job run.
  
-  ```
+    ```
     <copy>
     returns:
 
     % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-100  1142  100  1142    0     0    849      0  0:00:01  0:00:01 --:--:--   849
-{
-  "jobId": "OML$D65A2211_DC3A_4EDC_9AF2_46FF59757FDE",
-  "jobRequest": {
+    100  1142  100  1142    0     0    849      0  0:00:01  0:00:01 --:--:--   849
+    {
+    "jobId": "OML$D65A2211_DC3A_4EDC_9AF2_46FF59757FDE",
+    "jobRequest": {
     "jobSchedule": {
       "jobStartDate": "2026-04-22T00:30:07Z",
       "repeatInterval": "FREQ=HOURLY",
@@ -242,26 +242,26 @@ This completes the task of creating and running a model monitoring job.
       ],
       "performanceMetric": "MEAN_SQUARED_ERROR"
     }
-  },
-  "jobStatus": "CREATED",
-  "dateSubmitted": "2026-04-22T12:25:34.29732Z",
-  "links": [
+    },
+    "jobStatus": "CREATED",
+    "dateSubmitted": "2026-04-22T12:25:34.29732Z",
+    "links": [
     {
       "rel": "self",
       "href": "https://g703dcfbfc5ff90-omllabs199471.adb.ap-hyderabad-1.oraclecloudapps.com/omlmod/v1/jobs/OML%24D65A2211_DC3A_4EDC_9AF2_46FF59757FDE"
     }
-  ],
-  "jobFlags": [],
-  "state": "SCHEDULED",
-  "enabled": true,
-  "nextRunDate": "2026-04-22T12:30:07.413217Z",
-  "runCount": 0
-}
+    ],
+    "jobFlags": [],
+    "state": "SCHEDULED",
+    "enabled": true,
+    "nextRunDate": "2026-04-22T12:30:07.413217Z",
+    "runCount": 0
+    }
 
     </copy>
     ```
 
-  ![Model Monitoring Job details](images/mm-job-details1.png)
+    ![Model Monitoring Job details](images/mm-job-details1.png)
   
 
 2. Run this job after an hour. In Task 1 of this lab, we defined the `repeatInterval` of the model monitoring job to `HOURLY`. Hence, run this job after an hour to check the `jobRunStatus`.
