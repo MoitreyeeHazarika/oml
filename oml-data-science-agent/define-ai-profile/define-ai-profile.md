@@ -1,4 +1,4 @@
-# Define AI Profile for use with Data Science Agent
+# Create OCI Generative AI Credential and AI Profile  for use with Data Science Agent
 
 ## Introduction
 
@@ -82,7 +82,9 @@ To create an OCI Generative AI credential:
 
 
 
-## Task 2: Use DBMS_CLOUD_AI to Configure AI Profiles
+## Task 2: Create an AI Profile 
+
+Use `DBMS_CLOUD_AI` to Configure AI Profiles
 
 AI profiles define how Autonomous AI Database connects to an LLM and which profile attributes are used for natural language to SQL translation. These profiles can include metadata from database objects such as table names, column names, column data types, and comments.
 
@@ -117,7 +119,7 @@ AI profiles define how Autonomous AI Database connects to an LLM and which profi
     </copy>
     ```
 
-Define the following attributes for this profile:
+    Define the following attributes for this profile:
 
 * `profile_name`: A name for the AI profile. The profile name must follow the naming rules of Oracle SQL identifier. The maximum profile name length is 125 characters.
 * `credential_name`: This is the name of the credential used to authenticate requests to the selected AI provider.
@@ -135,21 +137,23 @@ Define the following attributes for this profile:
 * `max_tokens`: Specify the maximum number of tokens (words and pieces of words) in the response. Prevents overly long outputs and manages cost.
 * `oci_compartment_id`: This is the OCID of the compartment you are permitted to access when calling the OCI Generative AI service. The compartment ID can contain alphanumeric characters, hyphens and dots.
 
-1. Check the status of the profile creation by running the following:
+2. Check the status of the profile creation by running the following:
 
-```sql
+    ```sql
     <copy>
     %sql 
     select * from
     user_cloud_ai_profiles;
     </copy>
     ```
-![AI Profile created and listed](images/ai-profile-created.png "AI Profile created and listed")
+    ![AI Profile created and listed](images/ai-profile-created.png "AI Profile created and listed")
 
 
-## Task 2: Grant OML_DEVELOPER Role to OML User
+## Task 3: Grant `OML_DEVELOPER` Role to OML User
 
-To use Data Science Agent, the administrator must grant the `OML_DEVELOPER` role to the OML user. If the OML user, such as `OMLUSER`, is created through Database Actions, the `OML_DEVELOPER` role is automatically granted.
+To use Data Science Agent, the administrator must grant the `OML_DEVELOPER` role to the OML user. 
+
+> **Note:** If the OML user, such as `OMLUSER`, is created through Database Actions, the `OML_DEVELOPER` role is automatically granted.
 
 1. Grant the `OML_DEVELOPER` role to the OML user.
 
@@ -167,11 +171,11 @@ To use Data Science Agent, the administrator must grant the `OML_DEVELOPER` role
     Grant succeeded.
     ```
 
-    ![Verify that the OML_DEVELOPER role was granted to OMLUSER](images/verify-oml-developer-role.png "Verify OML_DEVELOPER Role")
+
 
 ## Task 3: Add User to the Host ACL
 
-For model providers such as OpenAI, you must add users to the host ACL so the database user can access the model provider endpoint.
+For model providers such as OpenAI, you must add users to the host ACL (Access Control List). This allows the database user to access the model provider endpoint.
 
 > **Note:** Host ACL entry is not required for OCI GenAI.
 
@@ -197,27 +201,11 @@ For model providers such as OpenAI, you must add users to the host ACL so the da
     ```
     PL/SQL procedure successfully completed.
     ```
+Here, the parameters are:
 
-    ![Verify that OMLUSER was added to the host ACL for api.openai.com](images/verify-host-acl-openai.png "Verify Host ACL for OpenAI")
+* `host`: The host, which can be the name or the IP address of the host. You can use a wildcard to specify a domain or an IP subnet. The host or domain name is not case sensitive.
+* `ace`: The access control entries (ACE). The XS$ACE_TYPE type is provided to construct each ACE entry for the ACL.
 
-2. Review the host ACL parameters.
-
-    The `host` parameter specifies the host name or IP address that the database user can access. The `ace` parameter defines the access control entry, including the privilege list, principal name, and principal type.
-
-    The expected output should look similar to:
-
-    ```
-    Host ACL configuration reviewed.
-
-    host:
-    api.openai.com
-
-    principal_name:
-    OMLUSER
-
-    privilege:
-    http
-    ```
 
 You may now **proceed to the next lab**.
 
