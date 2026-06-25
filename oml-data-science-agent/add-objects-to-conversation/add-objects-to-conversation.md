@@ -2,9 +2,9 @@
 
 ## Introduction
 
-In this lab, you will add objects to the `Predict Subscription` Data Science Agent conversation. Objects can include tables, views, and machine learning models that Data Science Agent can use during a conversation.
+In this lab, you will add objects to the `Predict Subscription` Data Science Agent conversation. Objects include tables, views, and machine learning models that Data Science Agent can use during a conversation.
 
-In this workshop, you will use the bank marketing dataset. You will associate multiple dataset objects with the conversation so Data Science Agent has the context it needs to answer questions and generate useful outputs.
+In this workshop, you will use the bank marketing dataset. You will associate multiple dataset objects with the conversation so that Data Science Agent has the context it needs to answer questions and generate useful outputs.
 
 **Estimated Lab Time:** 30 minutes
 
@@ -20,7 +20,7 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
-* Completed all previous labs
+* Complete all the previous labs in this workshop
 * Created the `Predict Subscription` Data Science Agent conversation
 * Access to the Oracle Machine Learning user interface
 * Imported the bank marketing dataset
