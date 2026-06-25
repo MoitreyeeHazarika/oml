@@ -29,8 +29,13 @@ In this workshop, you will learn how to:
 
 ### Prerequisites
 
-This workshop assumes you have:
+This workshop requires access to your Oracle Machine Learning UI in Oracle Autonomous AI Database. You may use your own cloud account or a training account whose details were given to you by an Oracle instructor.
+
 * An Oracle Cloud Account with an Autonomous AI Database instance and Cloud Shell.
+* Familiarity with OML UI
+* Familiarity with Oracle Autonomous AI Database
+* Familiarity with Oracle Cloud Infrastructure (OCI) GenAI Service
+* Access to OCI GenAI Services LLM
 
 > **Note:** If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. [Click here for the Free Tier FAQ page](https://www.oracle.com/cloud/free/faq.html).
 

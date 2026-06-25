@@ -169,7 +169,7 @@ In this task, you will verify that the selected objects were added to the conver
 
 This completes the task of adding objects to the `Predict Subscription` conversation.
 
-*[Optional]* You may now **proceed to the next lab**.
+You may now **proceed to the next lab**.
 
 ## Learn More
 

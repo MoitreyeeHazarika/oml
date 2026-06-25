@@ -129,7 +129,7 @@ In this task, you will begin interacting with Data Science Agent by submitting a
 
     ![Send a natural language prompt in the Data Science Agent chat interface](images/dsa-send-message-placeholder.png "Send Message to Data Science Agent")
 
-*[Optional]* You may now **proceed to the next lab**.
+You may now **proceed to the next lab**.
 
 ## Learn More
 

@@ -189,6 +189,8 @@ For model providers such as OpenAI, you must add users to the host ACL so the da
     http
     ```
 
+You may now **proceed to the next lab**.
+
 ## Learn More
 
 * [Oracle Machine Learning](https://docs.oracle.com/en/database/oracle/machine-learning/)
