@@ -2,7 +2,9 @@
 
 ## Introduction
 
-In this lab, you will define an AI profile for use with Data Science Agent (DSA). Autonomous AI Database uses AI profiles to configure access to a large language model (LLM), generate SQL from natural language prompts, run SQL, explain SQL, and support retrieval augmented generation with embedding models and vector indexes.
+In this lab, you will create an OCI Generative AI Credential and an AI profile. You will define the AI profile for use with Data Science Agent (DSA). 
+
+Autonomous AI Database uses AI profiles to configure access to a large language model (LLM), generate SQL from natural language prompts, run SQL, explain SQL, and support retrieval augmented generation with embedding models and vector indexes.
 
 You will also grant the required OML role to the OML user and configure host Access Control List (ACL) access for model providers that require outbound network access.
 
@@ -11,6 +13,8 @@ You will also grant the required OML role to the OML user and configure host Acc
 ### Objectives
 
 In this lab, you will:
+
+* Create an OCI Generative AI Credential
 * Create an AI profile using `DBMS_CLOUD_AI`
 * Grant the `OML_DEVELOPER` role to an OML user
 * Add the OML user to the host ACL for OpenAI access
@@ -19,103 +23,129 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
-* Completed all previous labs
+* Completed the previous lab
 * Access to an Autonomous AI Database
 * Administrator privileges or equivalent permissions
 * An OML user, such as `OMLUSER`
 * A configured credential for the model provider, such as `openai_cred`
+* DBMS_CLOUD_AI package
+* user_ocid
+* tenancy_ocid
+* private_key
+* fingerprint
 
-## Task 1: Use DBMS_CLOUD_AI to Configure AI Profiles
+## Task 1: Create an OCI Generative AI Credential and an AI Profile
+
+An AI credential stores authentication details that the database uses to access the selected AI provider or related cloud resources. Depending on the provider, it may contain an API key, OCI signing key details, or other provider-specific authentication fields. The credential comprises the following information:
+
+* `user_ocid`: This is the unique identifier of the OCI user.
+* `tenancy_ocid`: This is the unique identifier of the OCI tenancy in your cloud account.
+* `private_key`: The private key associated with the OCI user. It is required for secure authentication.
+* `fingerprint`: The fingerprint of the public key linked to the OCI user.
+
+To create an OCI Generative AI credential:
+
+1. Create a notebook and in a %script paragraph, run the following command: 
+
+    ```sql
+    <copy>
+    %script
+
+    DECLARE
+    credential_name VARCHAR2(128) := 'OCI_CRED';
+    BEGIN
+    BEGIN
+    dbms_cloud.drop_credential(credential_name => credential_name);
+    EXCEPTION
+    WHEN OTHERS THEN
+    NULL;
+    END;
+    dbms_cloud.create_credential(
+    credential_name => credential_name,
+    user_ocid       => '<ocid1.user.oc1..>',
+    tenancy_ocid    => '<ocid1.tenancy.oc1..>',
+    private_key     => '<private_key>',
+    fingerprint     => '<fingerprint>'
+    );
+    END;
+    /
+    </copy>
+    ```
+
+    This PL/SQL script calls the `DBMS_CLOUD.CREATE_CREDENTIAL` procedure to create a new credential with the given parameters:
+
+    * `credential_name`: Name of the credential. In this example, the credential name is `OCI_CRED`.
+    * `user_ocid`: This is the Oracle Cloud Identifier, a unique ID for the user. See Where to Get the Tenancy's OCID and User's OCID for details.
+    * `tenancy_ocid`: This is the Oracle Cloud Identifier for your tenancy (your OCI account). See Where to Get the Tenancy's OCID and User's OCID for details.
+    * `private_key`: Specify the generated private key. Private keys generated with a passphrase are not supported. You must generate the private key without a passphrase. See How to Generate an API Signing Key for details.
+    * `fingerprint`: Specify the fingerprint. After a generated public key is uploaded to your account the fingerprint is displayed in the console. Use the displayed fingerprint for this argument. See How to Get the Key's Fingerprint and How to Generate an API Signing Key for more information.
+
+
+
+## Task 2: Use DBMS_CLOUD_AI to Configure AI Profiles
 
 AI profiles define how Autonomous AI Database connects to an LLM and which profile attributes are used for natural language to SQL translation. These profiles can include metadata from database objects such as table names, column names, column data types, and comments.
 
-1. Review the `DBMS_CLOUD_AI.CREATE_PROFILE` procedure signature.
+1. In another `%script` paragraph in the same notebook, run the following command to create an AI profile by the name `GROK_4_3_PROFILE`. This script uses the `DBMS_CLOUD_AI.CREATE_PROFILE` procedure.
 
     This procedure creates a new AI profile. The profile can later be used to translate natural language prompts into SQL statements and to configure access to an LLM provider.
 
     ```sql
     <copy>
-    DBMS_CLOUD_AI.CREATE_PROFILE(
+    %script
 
-       profile_name        IN  VARCHAR2,
-
-       attributes          IN  CLOB      DEFAULT NULL,
-
-       status              IN  VARCHAR2  DEFAULT NULL,
-
-       description         IN  CLOB      DEFAULT NULL
-
-    );
-    </copy>
-    ```
-
-2. Review the required and optional parameters.
-
-    The `profile_name` parameter is mandatory and must follow Oracle SQL identifier naming rules. The `attributes` parameter defines profile attributes in JSON format. The `status` parameter controls whether the profile is enabled, and the `description` parameter provides additional context about the profile.
-
-    The expected output should look similar to:
-
-    ```
-    Procedure reviewed successfully.
-
-    Required parameter:
-    - profile_name
-
-    Optional parameters:
-    - attributes
-    - status
-    - description
-    ```
-
-3. Create the AI profile.
-
-    Run the following PL/SQL block to create an AI profile named `NL2SQL`. This profile uses OpenAI as the provider and references the `openai_cred` credential for SQL translation.
-
-    ```sql
-    <copy>
+    DECLARE
+        profile_name VARCHAR2(128) := 'GROK_4_3_PROFILE';
     BEGIN
-
-         DBMS_CLOUD_AI.CREATE_PROFILE(
-
-              profile_name    => 'NL2SQL',
-
-              attributes      => JSON_OBJECT('provider' value 'openai',
-
-                                             'credential_name' value 'openai_cred'),
-
-            status     => 'enabled',                             
-
-              description     => 'AI profile to use OpenAI for SQL translation'
-
-         );
-
+        dbms_cloud_ai.drop_profile(
+            profile_name,
+            TRUE
+        );
+        dbms_cloud_ai.create_profile(
+            profile_name => profile_name,
+            attributes   => '{
+                "credential_name": "OCI_CRED",
+                "model": "xai.grok-4.3",
+                "provider": "oci",
+                "temperature": 1,
+                "max_tokens": 8192,
+                "oci_compartment_id": "<ocid1.compartment.oc1..>"
+            }'
+        );
     END;
-
     /
     </copy>
     ```
 
-    The expected output should look similar to:
+Define the following attributes for this profile:
 
+* `profile_name`: A name for the AI profile. The profile name must follow the naming rules of Oracle SQL identifier. The maximum profile name length is 125 characters.
+* `credential_name`: This is the name of the credential used to authenticate requests to the selected AI provider.
+* `model`: The name of the AI model being used to generate responses in the conversation. In this example, it is xai.grok-4.3. For more information, see Recommended Models.
+* `provider`: This is the provider of the model. It is a mandatory field. Supported providers are:
+    * openai
+    * cohere
+    * azure
+    * database
+    * oci
+    * google
+    * anthropic
+    * huggingface
+    * aws
+* `max_tokens`: Specify the maximum number of tokens (words and pieces of words) in the response. Prevents overly long outputs and manages cost.
+* `oci_compartment_id`: This is the OCID of the compartment you are permitted to access when calling the OCI Generative AI service. The compartment ID can contain alphanumeric characters, hyphens and dots.
+
+1. Check the status of the profile creation by running the following:
+
+```sql
+    <copy>
+    %sql 
+    select * from
+    user_cloud_ai_profiles;
+    </copy>
     ```
-    PL/SQL procedure successfully completed.
-    ```
+![AI Profile created and listed](images/ai-profile-created.png "AI Profile created and listed")
 
-    ![Verify that the NL2SQL AI profile was created successfully](images/verify-ai-profile-created.png "Verify AI Profile Created")
-
-4. Review support for additional data sources.
-
-    In addition to specifying tables and views in the AI profile, you can specify tables mapped with external tables, including external data queried with Data Catalog. This enables you to query data inside the database and data stored in an object store.
-
-    The expected output should look similar to:
-
-    ```
-    AI profile configuration supports:
-    - Database tables
-    - Database views
-    - External tables
-    - Data lake object store data
-    ```
 
 ## Task 2: Grant OML_DEVELOPER Role to OML User
 
