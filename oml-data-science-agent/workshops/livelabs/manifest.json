@@ -26,7 +26,7 @@
             "filename": "../../intro-to-dsa/intro-to-dsa.md"
         },
         {
-            "title": "Lab 2: Define AI Profile for use with Data Science Agent",
+            "title": "Lab 2: Create AI Credential and AI Profile for use with Data Science Agent",
             "type": "livelabs",
             "filename": "../../define-ai-profile/define-ai-profile.md"            
         },
