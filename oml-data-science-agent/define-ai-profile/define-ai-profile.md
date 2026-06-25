@@ -84,13 +84,11 @@ To create an OCI Generative AI credential:
 
 ## Task 2: Create an AI Profile 
 
-Use `DBMS_CLOUD_AI` to Configure AI Profiles
-
 AI profiles define how Autonomous AI Database connects to an LLM and which profile attributes are used for natural language to SQL translation. These profiles can include metadata from database objects such as table names, column names, column data types, and comments.
 
 1. In another `%script` paragraph in the same notebook, run the following command to create an AI profile by the name `GROK_4_3_PROFILE`. This script uses the `DBMS_CLOUD_AI.CREATE_PROFILE` procedure.
 
-    This procedure creates a new AI profile. The profile can later be used to translate natural language prompts into SQL statements and to configure access to an LLM provider.
+    This procedure creates a new AI profile. You can use the profile to translate natural language prompts into SQL statements and also to configure access to an LLM provider.
 
     ```sql
     <copy>
@@ -119,7 +117,7 @@ AI profiles define how Autonomous AI Database connects to an LLM and which profi
     </copy>
     ```
 
-    Define the following attributes for this profile:
+The attributes of this profile:
 
 * `profile_name`: A name for the AI profile. The profile name must follow the naming rules of Oracle SQL identifier. The maximum profile name length is 125 characters.
 * `credential_name`: This is the name of the credential used to authenticate requests to the selected AI provider.
@@ -149,7 +147,7 @@ AI profiles define how Autonomous AI Database connects to an LLM and which profi
     ![AI Profile created and listed](images/ai-profile-created.png "AI Profile created and listed")
 
 
-## Task 3: Grant `OML_DEVELOPER` Role to OML User
+## Task 3: Grant OML_DEVELOPER Role to OML User
 
 To use Data Science Agent, the administrator must grant the `OML_DEVELOPER` role to the OML user. 
 
