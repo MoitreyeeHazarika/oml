@@ -1,7 +1,3 @@
-WORKSHOP: Introduction to Oracle Data Science Agent   
-THIS IS: Lab 4: Issue prompts to perform Data Science and Machine Learning tasks  
-ESTIMATED TIME: 120 minutes
-
 # Issue prompts to perform Data Science and Machine Learning tasks
 
 ## Introduction

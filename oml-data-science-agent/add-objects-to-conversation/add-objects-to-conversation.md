@@ -1,7 +1,3 @@
-WORKSHOP: Introduction to Oracle Data Science Agent   
-THIS IS Lab 3: Add Objects to your Conversation  
-ESTIMATED TIME: 120 minutes
-
 # Lab 4: Add Objects to your Conversation
 
 ## Introduction

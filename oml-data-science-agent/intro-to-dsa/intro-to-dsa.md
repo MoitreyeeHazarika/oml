@@ -1,9 +1,5 @@
-# Introduction
+# Introduction to Oracle Data Science Agent
 
-## About this workshop
-The labs in this workshop walk you through all the steps to get started with Oracle Machine Learning Data Science Agent.
-
-Data Science Agent is an intelligent built-in conversational chatbot integrated with Oracle Machine Learning UI included in your Oracle Autonomous AI Database subscription. You must provide the LLM, specified through your AI profile, whether from a third-party AI provider, OCI GenAI Service, or one you privately host. You can run complete data science workflows using natural language in the Data Science Agent chat.
 
 
 ### Estimated Lab Time:
@@ -42,7 +38,7 @@ To access Data Science Agent, you must first sign into Oracle Machine Learning U
 
     ![Machine Learning](images/dbactions-dev-machine-learning.png "Machine Learning option on Development tab")
 
-3. On the Oracle Machine Learning UI sign in page, enter your username and password, and click **Sign in**.
+3. On the Oracle Machine Learning UI sign in page, enter your username and password, and click **Sign in**. The Oracle Machine Learning UI home page opens.
 
 4. On your Oracle Machine Learning UI home page, click **Data Science Agent**. Alternatively, you can click the Cloud menu icon to open on the left navigation menu. Here, click **Data Science Agent**.
 

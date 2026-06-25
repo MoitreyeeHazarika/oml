@@ -1,7 +1,3 @@
-WORKSHOP: Introduction to Oracle Data Science Agent
-THIS IS: Lab 1: Define AI Profile for use with Data Science Agent  
-ESTIMATED TIME: 120 minutes
-
 # Define AI Profile for use with Data Science Agent
 
 ## Introduction

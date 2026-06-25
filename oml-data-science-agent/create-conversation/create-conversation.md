@@ -1,7 +1,3 @@
-WORKSHOP: Introduction to Oracle Data Science Agent
-THIS IS: Lab 2: Create a Data Science Agent Conversation  
-ESTIMATED TIME: 120 minutes
-
 # Create a Data Science Agent Conversation
 
 ## Introduction
