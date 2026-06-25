@@ -32,15 +32,9 @@ This lab assumes you have:
 
 In this task, you will open the existing Data Science Agent conversation so you can associate dataset objects with it.
 
-1. On the Conversations listing page, click the `Predict Subscription` conversation to open it.
+1. On the Conversations listing page, click the `Predict Subscription` conversation to open it. The Predict Subscription conversation opens in the Data Science Agent chat interface.
 
-    The expected output should look similar to:
-
-    ```
-    The Predict Subscription conversation opens in the Data Science Agent chat interface.
-    ```
-
-    ![Predict Subscription conversation opened in the Data Science Agent chat interface](images/dsa-conversation-opened.png "Predict Subscription Conversation")
+    ![Predict Subscription conversation listed on the Data Science Agent Conversations page](images/dsa-conv-listing-page.png "Predict Subscription Conversation")
 
 ## Task 2: Open the Objects Pane
 
