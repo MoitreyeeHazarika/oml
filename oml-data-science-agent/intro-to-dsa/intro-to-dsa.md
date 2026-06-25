@@ -11,7 +11,7 @@ Data Science Agent is an intelligent built-in conversational chatbot integrated 
 
 
 ### Objectives
-In this workshop, you will learn how to:
+In this lab, you will learn how to:
 
 * Access and use the Oracle Machine Learning Data Science Agent
 * Create AI Credential and AI Profile
@@ -29,8 +29,29 @@ This workshop requires access to your Oracle Machine Learning UI in Oracle Auton
 * Familiarity with Oracle Cloud Infrastructure (OCI) GenAI Service
 * Access to OCI GenAI Services LLM
 
-You are all set to begin the labs!
-Please click Lab 1: Create Projects and Workspaces in Oracle Machine Learning Notebooks in the Contents menu on the right.
+## Task 1: Access Oracle Data Science Agent
+
+You can access Data Science Agent directly from Oracle Machine Learning UI home page.
+To access Data Science Agent, you must first sign into Oracle Machine Learning UI from Autonomous AI Database. To sign into Oracle Machine Learning from an Autonomous AI Database instance:
+
+1. On the Autonomous AI Database information page click **Database actions** and then click **View all database actions**. The Database Actions Launchpad opens. 
+
+   ![Database Actions](images/database-actions.png "View all database options")
+
+2. On the Database Actions page, go to the **Development** tab and click **Machine Learning**. The Oracle Machine Learning UI sign in page opens.
+
+    ![Machine Learning](images/dbactions-dev-machine-learning.png "Machine Learning option on Development tab")
+
+3. On the Oracle Machine Learning UI sign in page, enter your username and password, and click **Sign in**.
+
+4. On your Oracle Machine Learning UI home page, click **Data Science Agent**. Alternatively, you can click the Cloud menu icon to open on the left navigation menu. Here, click **Data Science Agent**.
+
+    ![Data Science Agent on OML UI homepage](images/oml-ui-homepage.png "Data Science Agent on Oracle Machine Learning UI home page")
+
+5. This opens the Data Science Conversations listing page.
+
+    ![Data Science Agent listing page](images/dsa-listing-page-blank.png "Data Science Agent listing page")
+
 
 > **Note:** If you have a Free Trial account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
 
