@@ -6,6 +6,8 @@ In this lab, you will issue a sequence of prompts to Data Science Agent to perfo
 
 By the end of this lab, you will see how Data Science Agent supports a novice user in exploring the dataset present in the `OMLUSER` schema and in building and evaluating a machine learning model. You will use natural language to prepare data, generate SQL, create visualizations, train models, interpret model results, and score prospects.
 
+>**Note:** In an agent-driven workflow, outputs can vary by model, profile, seed, data state, and previous conversation context. Your generated object names and model results may differ; use the names shown in your response.
+
 **Estimated Lab Time:** 30 minutes
 
 ### Objectives
@@ -32,9 +34,9 @@ This lab assumes you have:
 
 ## Task 1: Set the conversation goal and context
 
-In this task, you will start a new conversation with Data Science Agent and provide enough context for the agent to understand your role, your experience level, and the data you want to explore. This helps the agent tailor its response and explain the machine learning workflow in an accessible way.
+In this task, continue the `Predict Subscription` conversation you created in Lab 3: Create a Data Science Conversation. Provide enough context for the agent to understand your role, your experience level, and the data you want to explore. This helps the agent tailor its response and explain the machine learning workflow in an accessible way.
 
-1. Open Data Science Agent and review the tips displayed in the chat interface.
+1. Open the `Predict Subscription` conversation, and review the tips displayed in the chat interface.
 
     ![Data Science Agent tips shown at the start of a new conversation](images/ml-prompt-01.png "Goal and context setting")
 
