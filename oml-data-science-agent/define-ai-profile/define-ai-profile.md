@@ -8,7 +8,7 @@ Autonomous AI Database uses AI profiles to configure access to a large language 
 
 You will also grant the required OML role to the OML user and configure host Access Control List (ACL) access for model providers that require outbound network access.
 
-**Estimated Lab Time:** 30 minutes
+**Estimated Lab Time:** 45 minutes
 
 ### Objectives
 
@@ -218,4 +218,4 @@ You may now **proceed to the next lab**.
 
 * **Author** - Moitreyee Hazarika, Consulting User Assistance Developer, Oracle AI Database User Assistance Development
 * **Contributors** - Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Consulting Member of Tech Staff, Machine Learning
-* **Last Updated By/Date** - Moitreyee Hazarika, November 2026
+* **Last Updated By/Date** - Moitreyee Hazarika, June 2026

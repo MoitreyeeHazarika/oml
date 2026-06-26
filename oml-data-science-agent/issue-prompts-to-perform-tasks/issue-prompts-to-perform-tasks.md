@@ -6,7 +6,7 @@ In this lab, you will issue a sequence of prompts to Data Science Agent to perfo
 
 By the end of this lab, you will see how Data Science Agent supports a novice user in exploring the dataset present in the `OMLUSER` schema and in building and evaluating a machine learning model. You will use natural language to prepare data, generate SQL, create visualizations, train models, interpret model results, and score prospects.
 
-**Estimated Lab Time:** 50 minutes
+**Estimated Lab Time:** 30 minutes
 
 ### Objectives
 
@@ -27,6 +27,8 @@ This lab assumes you have:
 * Access to Data Science Agent
 * The `CLIENTS`, `CONTACTS`, `PAST_CAMPAIGNS`, and `PROSPECTS` tables added as Associated Objects
 * Access to the `OMLUSER` schema
+
+>**Note:**  The output in this lab are examples. The suffixes, selected algorithm, metrics, and row counts may differ when you run the workshop in your environment. Use the object names generated in your session wherever needed.
 
 ## Task 1: Set the conversation goal and context
 
@@ -148,9 +150,13 @@ In this task, you will ask Data Science Agent to show the joins required to crea
 
     ![Response 4 concluded showing join summary, SQL, and visual diagram](images/grok-res-04b.png "Response 4 concluded")
 
+    >**Note:**  The outputs in this lab are examples only. The suffixes, selected algorithm, metrics, and row counts may differ in your environment. Use the object names generated in your session wherever needed.
+
 ## Task 5: Perform feature validation and modeling preparation
 
 In this task, you will ask Data Science Agent to validate features and prepare the modeling data. Feature validation helps identify columns that are suitable for modeling and prepares a clean view for downstream training.
+
+>**Note:**  The outputs in this lab are examples only. The view names, suffixes, selected algorithm, metrics, and row counts may differ in your environment. Use the object names generated in your session wherever needed.
 
 1. Enter the following prompt to continue with feature validation and modeling. This prompt asks Data Science Agent to prepare the unified data for model training.
 
@@ -170,9 +176,12 @@ In this task, you will ask Data Science Agent to validate features and prepare t
 
     ![Prompt 5 response showing clean modeling view and next step options](images/grok-res-05a.png "Prompt 5 and response")
 
+
 ## Task 6: Split the data, train models, and evaluate the final model
 
 In this task, you will ask Data Science Agent to split the clean modeling view into training, validation, and test sets. Data Science Agent uses the clean view for model training and evaluation, splitting the data into 70% training, 10% validation, and 20% test.
+
+>**Note:**  The outputs in this lab are examples only. The view names, model names, suffixes, selected algorithm, metrics, and row counts may differ in your environment. Use the object names generated in your session wherever needed.
 
 1. Enter the following prompt to split the clean view and start model training. This prompt starts the model development stage of the workflow.
 
@@ -221,6 +230,8 @@ In this task, you will ask Data Science Agent to split the clean modeling view i
 ## Task 7: Score prospects to predict subscription likelihood
 
 In this task, you will ask Data Science Agent to use the trained model to score the 100 prospects in the `PROSPECTS` table. Scoring applies the trained model to new or prospective clients and returns a predicted subscription value and probability.
+
+>**Note:**  The outputs in this lab are examples only. The view names, model names, suffixes, selected algorithm, metrics, and row counts may differ in your environment. Use the object names generated in your session wherever needed.
 
 1. Enter the following prompt to score the 100 prospects. This prompt asks Data Science Agent to use the trained model for inference on the `PROSPECTS` table.
 

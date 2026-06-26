@@ -13,7 +13,7 @@ As a human-in-the-loop chatbot, Data Science Agent requires your intervention an
 
 
 ### Estimated Lab Time:
-80 minutes
+30 minutes
 
 
 ### Objectives

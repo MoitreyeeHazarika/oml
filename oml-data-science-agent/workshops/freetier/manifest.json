@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Introduction to Oracle Machine Learning Notebooks",
+    "workshoptitle": "Introduction to Oracle Data Science Agent",
     "help": "livelabs-help-db_us@oracle.com",
     "include": {
         "oml-sign-into-oml.md":"/common/building-blocks/tasks/oml/sign-into-oml.md",
@@ -11,7 +11,7 @@
     "tutorials": [
         {
             "title": "Introduction",
-            "description": "Introduction to Oracle Machine Learning Notebooks.",
+            "description": "Introduction to Oracle Data Science Agent.",
             "filename": "../../introduction/introduction.md"
         },
         {

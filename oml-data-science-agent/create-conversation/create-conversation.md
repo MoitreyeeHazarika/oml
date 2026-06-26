@@ -8,7 +8,7 @@ A conversation is a set of interactions with Data Science Agent in the chat inte
 
 You will open the Data Science Agent Conversations page, create a new conversation, select an AI profile, test the profile, and open the chat interface where you can begin interacting with Data Science Agent.
 
-**Estimated Lab Time:** 10 minutes
+**Estimated Lab Time:** 15 minutes
 
 ### Objectives
 
@@ -95,4 +95,4 @@ You may now **proceed to the next lab**.
 
 * **Author** - Moitreyee Hazarika, Consulting User Assistance Developer, Oracle AI Database User Assistance Development
 * **Contributors** - Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Consulting Member of Tech Staff, Machine Learning
-* **Last Updated By/Date** - Moitreyee Hazarika, November 2026
+* **Last Updated By/Date** - Moitreyee Hazarika, June 2026
