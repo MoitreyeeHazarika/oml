@@ -6,7 +6,7 @@ In this lab, you will issue a sequence of prompts to Data Science Agent to perfo
 
 By the end of this lab, you will see how Data Science Agent supports a novice user in exploring the dataset present in the `OMLUSER` schema and in building and evaluating a machine learning model. You will use natural language to prepare data, generate SQL, create visualizations, train models, interpret model results, and score prospects.
 
->**Note:** In an agent-driven workflow, outputs can vary by model, profile, seed, data state, and previous conversation context. Your generated object names and model results may differ; use the names shown in your response.
+>**Note:** This is an agent-driven workflow. Outputs can vary by model, profile, seed, data state, and previous conversation context. Your generated object names and model results may differ. Use the names shown in your response.
 
 **Estimated Lab Time:** 30 minutes
 
@@ -30,7 +30,7 @@ This lab assumes you have:
 * The `CLIENTS`, `CONTACTS`, `PAST_CAMPAIGNS`, and `PROSPECTS` tables added as Associated Objects
 * Access to the `OMLUSER` schema
 
->**Note:**  The output in this lab are examples. The suffixes, selected algorithm, metrics, and row counts may differ when you run the workshop in your environment. Use the object names generated in your session wherever needed.
+>**Note:**  The output in this lab are examples. The suffixes, selected algorithm, metrics, row counts, and names of models and views may differ when you run the workshop in your environment. Use the object names generated in your session wherever needed.
 
 ## Task 1: Set the conversation goal and context
 
