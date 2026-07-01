@@ -1,11 +1,11 @@
 # Introduction
 
-Estimated Workshop Time: TODO - x minutes
+Estimated Workshop Time: 60 minutes
 
 
 ## About this workshop
 
-The labs in this workshop walk you through all the steps to get started with Oracle Machine Learning Data Science Agent.
+The labs in this workshop walk you through all the steps to get started with Oracle Data Science Agent.
 
 Data Science Agent is an intelligent built-in conversational chatbot integrated with Oracle Machine Learning UI included in your Oracle Autonomous AI Database subscription. You must provide the LLM, specified through your AI profile, whether from a third-party AI provider, OCI GenAI Service, or one you privately host. You can run complete data science workflows using natural language in the Data Science Agent chat.
 
@@ -46,4 +46,4 @@ This workshop requires access to your Oracle Machine Learning UI in Oracle Auton
 
 * **Author** - Moitreyee Hazarika, Consulting User Assistance Developer, Oracle AI Database User Assistance Development
 * **Contributors** - Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Consulting Member of Tech Staff, Machine Learning
-* **Last Updated By/Date** - Moitreyee Hazarika, June 2026
+* **Last Updated By/Date** - Moitreyee Hazarika, July 2026
