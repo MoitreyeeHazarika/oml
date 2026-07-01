@@ -8,7 +8,7 @@ By the end of this lab, you will see how Data Science Agent supports a novice us
 
 >**Note:** This is an agent-driven workflow. Outputs can vary by model, profile, seed, data state, and previous conversation context. Your generated object names and model results may differ. Use the names shown in your response.
 
-**Estimated Lab Time:** 30 minutes
+Estimated Time: X
 
 ### Objectives
 

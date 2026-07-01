@@ -8,7 +8,7 @@ A conversation is a set of interactions with Data Science Agent in the chat inte
 
 You will open the Data Science Agent Conversations page, create a new conversation, select an AI profile, test the profile, and open the chat interface where you can begin interacting with Data Science Agent.
 
-**Estimated Lab Time:** 15 minutes
+Estimated Time: X
 
 ### Objectives
 
