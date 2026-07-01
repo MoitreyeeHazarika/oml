@@ -65,21 +65,6 @@ Data Science Agent works with large language models accessed through Oracle `DBM
 
 This table lists the recommended large language models and the scenarios in which each should be used.
 
-Table 1: Recommended Models
-
-| Provider            | Tier           | Large Language Models       |
-| ------------------- | -------------- | --------------------------- |
-| OpenAI or OCI GenAI | Top            | gpt-5.5                     |
-| OpenAI or OCI GenAI | Cost-effective | gpt-5.4-mini                |
-| OCI GenAI           | Top            | xai.grok-4.3                |
-| OCI GenAI           | Cost-effective | xai.grok-4-1-fast-reasoning |
-| Google              | Top            | gemini-3.5-flash            |
-| Google              | Cost-effective | gemini-3-flash-preview      |
-| Anthropic           | Top            | claude-opus-4-8             |
-| Anthropic           | Cost-effective | claude-sonnet-4-6           |
-
-
->**Note:** When using OCI Generative AI, use the provider and model identifiers exactly as documented for OCI GenAI. Some model identifiers may include the original model family or vendor name.
 
 | Provider            | Tier           | Large Language Model        |
 | ------------------- | -------------- | --------------------------- |
@@ -93,6 +78,7 @@ Table 1: Recommended Models
 | Anthropic           | Cost-effective | claude-sonnet-4-6           |
 
 
+>**Note:** When using OCI Generative AI, use the provider and model identifiers exactly as documented for OCI GenAI. Some model identifiers may include the original model family or vendor name.
 
 
 Explanation of tiers:
