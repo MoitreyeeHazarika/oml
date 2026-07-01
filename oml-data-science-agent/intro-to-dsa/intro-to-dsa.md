@@ -12,8 +12,7 @@ As a human-in-the-loop chatbot, Data Science Agent requires your intervention an
 * **Approval for object view:** During any conversation, Data Science Agent compares the object_list with the objects already associated with the active conversation. If required, the agent proposes any table or view outside the user-approved set. It stops the conversation and explicitly seeks your approval to associate those missing objects before continuing. If you approve associating the missing objects, the association is recorded and the agent continues the conversation. Else, the operation is canceled and no view is created.
 
 
-### Estimated Lab Time:
-30 minutes
+Estimated Time: X
 
 
 ### Objectives

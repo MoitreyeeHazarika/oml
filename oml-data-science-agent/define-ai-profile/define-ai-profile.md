@@ -8,7 +8,7 @@ Autonomous AI Database uses AI profiles to configure access to a large language 
 
 You will also grant the required OML role to the OML user and configure host Access Control List (ACL) access for model providers that require outbound network access.
 
-**Estimated Lab Time:** 45 minutes
+Estimated Time: X
 
 ### Objectives
 

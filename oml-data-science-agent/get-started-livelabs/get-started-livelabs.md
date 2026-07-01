@@ -3,7 +3,7 @@
 ## Introduction
 This lab walks you through the steps to set up your free tier environment that includes provisioning an Oracle Autonomous AI Database, and signing into Oracle Machine Learning user interface.
 
-Estimated Lab Time: 15 minutes
+Estimated Time: X
 
 ### Objectives
 

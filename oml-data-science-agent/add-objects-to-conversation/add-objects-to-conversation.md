@@ -6,7 +6,7 @@ In this lab, you will add objects to the `Predict Subscription` Data Science Age
 
 In this workshop, you will use the bank marketing dataset. You will associate multiple dataset objects with the conversation so that Data Science Agent has the context it needs to answer questions and generate useful outputs.
 
-**Estimated Lab Time:** 30 minutes
+Estimated Time: X
 
 ### Objectives
 
