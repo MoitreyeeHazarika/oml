@@ -81,6 +81,20 @@ Table 1: Recommended Models
 
 >**Note:** When using OCI Generative AI, use the provider and model identifiers exactly as documented for OCI GenAI. Some model identifiers may include the original model family or vendor name.
 
+| Provider            | Tier           | Large Language Model        |
+| ------------------- | -------------- | --------------------------- |
+| OpenAI or OCI GenAI | Top            | gpt-5.5                     |
+| OpenAI or OCI GenAI | Cost-effective | gpt-5.4-mini                |
+| OCI GenAI           | Top            | xai.grok-4.3                |
+| OCI GenAI           | Cost-effective | xai.grok-4-1-fast-reasoning |
+| Google              | Top            | gemini-3.5-flash            |
+| Google              | Cost-effective | gemini-3-flash-preview      |
+| Anthropic           | Top            | claude-opus-4-8             |
+| Anthropic           | Cost-effective | claude-sonnet-4-6           |
+
+
+
+
 Explanation of tiers:
 
 * **Top:** Represents the best state-of-the-art model from a specific provider. This tier is the strongest option in terms of quality, reliability, and precision.
