@@ -61,7 +61,7 @@ To access Data Science Agent, you must first sign into Oracle Machine Learning U
 
 ## Task 2: Review the recommended models for use with Data Science Agent 
 
-Data Science Agent works with large language models accessed through Oracle DBMS_CLOUD_AI and DBMS_CLOUD_AI_AGENT packages. The DBMS_CLOUD_AI package, with Select AI, supports the translation of natural language prompts to generate, run, explain SQL statements, and also enables RAG and natural language-based interactions, including chats with LLMs.
+Data Science Agent works with large language models accessed through Oracle `DBMS_CLOUD_AI` and `DBMS_CLOUD_AI_AGENT` packages. The `DBMS_CLOUD_AI` package, with Select AI, supports the translation of natural language prompts to generate, run, explain SQL statements, and also enables RAG and natural language-based interactions, including chats with LLMs.
 
 This table lists the recommended large language models and the scenarios in which each should be used.
 
