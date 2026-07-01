@@ -100,9 +100,10 @@ Use these links to get more information about Oracle Machine Learning and Oracle
 * [Oracle Cloud Infrastructure Documentation](https://docs.cloud.oracle.com/iaas/Content/GSG/Reference/gettingstartedwithPaaS.htm)
 * [Overview of Oracle Cloud Infrastructure Identity and Access Management (IAM)](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm)
 * [Oracle Cloud Infrastructure Self-paced Learning Modules](https://www.oracle.com/cloud/iaas/training/foundations.html)
+* [Oracle LiveLabs](https://livelabs.oracle.com/ords/r/dbpm/livelabs/home)
 
 
 ## Acknowledgements
 * **Author** : Moitreyee Hazarika, Consulting User Assistance Developer, Database User Assistance Development
 * **Contributors**: Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Consulting Member of Tech Staff, Machine Learning
-* **Last Updated By/Date**: Moitreyee Hazarika, June 2026
+* **Last Updated By/Date**: Moitreyee Hazarika, July 2026

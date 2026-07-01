@@ -28,7 +28,7 @@ This lab assumes you have:
 * Administrator privileges or equivalent permissions
 * An OML user, such as `OMLUSER`
 * A configured credential for the model provider, such as `openai_cred`
-* DBMS_CLOUD_AI package
+* `DBMS_CLOUD_AI` package
 * user_ocid
 * tenancy_ocid
 * private_key
@@ -52,21 +52,21 @@ To create an OCI Generative AI credential:
     %script
 
     DECLARE
-    credential_name VARCHAR2(128) := 'OCI_CRED';
+            credential_name VARCHAR2(128) := 'OCI_CRED';
     BEGIN
-    BEGIN
-    dbms_cloud.drop_credential(credential_name => credential_name);
-    EXCEPTION
-    WHEN OTHERS THEN
-    NULL;
-    END;
-    dbms_cloud.create_credential(
-    credential_name => credential_name,
-    user_ocid       => '<ocid1.user.oc1..>',
-    tenancy_ocid    => '<ocid1.tenancy.oc1..>',
-    private_key     => '<private_key>',
-    fingerprint     => '<fingerprint>'
-    );
+            BEGIN
+                dbms_cloud.drop_credential(credential_name => credential_name);
+            EXCEPTION
+                WHEN OTHERS THEN
+                    NULL;
+            END;
+            dbms_cloud.create_credential(
+                credential_name => credential_name,
+                user_ocid       => '<ocid1.user.oc1..>',
+                tenancy_ocid    => '<ocid1.tenancy.oc1..>',
+                private_key     => '<private_key>',
+                fingerprint     => '<fingerprint>'
+            );
     END;
     /
     </copy>
@@ -171,7 +171,7 @@ To use Data Science Agent, the administrator must grant the `OML_DEVELOPER` role
 
 
 
-## Task 3: Add User to the Host ACL
+## Task 4: Add User to the Host ACL
 
 For model providers such as OpenAI, you must add users to the host ACL (Access Control List). This allows the database user to access the model provider endpoint.
 
@@ -212,10 +212,10 @@ You may now **proceed to the next lab**.
 * [Oracle Machine Learning](https://docs.oracle.com/en/database/oracle/machine-learning/)
 * [Oracle Data Science Agent](https://docs.oracle.com/en/database/oracle/machine-learning/data-science-agent/index.html)
 * [Oracle Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/)
-* [Oracle LiveLabs](https://oracle-livelabs.github.io/)
+* [Oracle LiveLabs](https://livelabs.oracle.com/ords/r/dbpm/livelabs/home)
 
 ## Acknowledgements
 
 * **Author** - Moitreyee Hazarika, Consulting User Assistance Developer, Oracle AI Database User Assistance Development
 * **Contributors** - Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Consulting Member of Tech Staff, Machine Learning
-* **Last Updated By/Date** - Moitreyee Hazarika, June 2026
+* **Last Updated By/Date** - Moitreyee Hazarika, July 2026

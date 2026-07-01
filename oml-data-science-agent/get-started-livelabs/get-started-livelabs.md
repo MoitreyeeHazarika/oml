@@ -30,9 +30,13 @@ You may now **proceed to the next lab.**
 
 ## Learn More
 
-* [Oracle Machine Learning Notebooks](https://docs.oracle.com/en/database/oracle/machine-learning/oml-notebooks/)
+* [Oracle Machine Learning](https://docs.oracle.com/en/database/oracle/machine-learning/)
+* [Oracle Data Science Agent](https://docs.oracle.com/en/database/oracle/machine-learning/data-science-agent/index.html)
+* [Oracle Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/)
+* [Oracle LiveLabs](https://livelabs.oracle.com/ords/r/dbpm/livelabs/home)
+
 
 ## Acknowledgements
 * **Author** : Moitreyee Hazarika, Consulting User Assistance Developer, Database User Assistance Development
 * **Contributors**: Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Consulting Member of Tech Staff, Machine Learning
-* **Last Updated By/Date**: Moitreyee Hazarika, June 2026
+* **Last Updated By/Date**: Moitreyee Hazarika, July 2026
