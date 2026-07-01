@@ -41,7 +41,7 @@ To access Data Science Agent, you must first sign into Oracle Machine Learning U
 
 1. On the Autonomous AI Database information page click **Database actions** and then click **View all database actions**. The Database Actions Launchpad opens. 
 
-   ![Database Actions](images/database-actions.png "View all database options")
+    ![Database Actions](images/database-actions.png "View all database options")
 
 2. On the Database Actions page, go to the **Development** tab and click **Machine Learning**. The Oracle Machine Learning UI sign in page opens.
 

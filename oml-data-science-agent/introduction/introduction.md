@@ -1,5 +1,8 @@
 # Introduction
 
+Estimated Workshop Time: TODO - x minutes
+
+
 ## About this workshop
 
 The labs in this workshop walk you through all the steps to get started with Oracle Machine Learning Data Science Agent.

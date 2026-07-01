@@ -117,12 +117,12 @@ AI profiles define how Autonomous AI Database connects to an LLM and which profi
     </copy>
     ```
 
-The attributes of this profile:
+    The attributes of this profile:
 
-* `profile_name`: A name for the AI profile. The profile name must follow the naming rules of Oracle SQL identifier. The maximum profile name length is 125 characters.
-* `credential_name`: This is the name of the credential used to authenticate requests to the selected AI provider.
-* `model`: The name of the AI model being used to generate responses in the conversation. In this example, it is xai.grok-4.3. For more information, see Recommended Models.
-* `provider`: This is the provider of the model. It is a mandatory field. Supported providers are:
+    * `profile_name`: A name for the AI profile. The profile name must follow the naming rules of Oracle SQL identifier. The maximum profile name length is 125 characters.
+    * `credential_name`: This is the name of the credential used to authenticate requests to the selected AI provider.
+    * `model`: The name of the AI model being used to generate responses in the conversation. In this example, it is xai.grok-4.3. For more information, see Recommended Models.
+    * `provider`: This is the provider of the model. It is a mandatory field. Supported providers are:
     * openai
     * cohere
     * azure
@@ -132,8 +132,8 @@ The attributes of this profile:
     * anthropic
     * huggingface
     * aws
-* `max_tokens`: Specify the maximum number of tokens (words and pieces of words) in the response. Prevents overly long outputs and manages cost.
-* `oci_compartment_id`: This is the OCID of the compartment you are permitted to access when calling the OCI Generative AI service. The compartment ID can contain alphanumeric characters, hyphens and dots.
+    * `max_tokens`: Specify the maximum number of tokens (words and pieces of words) in the response. Prevents overly long outputs and manages cost.
+    * `oci_compartment_id`: This is the OCID of the compartment you are permitted to access when calling the OCI Generative AI service. The compartment ID can contain alphanumeric characters, hyphens and dots.
 
 2. Check the status of the profile creation by running the following:
 

@@ -46,11 +46,11 @@ To add objects to your conversation:
 
 3. On the Objects pane, click the **+** icon to add objects to the conversation. The Object Management dialog opens. You can also search for objects by typing the object name in the search box.
 
-   ![Objects Management dialog used to select objects for the conversation](images/dsa-objects-pane-1.png "Objects Management Dialog")
+    ![Objects Management dialog used to select objects for the conversation](images/dsa-objects-pane-1.png "Objects Management Dialog")
 
 4. In the Object Management dialog, click **Show other schemas** to view objects present in schemas besides your own. 
 
-   ![Objects Management dialog used to select objects for the conversation](images/dsa-object-mgmt-1.png "Objects Management Dialog")
+    ![Objects Management dialog used to select objects for the conversation](images/dsa-object-mgmt-1.png "Objects Management Dialog")
 
 5. In the Objects field, click the down arrow to select objects from the drop-down list. 
 
