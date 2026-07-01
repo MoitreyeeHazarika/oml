@@ -65,6 +65,8 @@ Data Science Agent works with large language models accessed through Oracle `DBM
 
 This table lists the recommended large language models and the scenarios in which each should be used.
 
+Table 1: Recommended Models
+
 | Provider            | Tier           | Large Language Models       |
 | ------------------- | -------------- | --------------------------- |
 | OpenAI or OCI GenAI | Top            | gpt-5.5                     |
