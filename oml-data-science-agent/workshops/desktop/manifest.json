@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Introduction to Oracle Data Science Agent",
+  "workshoptitle": "Get Started with Oracle Data Science Agent",
   "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
       {
@@ -13,21 +13,25 @@
           "filename": "https://livelabs.oracle.com/cdn/common/labs/cloud-login/pre-register-free-tier-account.md"
       },
       {
-          "title": "Lab 1: Create Projects and Workspaces in Oracle Machine Learning Notebooks",
-          "filename": "../../create-project-workspace/create-project-workspace.md"
-      },
-      {
-          "title": "Lab 2: Create and Run Notebooks in Oracle Machine Learning",
-          "filename": "../../create-run-notebooks/create-run-notebooks.md"
-      },
-      {
-          "title": "Lab 3: Collaborate in Oracle Machine Learning Notebooks",
-          "filename": "../../collaborate-use-notebooks/collaborate-use-notebooks.md"
-      },
-      {
-          "title": "Lab 4: Use the Scratchpad in Oracle Machine Learning Notebooks",
-          "filename": "../../use-scratchpad/use-scratchpad.md"
-      },
+        "title": "Lab 1: Introduction to Oracle Data Science Agent",
+        "filename": "../../intro-to-dsa/intro-to-dsa.md"
+    },
+    {
+        "title": "Lab 2: Create AI Credential and AI Profile for use with Data Science Agent",
+        "filename": "../../define-ai-profile/define-ai-profile.md"
+    },
+    {
+        "title": "Lab 3: Create a Data Science Conversation",
+        "filename": "../../create-conversation/create-conversation.md"
+    },
+    {
+        "title": "Lab 4: Configure your Data Science Agent Conversation",
+        "filename": "../../add-objects-to-conversation/add-objects-to-conversation.md"
+    },
+    {
+        "title": "Lab 5: Issue prompts to perform Data Science and Machine Learning tasks",
+        "filename": "../../issue-prompts-to-perform-tasks/issue-prompts-to-perform-tasks.md"
+    },
       {
           "title": "Need Help?",
           "description": "Solutions to Common Problems and Directions for Receiving Live Help",
