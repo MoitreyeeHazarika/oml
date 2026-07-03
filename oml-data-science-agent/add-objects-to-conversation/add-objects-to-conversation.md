@@ -26,7 +26,7 @@ This lab assumes you have:
 * Imported the bank marketing dataset
 * Access to the `OMLUSER.CLIENTS`, `OMLUSER.CONTACTS`, `OMLUSER.PAST_CAMPAIGNS`, and `OMLUSER.PROSPECTS` objects
 
-> **Note:** To import the bank marketing dataset, import and run the following notebook: `<TBD>`.
+> **Note:** To import the bank marketing dataset, import and run the following notebook: [Bank Marketing Dataset](https://adwc4pm.objectstorage.us-ashburn-1.oci.customer-oci.com/p/sqs5Pe9KKWcOrgDvXMnJWkWOh9JFc8WLQlkbrItFpJ2AhMw3P83Ht2a8JQDF38ZQ/n/adwc4pm/b/OML-Resources/o/Create%20Bank%20Marketing%20Tables.dsnb).
 
 ## Task 1: Add Objects to your Conversation
 
