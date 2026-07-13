@@ -501,7 +501,7 @@ Before deploying the ONNX model to OML Services, you must obtain an authenticati
     </copy>
       ```
 
-    ![Model stored in OML Services model repository. Model ID generated](images/modelid-model-repo.png)
+    
 
     > **Note:** When you store the model in the repository, a unique ID is generated. This is the `modelId` that you use when creating the model endpoint.
   
