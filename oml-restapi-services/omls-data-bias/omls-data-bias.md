@@ -8,7 +8,7 @@ Estimated Time: 40 minutes
 
 ### About Data Bias Detection in Oracle Machine Learning Services
 
-The OML Services Data Bias Detector provides REST endpoints for creating bias detection jobs. To help identify potential data bias so that you can mitigate effects in later stages, the bias mitigation method **Reweighing** has been added to the `data_bias` API. The Database Bias Detector calculates metrics to identify common types of data bias: Class Imbalance (CI), Statistical Parity (SP), and Conditional Demographic Disparity (CDD). 
+The OML Services Data Bias Detector provides REST endpoints for creating bias detection jobs. To help identify potential data bias so that you can mitigate effects in later stages, the bias mitigation method **Reweighing** has been added to the `data_bias` API. The Database Bias Detector calculates metrics to identify common types of data bias: Class Imbalance (CI), Statistical Parity (SP), and Conditional Demographic Disparity (CDD).
 
 ### Objectives
 
@@ -27,7 +27,7 @@ This lab assumes you have:
     * `oml-cloud-service-location-url`
 * Completed all previous labs successfully.
 * Access to the `Adult` dataset. The dataset used in this example— the **Adult** dataset, also known as the **Census Income** dataset, is a multivariate dataset. It contains census data of `30,940` adults. The prediction task associated with the dataset is to determine whether a person makes over `50K` a year.
-* A valid authentication token 
+* A valid authentication token
 
 
 ## Task 1: Load the Dataset
@@ -38,39 +38,39 @@ This lab assumes you have:
     ```
     <code>
     <copy>
-    
+
     import oml
     import pandas as pd
     import ssl
     ssl._create_default_https_context = ssl._create_unverified_context
-    
+
     # Load the dataset
     url = "https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data"
     columns = ['AGE', 'WORKCLASS', 'FNLWGT', 'EDUCATION', 'EDUCATION_NUM', 'MARITAL_STATUS',
         'OCCUPATION', 'RELATIONSHIP', 'RACE', 'GENDER', 'CAPITAL_GAIN', 'CAPITAL_LOSS',
         'HOURS_PER_WEEK', 'NATIVE_COUNTRY', 'INCOME']
     adult_df = pd.read_csv(url, names=columns, na_values=" ?", skipinitialspace=True)
-    
+
     # Create a table from the DataFrame
     try:
         oml.drop(table="ADULT")
     except:
         pass
     oml.create(adult_df, table="ADULT")
-    
+
     </copy>
     </code>
     ```
 
 ## Task 1: Create and Run a Data Bias Detection Job in OML Services
 
-To create and run a data bias detection job: 
+To create and run a data bias detection job:
 
 1. Obtain an authentication token by using your Oracle Machine Learning (OML) account credentials to send requests to OML Services. See **Lab 1-Authenticate your OML Account with your Autonomous AI Database instance to use OML Services** in this workshop on how to obtain the authentication token.
 
-2. To create a job for data bias detection and data bias mitigation, send the following POST request to the `/omlmod/v1/jobs` endpoint in OML Services. 
+2. To create a job for data bias detection and data bias mitigation, send the following POST request to the `/omlmod/v1/jobs` endpoint in OML Services.
 
-    >**Note:** OML Services interacts with the `DBMS_SCHEDULER` to perform actions on jobs. 
+    >**Note:** OML Services interacts with the `DBMS_SCHEDULER` to perform actions on jobs.
 
     _Example of a data bias detection job request:_
 
@@ -117,7 +117,7 @@ To create and run a data bias detection job:
     * `sensitiveFeatures` - This is a list of features on which data bias detection and mitigation is performed. By default, 250 features can be monitored for data bias detection. If there are more than 250 features, it will error out. The features can be either numeric or categorical. In this example, the attribute passed for sensitive feature is `GENDER`.
 
       >**Note:** `Text`, `Nested`, and `Date` data types are not supported in this release.
-    
+
     * `strata` - This is an array of strata names to calculate the Conditional Demographihc Disparity (CDD) to mitigate the impact of data bias from confounding variables by conditioning a third variable called strata. In this example, the name provided for strata is `MARITAL_STATUS`.
     * `outcomeColumn` - This is the name of the feature in the input data that is the outcome of training a machine learning model. The outcome must be either numeric or categorical. In this examplem it is `INCOME`.
     * `positiveOutcome` - This is a value that is in favor of a specific group in a dataset. It essentially indicates a positive outcome for that group. In the example, the positive outcome value is `>50K`.
@@ -131,9 +131,9 @@ To create and run a data bias detection job:
     "jobId":"OML$53D60B34_A275_4B2B_831C_2C8AE40BCB53","links":[{"rel":"self","href":"http://<oml-cloud-service-location-url>/omlmod/v1/jobs/OML%2453D60B34_A275_4B2B_831C_2C8AE40BCB53"}]}
     ```
 
-    In the response, `OML$53D60B34_A275_4B2B_831C_2C8AE40BCB53` is the Job ID. 
+    In the response, `OML$53D60B34_A275_4B2B_831C_2C8AE40BCB53` is the Job ID.
 
-    This completes the task of creating a data bias detection job. 
+    This completes the task of creating a data bias detection job.
 
 ## Task 2: View details of Data Bias Detection Job
 
@@ -141,7 +141,7 @@ To create and run a data bias detection job:
 
     ```
     <copy>
-    curl -v -X GET ${omlservice}/omlmod/v1/jobs/'OML$53D60B34_A275_4B2B_831C_2C8AE40BCB53' 
+    curl -v -X GET ${omlservice}/omlmod/v1/jobs/'OML$53D60B34_A275_4B2B_831C_2C8AE40BCB53'
     -H "Content-Type: application/json" -H 'Authorization:Bearer ${token}}$'
     </copy>
     ```
@@ -150,11 +150,11 @@ To create and run a data bias detection job:
       * `$token` - Represents an environmental variable that is assigned to the token obtained through the  Authorization API.
       * `OML$53D60B34_A275_4B2B_831C_2C8AE40BCB53` - This is the job ID
 
-## Task 3: Query the Output table to view the Data Bias Detection Details 
+## Task 3: Query the Output table to view the Data Bias Detection Details
 
-After the data bias job is submitted successfully, you must connect to the database to access the output table in the output schema. The data bias detection details are available in the output table. 
+After the data bias job is submitted successfully, you must connect to the database to access the output table in the output schema. The data bias detection details are available in the output table.
 
-Note the `inputSchemaName`, `outputSchemaName`, and `outputData`. 
+Note the `inputSchemaName`, `outputSchemaName`, and `outputData`.
 
 In this example:
 
@@ -162,7 +162,7 @@ In this example:
 * `outputSchemaName` - It is `OMLUSER`
 * `outputData` - This is the output data table. In this example, the name of the output table is `adultbias_tab`.
 
-1. Run the following SQL query to count the number of records in the output table: 
+1. Run the following SQL query to count the number of records in the output table:
 
     ```
     <copy>
