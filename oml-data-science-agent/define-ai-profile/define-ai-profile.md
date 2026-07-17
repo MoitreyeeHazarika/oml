@@ -1,4 +1,4 @@
-# Create OCI Generative AI Credential and AI Profile  for use with Data Science Agent
+# Create OCI Generative AI Credential and AI Profile for use with Data Science Agent
 
 ## Introduction
 
@@ -90,7 +90,11 @@ To create an OCI Generative AI credential:
 
 ## Task 2: Create an AI Profile 
 
-AI profiles define how Autonomous AI Database connects to an LLM and which profile attributes are used for natural language to SQL translation. These profiles can include metadata from database objects such as table names, column names, column data types, and comments.
+An AI profile is a configuration object that defines how Autonomous AI Database connects to a large language model (LLM) and which settings are used for natural-language-to-SQL translation.
+
+The profile can also reference metadata from database objects, including table names, column names, data types, and comments. This metadata provides context that helps the LLM generate SQL that is relevant to the database schema.
+
+To create an AI Profile:
 
 1. In another `%script` paragraph in the same notebook, run the following command to create an AI profile by the name `GROK_4_3_PROFILE`. This script uses the `DBMS_CLOUD_AI.CREATE_PROFILE` procedure.
 
