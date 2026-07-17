@@ -4,9 +4,9 @@
 
 In this lab, you will create an OCI Generative AI Credential and an AI profile. You will define the AI profile for use with Data Science Agent (DSA). 
 
-Autonomous AI Database uses AI profiles to configure access to a large language model (LLM), generate SQL from natural language prompts, run SQL, explain SQL, and support retrieval augmented generation with embedding models and vector indexes.
+Autonomous AI Database users can configure AI profiles to access a large language model (LLM), generate SQL from natural-language prompts, run and explain SQL, and support retrieval-augmented generation using embedding models and vector indexes.
 
-You will also grant the required OML role to the OML user and configure host Access Control List (ACL) access for model providers that require outbound network access.
+You will also grant the required OML role to the OML user and configure the host Access Control List (ACL) access for model providers that require outbound network access.
 
 Estimated Time: X
 
@@ -151,7 +151,7 @@ AI profiles define how Autonomous AI Database connects to an LLM and which profi
 
 ## Task 3: Grant OML_DEVELOPER Role to OML User
 
-To use Data Science Agent, the administrator must grant the `OML_DEVELOPER` role to the OML user. 
+To use Data Science Agent, the administrator user ADMIN must grant the `OML_DEVELOPER` role to the OML user.
 
 > **Note:** If the OML user, such as `OMLUSER`, is created through Database Actions, the `OML_DEVELOPER` role is automatically granted.
 

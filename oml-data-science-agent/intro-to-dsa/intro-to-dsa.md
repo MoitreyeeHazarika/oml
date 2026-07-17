@@ -36,7 +36,7 @@ This workshop requires access to your Oracle Machine Learning UI in Oracle Auton
 
 ## Task 1: Access Oracle Data Science Agent
 
-You can access Data Science Agent directly from Oracle Machine Learning UI home page.
+You can access Data Science Agent directly from the Oracle Machine Learning UI home page.
 To access Data Science Agent, you must first sign into Oracle Machine Learning UI from Autonomous AI Database. To sign into Oracle Machine Learning from an Autonomous AI Database instance:
 
 1. On the Autonomous AI Database information page click **Database actions** and then click **View all database actions**. The Database Actions Launchpad opens. 
