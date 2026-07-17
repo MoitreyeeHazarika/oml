@@ -50,11 +50,10 @@ An AI credential stores authentication details that the database uses to access 
 
 To create an OCI Generative AI credential:
 
-1. Create a notebook and in a %script paragraph, run the following command: 
+1. Create a notebook and in a `%script` paragraph, run the following command: 
 
     ```sql
     <copy>
-    %script
 
     DECLARE
             credential_name VARCHAR2(128) := 'OCI_CRED';
@@ -99,7 +98,6 @@ AI profiles define how Autonomous AI Database connects to an LLM and which profi
 
     ```sql
     <copy>
-    %script
 
     DECLARE
         profile_name VARCHAR2(128) := 'GROK_4_3_PROFILE';
@@ -142,11 +140,11 @@ AI profiles define how Autonomous AI Database connects to an LLM and which profi
     * `max_tokens`: Specify the maximum number of tokens (words and pieces of words) in the response. Prevents overly long outputs and manages cost.
     * `oci_compartment_id`: This is the OCID of the compartment you are permitted to access when calling the OCI Generative AI service. The compartment ID can contain alphanumeric characters, hyphens and dots.
 
-2. Check the status of the profile creation by running the following:
+2. Check the status of the profile creation by running the following in a `%sql` paragraph in a notebook:
 
     ```sql
     <copy>
-    %sql 
+
     select * from
     user_cloud_ai_profiles;
     </copy>
