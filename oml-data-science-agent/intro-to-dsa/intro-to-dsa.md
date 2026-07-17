@@ -6,10 +6,10 @@ Data Science Agent is an intelligent built-in conversational chatbot integrated 
 
 As a human-in-the-loop chatbot, Data Science Agent requires your intervention and approval in the following areas:
 
-* **Object association:** Associating database objects with a conversation improves precision and efficiency. Objects must be associated or approved before the agent creates views that use them; other supported operations may still use accessible objects based on the user's database privileges.
+* **Object association:** Objects must be associated or approved before the agent creates views that use them; other supported operations may still use accessible objects based on the user's database privileges. Associating database objects with a conversation improves precision and efficiency.
 * **Conversation management:** The scope of Data Science Agent is limited to the active conversation context only. You must create, manage, and delete your conversations.
-* **Profile selection:** You must select an AI profile, and therefore, the LLM that powers the agent. You can also switch profiles mid-conversation.
-* **Approval for object view:** During any conversation, Data Science Agent compares the object_list with the objects already associated with the active conversation. If required, the agent proposes any table or view outside the user-approved set. It stops the conversation and explicitly seeks your approval to associate those missing objects before continuing. If you approve associating the missing objects, the association is recorded and the agent continues the conversation. Else, the operation is canceled and no view is created.
+* **Profile selection:** You must select an AI profile and, therefore, the LLM that powers the agent. You can choose an existing profile or create and select your own. You can also switch profiles mid-conversation.
+* **Approval for object viewing:** During a conversation, Data Science Agent compares the requested objects with those already associated with the active conversation. If a required table or view is not in the approved set, the agent pauses and asks for your approval to add it. If you approve, the object is associated with the conversation and the agent continues. If you do not approve, the request is canceled and no view is created.
 
 
 Estimated Time: X
@@ -19,10 +19,10 @@ Estimated Time: X
 In this lab, you will learn how to:
 
 * Access and use the Oracle Machine Learning Data Science Agent
-* Create AI Credential and AI Profile
+* Create an AI Credential and an AI Profile
 * Create a Data Science Conversation
 * Use the Data Science Agent chat interface
-* Issue sequence of prompts to perform sequences of machine learning tasks
+* Issue a sequence of prompts to perform machine learning tasks
 
 
 ### Prerequisites

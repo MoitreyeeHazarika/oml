@@ -75,10 +75,12 @@ To create an OCI Generative AI credential:
     This PL/SQL script calls the `DBMS_CLOUD.CREATE_CREDENTIAL` procedure to create a new credential with the given parameters:
 
     * `credential_name`: Name of the credential. In this example, the credential name is `OCI_CRED`.
-    * `user_ocid`: This is the Oracle Cloud Identifier, a unique ID for the user. See Where to Get the Tenancy's OCID and User's OCID for details.
-    * `tenancy_ocid`: This is the Oracle Cloud Identifier for your tenancy (your OCI account). See Where to Get the Tenancy's OCID and User's OCID for details.
-    * `private_key`: Specify the generated private key. Private keys generated with a passphrase are not supported. You must generate the private key without a passphrase. See How to Generate an API Signing Key for details.
-    * `fingerprint`: Specify the fingerprint. After a generated public key is uploaded to your account the fingerprint is displayed in the console. Use the displayed fingerprint for this argument. See How to Get the Key's Fingerprint and How to Generate an API Signing Key for more information.
+    * `user_ocid`: This is the Oracle Cloud Identifier, a unique ID for the user. See See [Where to Get the Tenancy's OCID and User's OCID](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#Other) for details.
+    * `tenancy_ocid`: This is the Oracle Cloud Identifier for your tenancy (your OCI account). See [Where to Get the Tenancy's OCID and User's OCID](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#Other)
+    * `private_key`: Specify the generated private key. Private keys generated with a passphrase are not supported. You must generate the private key without a passphrase. See [How to Generate an API Signing Key](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#Other) for details.
+    * `fingerprint`: Specify the fingerprint. After a generated public key is uploaded to your account the fingerprint is displayed in the console. Use the displayed fingerprint for this argument. For more information:
+        * See [How to Generate an API Signing Key](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#two)
+        * See [How to Get the Key's Fingerprint](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#How3)
 
 
 
@@ -123,15 +125,15 @@ AI profiles define how Autonomous AI Database connects to an LLM and which profi
     * `credential_name`: This is the name of the credential used to authenticate requests to the selected AI provider.
     * `model`: The name of the AI model being used to generate responses in the conversation. In this example, it is xai.grok-4.3. For more information, see Recommended Models.
     * `provider`: This is the provider of the model. It is a mandatory field. Supported providers are:
-    * openai
-    * cohere
-    * azure
-    * database
-    * oci
-    * google
-    * anthropic
-    * huggingface
-    * aws
+        * openai
+        * cohere
+        * azure
+        * database
+        * oci
+        * google
+        * anthropic
+        * huggingface
+        * aws
     * `max_tokens`: Specify the maximum number of tokens (words and pieces of words) in the response. Prevents overly long outputs and manages cost.
     * `oci_compartment_id`: This is the OCID of the compartment you are permitted to access when calling the OCI Generative AI service. The compartment ID can contain alphanumeric characters, hyphens and dots.
 
