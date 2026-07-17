@@ -30,7 +30,9 @@ In this workshop, you will learn how to:
 This workshop requires access to your Oracle Machine Learning UI in Oracle Autonomous AI Database. You may use your own cloud account or a training account whose details were given to you by an Oracle instructor.
 
 * An Oracle Cloud Account with an Autonomous AI Database instance.
+    
     >**Note:** You must have your Autonomous AI Database enabled for Oracle Machine Learning
+    
 * Familiarity with OML UI
 * Familiarity with Oracle Autonomous AI Database
 * Familiarity with Oracle Cloud Infrastructure (OCI) GenAI Service

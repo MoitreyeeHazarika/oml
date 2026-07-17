@@ -52,9 +52,9 @@ To create a Data Science Agent conversation:
 
 4. Click **Test** to validate the selected AI profile before creating the conversation. The profile test confirms that the selected profile can be used by Data Science Agent.
 
-    ![AI profile test succeeded message for GROK_4_3_PROFILE](images/create-dsa-conv-dialog.png "AI Profile Test Succeeded")
-
     > **Note:** AI profiles may show warnings if the parameters `model`, `temperature`, or `max_tokens` are outside the recommended Data Science Agent ranges. However, a warning does not necessarily mean the profile cannot be selected. Review the warning before continuing.
+
+    ![AI profile test succeeded message for GROK_4_3_PROFILE](images/create-dsa-conv-dialog.png "AI Profile Test Succeeded")
 
     > **Note:** Profile test failures can be caused by Access Control List (ACL), missing or deleted credentials, invalid credentials, invalid model, timeout, or unexpected `DBMS_CLOUD_AI.GENERATE` errors. To resolve errors, check ACL access, credential validity, model availability, and the request ID shown in the error.
 

@@ -2,11 +2,16 @@
 
 ## Introduction
 
-In this lab, you will create an OCI Generative AI Credential and an AI profile. You will define the AI profile for use with Data Science Agent (DSA). 
+In this lab, you will configure an Oracle Machine Learning (OML) user in Autonomous AI Database to use generative AI capabilities with Data Science Agent (DSA).
 
-Autonomous AI Database users can configure AI profiles to access a large language model (LLM), generate SQL from natural-language prompts, run and explain SQL, and support retrieval-augmented generation using embedding models and vector indexes.
+This configuration enables the OML user to connect securely to a large language model (LLM) and use AI-assisted database features, such as generating SQL from natural-language prompts, running and explaining SQL, and supporting retrieval-augmented generation with embedding models and vector indexes.
 
-You will also grant the required OML role to the OML user and configure the host Access Control List (ACL) access for model providers that require outbound network access.
+To enable these capabilities, you will:
+
+* Create an OCI Generative AI credential that securely stores the authentication information required to access an AI provider and cloud resources.
+* Create an AI profile that defines the model provider, credential, model, and other settings used by Data Science Agent.
+* Grant the required OML role so the user can access Oracle Machine Learning features.
+* Configure a host Access Control List (ACL) when the model provider requires outbound network access.
 
 Estimated Time: X
 
