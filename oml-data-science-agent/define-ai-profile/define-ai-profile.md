@@ -79,8 +79,14 @@ To create an OCI Generative AI credential:
     This PL/SQL script calls the `DBMS_CLOUD.CREATE_CREDENTIAL` procedure to create a new credential with the given parameters:
 
     * `credential_name`: Name of the credential. In this example, the credential name is `OCI_CRED`.
-    * `user_ocid`: This is the Oracle Cloud Identifier, a unique ID for the user. See See [Where to Get the Tenancy's OCID and User's OCID](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#Other) for details.
-    * `tenancy_ocid`: This is the Oracle Cloud Identifier for your tenancy (your OCI account). See [Where to Get the Tenancy's OCID and User's OCID](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#Other)
+    * `user_ocid`: This is the Oracle Cloud Identifier, a unique ID for the user. You get the user OCID from the Oracle Cloud Infrastructure Console on the User Information page. To obtain the `user_ocid`, click on the profile icon and then click **User Settings**. On the User Information section, click **Copy** on the OCID field.
+
+    ![User OCID](images/user-ocid.png "User OCID Information")
+
+    * `tenancy_ocid`: This is the Oracle Cloud Identifier for your tenancy (your OCI account). You get the tenancy OCID from the Oracle Cloud Infrastructure Console on the Tenancy Details page. To obtain the `tenancy_ocid`, click on the profile icon and then click **Tenancy**. On the Tenancy Details page, click **Copy** on the OCID field.
+
+    ![Tenancy OCID](images/tenancy-ocid.png "Tenancy OCID Information")
+
     * `private_key`: Specify the generated private key. Private keys generated with a passphrase are not supported. You must generate the private key without a passphrase. See [How to Generate an API Signing Key](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#Other) for details.
     * `fingerprint`: Specify the fingerprint. After a generated public key is uploaded to your account the fingerprint is displayed in the console. Use the displayed fingerprint for this argument. For more information:
         * See [How to Generate an API Signing Key](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#two)
@@ -220,6 +226,7 @@ You may now **proceed to the next lab**.
 
 * [Oracle Machine Learning](https://docs.oracle.com/en/database/oracle/machine-learning/)
 * [Oracle Data Science Agent](https://docs.oracle.com/en/database/oracle/machine-learning/data-science-agent/index.html)
+* [Where to Get the Tenancy's OCID and User's OCID](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#Other) for details.
 * [Oracle Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/)
 * [Oracle LiveLabs](https://livelabs.oracle.com/ords/r/dbpm/livelabs/home)
 
