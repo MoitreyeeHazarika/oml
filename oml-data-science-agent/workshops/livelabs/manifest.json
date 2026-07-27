@@ -7,7 +7,7 @@
         "oml-create-oml-user.md":"/common/building-blocks/tasks/oml/create-oml-user.md",
         "oml-oml-notebooks-ea.md":"/common/building-blocks/blocks/oml/oml-notebooks-ea/oml-notebooks-ea.md",
         "oml-nb-visualizations.md":"/common/building-blocks/blocks/oml/oml-nb-visualizations/oml-nb-visualizations.md",
-        "oml-prov-an-adb.md":"/common/building-blocks/tasks/oml/prov-an-adb.md"        
+        "oml-prov-an-adb.md":"/common/building-blocks/tasks/oml/prov-an-adb.md"
     },
     "tutorials": [
         {

@@ -24,6 +24,14 @@ In this lab, you will learn how to:
 
 [](include:oml-prov-an-adb.md)
 
+## Task 2: Create an OML User
+
+[](include:create-oml-user)
+
+
+## Task 3: Sign into Oracle Machine Learning UI
+
+[](include:sign-into-oml.md)
 
 
 You may now **proceed to the next lab.**
