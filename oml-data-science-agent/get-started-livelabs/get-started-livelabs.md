@@ -10,9 +10,9 @@ Estimated Time: X
 In this lab, you will learn how to:
 
 * Provision an Oracle Autonomous AI Database
+* Create an OML User
+* Sign into OML User
 
-
-	>**Note:** You will use this table in the lab on AutoML UI and OML Services.
 
 ### Prerequisites
 * Sign up for a free tier Oracle Cloud account.
@@ -26,12 +26,11 @@ In this lab, you will learn how to:
 
 ## Task 2: Create an OML User
 
-[](include:create-oml-user)
-
+[](include:oml-create-oml-user.md)
 
 ## Task 3: Sign into Oracle Machine Learning UI
 
-[](include:sign-into-oml.md)
+[](include:oml-sign-into-oml.md)
 
 
 You may now **proceed to the next lab.**
