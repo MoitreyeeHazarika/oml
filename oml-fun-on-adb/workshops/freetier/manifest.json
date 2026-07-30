@@ -37,7 +37,7 @@
             "title": "Lab 2: Work with GitHub Notebooks in Oracle Machine Learning UI",
             "type": "freetier",
             "filename": "../../oml-github-nb/oml-github-nb.md"
-        },          
+        },
         {
             "title": "Lab 3: Introduction to Oracle Machine Learning for SQL",
             "type": "freetier",
@@ -57,7 +57,7 @@
             "title": "Lab 6: Introduction to Oracle Machine Learning AutoML UI",
             "type": "freetier",
             "filename": "/common/building-blocks/blocks/oml/oml-automl/oml-automl.md"
-        },        
+        },
         {
             "title": "Lab 7: Introduction to Oracle Machine Learning Monitoring",
             "type": "freetier",
