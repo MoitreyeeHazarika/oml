@@ -50,16 +50,17 @@ To create a Data Science Agent conversation:
 
     * In the **AI Profile** drop-down menu, click the down arrow and select `GROK_4_3_PROFILE`. Data Science Agent uses this AI profile to process prompts submitted in the conversation.
 
-4. If the selected AI Profile has any issues, Data Science Agent displays a message showing the current issues with the profile. In the example below, Data Science Agent diagnosed issues related to model compatibility, tokens, and temperature settings with the AI profile `GENAI`.
+4. If the selected AI Profile has any issues, Data Science Agent displays a message showing the current issues along with the proposed changes.
+
+    > **Note:** AI profiles may show warnings if the parameters `model`, `temperature`, or `max_tokens` are outside the recommended Data Science Agent ranges. However, a warning does not necessarily mean the profile cannot be selected.
+
+    In the example below, Data Science Agent diagnosed issues related to model compatibility, tokens, and temperature settings associated with the AI profile `GENAI`.
 
     ![Current issues and proposed changes in an AI Profile](images/improve-profile-1.png "Current issues and proposed changes in an AI Profile")
-    Scroll down to view the proposed changes. Data Science Agent proposes the required changes, and recommends models based on best quality and lower costs. Select any model recommendation options here. You may also change the improved profile name suggested by the agent. Click **Create Profile**.
 
-    >**Note:** You will encounter this only if there are issues with the selected AI Profile.
+    Data Science Agent also proposes the required changes, and recommends models based on best quality and lower costs. Scroll down to view the proposed changes. Select any model recommendation options here. You may also change the improved profile name suggested by the agent. Click **Create Profile**.
 
 5. Click **Test** to validate the selected AI profile before creating the conversation. The profile test confirms that the selected profile can be used by Data Science Agent.
-
-    > **Note:** AI profiles may show warnings if the parameters `model`, `temperature`, or `max_tokens` are outside the recommended Data Science Agent ranges. However, a warning does not necessarily mean the profile cannot be selected. Review the warning before continuing.
 
     ![AI profile test succeeded message for GROK_4_3_PROFILE](images/create-dsa-conv-dialog.png "AI Profile Test Succeeded")
 

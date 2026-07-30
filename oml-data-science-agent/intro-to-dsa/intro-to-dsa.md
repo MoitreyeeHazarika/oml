@@ -50,7 +50,8 @@ To access Data Science Agent, you must first sign into Oracle Machine Learning U
 3. On the Oracle Machine Learning UI sign in page, enter your username and password, and click **Sign in**. The Oracle Machine Learning UI home page opens.
     ![OML Sign in page](images/omluser-signin.png "Oracle Machine Learning UI sign in page")
 
-4. On your Oracle Machine Learning UI home page, click **Data Science Agent**. Alternatively, you can click the Cloud menu icon to open on the left navigation menu. Here, click **Data Science Agent**.
+4. On your Oracle Machine Learning UI home page, under Quick Actions, click **Data Science Agent**.
+Alternatively, you can click the Cloud menu icon ![](images/cloud-menu-icon.png "") on the top left to open on the left navigation pane. Here, click **Data Science Agent**.
 
     ![Data Science Agent on OML UI homepage](images/oml-ui-homepage.png "Data Science Agent on Oracle Machine Learning UI home page")
 

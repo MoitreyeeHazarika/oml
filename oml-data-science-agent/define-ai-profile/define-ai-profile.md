@@ -39,7 +39,7 @@ This lab assumes you have:
 * private_key
 * fingerprint
 
-## Task 1: Create an OCI Generative AI Credential and an AI Profile
+## Task 1: Create an OCI Generative AI Credential
 
 An AI credential stores authentication details that the database uses to access the selected AI provider or related cloud resources. Depending on the provider, it may contain an API key, OCI signing key details, or other provider-specific authentication fields. The credential comprises the following information:
 
@@ -94,7 +94,7 @@ To create an OCI Generative AI credential:
 
 
 
-## Task 2: Create an AI Profile 
+## Task 2: Create an AI Profile
 
 An AI profile is a configuration object that defines how Autonomous AI Database connects to a large language model (LLM) and which settings are used for natural-language-to-SQL translation.
 

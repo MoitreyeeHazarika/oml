@@ -48,11 +48,7 @@ In this task, continue the `Predict Subscription` conversation you created in La
     </copy>
     ```
 
-    The expected output should look similar to:
-
-    ```text
-    Data Science Agent summarizes the available tables, describes key columns, and explains how the data can be framed as a supervised machine learning problem.
-    ```
+    In this example, Data Science Agent summarizes the available tables, describes key columns, and explains how the data can be framed as a supervised machine learning problem.
 
 3. Review the summary of the data in each table and the key columns identified by Data Science Agent.
 
@@ -74,25 +70,15 @@ In this task, you will ask Data Science Agent to explore the dataset and provide
     </copy>
     ```
 
-    The expected output should look similar to:
-
-    ```text
-    Data Science Agent provides insights for the CLIENTS, CONTACTS, PAST_CAMPAIGNS, and PROSPECTS tables, including row-level summaries and attribute-level statistics.
-    ```
+    In this example, Data Science Agent returns the insights for the CLIENTS, CONTACTS, PAST_CAMPAIGNS, and PROSPECTS tables, including row-level summaries and attribute-level statistics.
 
 2. Review the initial response, including the insight on the `CLIENTS`, `CONTACTS`, `PAST_CAMPAIGNS`, and `PROSPECTS` tables.
 
     ![Prompt 2 response showing dataset insights across associated tables](images/grok-res-02a.png "Prompt 2 and response")
 
-3. Expand the **Attribute Statistic** section for each table. Data Science Agent presents statistical analysis in a tabular format and, where applicable, as graphs.
+3. Expand the **Attribute Statistic** section for each table. Data Science Agent presents statistical analysis in a tabular format and, where applicable, as graphs. Data Science Agent generates the attribute statistics for each table. Numeric columns show values such as counts, minimums, maximums, averages, and distributions.
 
     ![Attribute Statistic section showing statistical analysis for the associated tables](images/grok-res-02b.png "Response 2 continued")
-
-    The expected output should look similar to:
-
-    ```text
-    Attribute statistics are available for each table. Numeric columns show values such as counts, minimums, maximums, averages, and distributions.
-    ```
 
 4. Expand the **Attribute Analysis** section for each table. Data Science Agent presents attribute-level analysis in a tabular format and, where applicable, as graphs.
 
@@ -110,11 +96,8 @@ In this task, you will ask Data Science Agent to explain how the available table
     </copy>
     ```
 
-    The expected output should look similar to:
+    In response to this prompt, Data Science Agent should return the prediction goal, identify the target variable, and list candidate input features from the available tables.
 
-    ```text
-    Data Science Agent explains the prediction goal, identifies the target variable, and lists candidate input features from the available tables.
-    ```
 
 2. Review the explanation of how to frame the machine learning problem and how the target variable is defined.
 
@@ -136,11 +119,7 @@ In this task, you will ask Data Science Agent to show the joins required to crea
     </copy>
     ```
 
-    The expected output should look similar to:
-
-    ```text
-    Data Science Agent creates the unified modeling view DSAGENT$MODELING_DATA_A6CB and explains the join logic used to combine the source tables.
-    ```
+    In this example, Data Science Agent creates the unified modeling view DSAGENT$MODELING_DATA_A6CB and explains the join logic used to combine the source tables. See screenshot in step 2 here.
 
 2. Review the response showing the unified modeling view `DSAGENT$MODELING_DATA_A6CB`, the summary of the view, and the explanation of the join logic.
 
@@ -168,11 +147,7 @@ In this task, you will ask Data Science Agent to validate features and prepare t
     </copy>
     ```
 
-    The expected output should look similar to:
-
-    ```text
-    Data Science Agent creates the clean modeling view DSAGENT$MODELING_DATA_CLEAN_A6CB, prepares it for modeling, and provides next step options.
-    ```
+    In this example, Data Science Agent creates the clean modeling view DSAGENT$MODELING_DATA_CLEAN_A6CB, prepares it for modeling, and provides next step options.
 
 2. Review the response showing the creation of `DSAGENT$MODELING_DATA_CLEAN_A6CB`, the SQL code, the visual diagram, and the suggested next steps.
 
@@ -193,11 +168,7 @@ In this task, you will ask Data Science Agent to split the clean modeling view i
     </copy>
     ```
 
-    The expected output should look similar to:
-
-    ```text
-    Data Science Agent creates DSAGENT$MODELING_DATA_CLEAN_A6CB_TRAIN with 31,750 rows, DSAGENT$MODELING_DATA_CLEAN_A6CB_VAL with 4,461 rows, and DSAGENT$MODELING_DATA_CLEAN_A6CB_TEST with 9,000 rows.
-    ```
+    In this example, Data Science Agent creates the views - DSAGENT$MODELING_DATA_CLEAN_A6CB_TRAIN with 31,750 rows, DSAGENT$MODELING_DATA_CLEAN_A6CB_VAL with 4,461 rows, and DSAGENT$MODELING_DATA_CLEAN_A6CB_TEST with 9,000 rows.
 
 2. Review the response showing the data split summary and the start of model training. Data Science Agent uses the clean view `OMLUSER.DSAGENT$MODELING_DATA_CLEAN_A6CB` and selects Neural Network as the best algorithm for this machine learning problem.
 
@@ -207,19 +178,15 @@ In this task, you will ask Data Science Agent to split the clean modeling view i
 
     ![Response 6 continued showing final model build and evaluation](images/grok-res-06b.png "Response 6 continued")
 
-    The expected output should look similar to:
-
-    ```text
-    Data Science Agent builds and evaluates the final model DSAGENT$SUBSCRIPTION_MODEL_A6CB.
-    ```
+    In this example, Data Science Agent builds and evaluates the final model DSAGENT$SUBSCRIPTION_MODEL_A6CB.
 
 4. Review the scorecard for the model `OMLUSER.DSAGENT$SUBSCRIPTION_MODEL_A6CB`, including model metrics and the binary confusion matrix.
 
     ![Response 6 concluded showing model scorecard and binary confusion matrix](images/grok-res-06d.png "Response 6 concluded")
 
-    The expected output should look similar to:
+    In this example, the Data Science Agent returns the following:
 
-    ```text
+    ```
     Model Name: OMLUSER.DSAGENT$SUBSCRIPTION_MODEL_A6CB
     Metrics: Accuracy, Precision, Recall, F1, and AUC
     Evaluation: Binary confusion matrix displayed for subscribed and not subscribed classes
@@ -243,11 +210,7 @@ In this task, you will ask Data Science Agent to use the trained model to score 
     </copy>
     ```
 
-    The expected output should look similar to:
-
-    ```text
-    Data Science Agent scores 100 prospective clients in the PROSPECTS table and returns subscription predictions with probability values.
-    ```
+    In this example, Data Science Agent scores 100 prospective clients in the PROSPECTS table and returns subscription predictions with probability values.
 
 2. Review the prediction table showing the probability of subscription for the prospects.
 
@@ -257,7 +220,7 @@ In this task, you will ask Data Science Agent to use the trained model to score 
 
     ![Prompt 7 response concluded showing manual inference SQL query](images/grok-res-07b.png "Prompt 7 response concluded")
 
-    The expected output should look similar to:
+    In this example, Data Science Agent returns the following:
 
     ```text
     CLIENT_ID    PREDICTION    PREDICTION_PROBABILITY
