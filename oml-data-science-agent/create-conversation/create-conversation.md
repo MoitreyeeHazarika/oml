@@ -50,12 +50,10 @@ To create a Data Science Agent conversation:
 
     * In the **AI Profile** drop-down menu, click the down arrow and select `GROK_4_3_PROFILE`. Data Science Agent uses this AI profile to process prompts submitted in the conversation.
 
-4. In case the selected profile has any issues, Data Science Agent displays a message showing the current issues with the profile. In the example below, Data Science Agent diagnosed issues related to model compatibility, tokens, and temperature settings with the AI profile GENAI.
+4. If the selected AI Profile has any issues, Data Science Agent displays a message showing the current issues with the profile. In the example below, Data Science Agent diagnosed issues related to model compatibility, tokens, and temperature settings with the AI profile `GENAI`.
 
-    ![Current issues in an AI Profile](images/improve-profile-1.png "Current issues diagnosed in an AI Profile")
+    ![Current issues and proposed changes in an AI Profile](images/improve-profile-1.png "Current issues and proposed changes in an AI Profile")
     Scroll down to view the proposed changes. Data Science Agent proposes the required changes, and recommends models based on best quality and lower costs. Select any model recommendation options here. You may also change the improved profile name suggested by the agent. Click **Create Profile**.
-
-    ![Proposed changes in an AI Profile](images/improve-profile-2.png "Proposed changes in an AI Profile")
 
     >**Note:** You will encounter this only if there are issues with the selected AI Profile.
 
