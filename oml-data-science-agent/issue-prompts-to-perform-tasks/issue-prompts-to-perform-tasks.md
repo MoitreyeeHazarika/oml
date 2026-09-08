@@ -147,11 +147,88 @@ In this task, you will ask Data Science Agent to validate features and prepare t
     </copy>
     ```
 
-    In this example, Data Science Agent creates the clean modeling view DSAGENT$MODELING_DATA_CLEAN_A6CB, prepares it for modeling, and provides next step options.
+    ![Prompt 5a response showing xxx](images/grok-res-05a1.png "Prompt 5 and response")
 
-2. Review the response showing the creation of `DSAGENT$MODELING_DATA_CLEAN_A6CB`, the SQL code, the visual diagram, and the suggested next steps.
+    In this example, Data Science Agent suggests transforming the `CONTACT_DATE` column, which is of DATE type but not directly usable. It suggests how to approach it and asks whether to generate all these features, or only a specific subset. Based on the user input, the agent clearly mentiones that it will create the transformed dataset, and then move to feature selection and data splitting for modeling.
 
-    ![Prompt 5 response showing clean modeling view and next step options](images/grok-res-05a.png "Prompt 5 and response")
+2. Review the response and enter the following prompt to transform the CONTACT_DATE column.
+
+    ```text
+    <copy>
+    Yes, go ahead and transform  the CONTACT_DATE column.
+    </copy>
+    ```
+
+    ![Prompt 5b response showing xxx](images/grok-res-05b.png "Prompt 5 and response")
+
+    Data Science Agent transforms the CONTACT_DATE column, and replaces it with these columns - CONTACT_YEAR (numeric), CONTACT_MONTH (month as a name), CONTACT_DAY (day of month), CONTACT_DAY_OF_WEEK (day name). It then creates the view `DSAGENT$MODELING_READY_9B43`. It also provides the SQL code the for the view, and the processing diagram. It also provides the most important suggestion to select only the most important features for predicting subscription, citing the reason that it improves both performance and interpretability.
+
+3. Review the response and enter the following prompt to perform feature engineering for predicting subscription likelihood. Also prompt the agent to identify and suggest useful features and explain the same:
+
+    ```text
+    <copy>
+    Review the view DSAGENT$MODELING_READY_9B43 and perform feature engineering for predicting subscription likelihood. Identify potentially useful derived features from the available columns, and explain why they may be useful.
+    </copy>
+    ```
+    ![Prompt 5c response showing xxx](images/grok-res-05c.png "Prompt 5 and response")
+
+    Data Science Agent provides a review of the dataset and suggests several feature engineering ideas to help improve the prediction of subscription likelihood. It provides a detailed list of potentially useful engineered features:
+
+    ![Prompt 5d response showing xxx](images/grok-res-05c1.png "Prompt 5 and response")
+    Here is a detailed list of potentially useful engineered features with rationale provided by Data Science Agent. The agent also provides the following options:
+    * Create any of the engineered features
+    * Suggestions on how to build the engineered features in the modeling dataset
+    * Adopt a fully automatic approach by compute feature importance using the current variables
+
+4. Next, let's proceed to create a new view to include the engineered features. Enter the following prompt: 
+
+    ```text
+    <copy>
+    Create a new view that includes the engineered features.
+    </copy>
+    ```
+
+    ![Prompt 5 response showing xxx](images/grok-res-05d.png "Prompt 5 and response")
+
+    Data Science agent creates the new view `DSAGENT$MODELING_FE_01_9B43` with all the original columns along with these new features - `AGE_BUCKET`, `HAS_ANY_LOAN`, `IS_WEEKEND`, `CONTACT_MONTH_QUARTER`, and `PREVIOUS_SUCCESS`.
+
+    ![Prompt 5 response showing xxx](images/grok-res-05d1.png "Prompt 5 and response")
+
+    It also provides the full SQL definition and a process diagram.
+
+5. Let's confirm if there's any data leakage issues with the feature `HAS_ANY_LOAN`. This feature indicates if a client has at least one loan, capturing overall indebtedness. Enter the following prompt:
+
+    ```text
+    <copy>
+    Confirm that HAS_ANY_LOAN uses only information available before the prediction is made. Assume the prediction is made before the current campaign contact. If there is a concern, explain it and do not create the feature.
+    </copy>
+    ```
+    ![Prompt 5 response showing xxx](images/grok-res-05e.png "Prompt 5 and response")
+
+    Data Science Agent analyses the feature and confirms that it uses only information available before the prediction is made for a given campaign contact. It suggests that it is safe to retain this engineered feature for predicting subscription likelihood.
+
+6. Let's add the feature `HAS_ANY_LOAN` to the new view `DSAGENT$MODELING_FE_ANYLOAN_9B43`. Enter the following prompt: 
+
+    ```text
+    <copy>
+    Create an engineered feature called HAS_ANY_LOAN. Set it to 1 if either HOUSING_LOAN or PERSONAL_LOAN is 1, otherwise set it to 0. Explain why this feature may help predict subscription likelihood.
+    </copy>
+    ```
+
+    ![Prompt 5 response showing xxx](images/grok-res-05f.png "Prompt 5 and response")
+
+    Data Science Agent now adds the engineered feature `HAS_ANY_LOAN` to the view `DSAGENT$MODELING_FE_ANYLOAN_9B43`. See screenshot above for information on how it has defined the feature and how it helps in predicting subscription likelihood.
+7. 
+
+
+    ```text
+    <copy>
+    Create a new view that includes the original columns and HAS_ANY_LOAN.
+    </copy>
+    ```
+    ![Prompt 5 response showing xxx](images/grok-res-05g.png "Prompt 5 and response")
+
+    Data Science Agent creates the view `DSAGENT$MODELING_READY_ANYLOAN_9B43` containing all original columns from the modeling dataset and the engineered feature `HAS_ANY_LOAN`.
 
 
 ## Task 6: Split the data, train models, and evaluate the final model
@@ -168,33 +245,27 @@ In this task, you will ask Data Science Agent to split the clean modeling view i
     </copy>
     ```
 
-    In this example, Data Science Agent creates the views - DSAGENT$MODELING_DATA_CLEAN_A6CB_TRAIN with 31,750 rows, DSAGENT$MODELING_DATA_CLEAN_A6CB_VAL with 4,461 rows, and DSAGENT$MODELING_DATA_CLEAN_A6CB_TEST with 9,000 rows.
+    ![Prompt 6 response showing xxx](images/grok-res-06a1.png "Prompt 5 and response")
+    In response to this prompt, Data Science Agent does the following:
+    * Split the dataset into Training set (31,750 rows, 70 percent), Validation set (4,461 rows, 10 percent), and Test set (9,000 rows, 20 percent). 
+    * Trained multiple models to predict SUBSCRIBED, optimizing for the best F1 score. 
+    * Created the table  table `DSAGENT$SUBSCRIBER_CLASSIFIER_VALIDATION_9B43`. 
+    * Built the final model `DSAGENT$ML_SUBSCRIBER_CLASSIFIER_9B43` and trained it on the combined training and validation data.
 
-2. Review the response showing the data split summary and the start of model training. Data Science Agent uses the clean view `OMLUSER.DSAGENT$MODELING_DATA_CLEAN_A6CB` and selects Neural Network as the best algorithm for this machine learning problem.
+2. Review the response showing the data split summary. Data Science Agent uses the clean view `USER1.DSAGENT$MODELING_READY_ANYLOAN_9B43` and selects Naive Bayes as the best algorithm for this machine learning problem.
 
-    ![Prompt 6 response showing data split and model training](images/grok-res-06a.png "Prompt 6 and response")
+    ![Prompt 6 response showing data split and model training](images/grok-res-06c1.png "Prompt 6 and response")
 
-3. Review the response showing details of the final model build and evaluation.
+3. Review the scorecard for the model `DSAGENT$ML_SUBSCRIBER_CLASSIFIER_9B43`:
 
-    ![Response 6 continued showing final model build and evaluation](images/grok-res-06b.png "Response 6 continued")
+    ![Response 6 concluded showing model scorecard and binary confusion matrix](images/grok-res-06e.png "Response 6 ")
 
-    In this example, Data Science Agent builds and evaluates the final model DSAGENT$SUBSCRIPTION_MODEL_A6CB.
+    Review the model metrics and the binary confusion matrix:
+    ![Response 6 concluded showing model scorecard and binary confusion matrix](images/grok-res-06f.png "Response 6 ")
 
-4. Review the scorecard for the model `OMLUSER.DSAGENT$SUBSCRIPTION_MODEL_A6CB`, including model metrics and the binary confusion matrix.
+4. Open the **Models** page and verify that the final model `DSAGENT$ML_SUBSCRIBER_CLASSIFIER_9B43` is listed.
 
-    ![Response 6 concluded showing model scorecard and binary confusion matrix](images/grok-res-06d.png "Response 6 concluded")
-
-    In this example, the Data Science Agent returns the following:
-
-    ```
-    Model Name: OMLUSER.DSAGENT$SUBSCRIPTION_MODEL_A6CB
-    Metrics: Accuracy, Precision, Recall, F1, and AUC
-    Evaluation: Binary confusion matrix displayed for subscribed and not subscribed classes
-    ```
-
-5. Open the **Models** page and verify that the final model `OMLUSER.DSAGENT$SUBSCRIPTION_MODEL_A6CB` is listed.
-
-    ![DSAGENT$SUBSCRIPTION_MODEL_A6CB listed on the Models page](images/grok-model-ui.png "DSAGENT$SUBSCRIPTION_MODEL_A6CB model listed on the Models page")
+    ![DSAGENT$ML_SUBSCRIBER_CLASSIFIER_9B43 listed on the Models page](images/grok-model-ui-1.png "DSAGENT$ML_SUBSCRIBER_CLASSIFIER_9B43 model listed on the Models page")
 
 ## Task 7: Score prospects to predict subscription likelihood
 
@@ -214,20 +285,127 @@ In this task, you will ask Data Science Agent to use the trained model to score 
 
 2. Review the prediction table showing the probability of subscription for the prospects.
 
-    ![Prompt 7 response showing scored prospects and prediction probabilities](images/grok-res-07a.png "Prompt 7 and response")
+    ![Prompt 7 response showing scored prospects and prediction probabilities](images/grok-res-07.png "Prompt 7 and response")
 
-3. Review the SQL query provided by Data Science Agent to run the inference manually.
+3. Review the details on the view `DSAGENT$PROSPECTS_FOR_SCORING_9B43`. 
 
-    ![Prompt 7 response concluded showing manual inference SQL query](images/grok-res-07b.png "Prompt 7 response concluded")
+    ![Prompt 7 response concluded showing manual inference SQL query](images/grok-res-07c.png "Prompt 7 response concluded")
+
+
+4. Review the SQL query provided by Data Science Agent to run the inference manually.
+
+    ![Prompt 7 response concluded showing manual inference SQL query](images/grok-res-07a1.png "Prompt 7 response concluded")
+
+5. Review the visual diagram provided by Data Science Agent to create the view `DSAGENT$PROSPECTS_FOR_SCORING_9B43`.
+
+    ![Prompt 7 response concluded showing manual inference SQL query](images/grok-res-07b1.png "Prompt 7 response concluded")
 
     In this example, Data Science Agent returns the following:
 
-    ```text
-    CLIENT_ID    PREDICTION    PREDICTION_PROBABILITY
-    42001        1             89.28
-    42002        0             84.11
-    42003        1             78.46
-    42004        0             91.03
+    ```
+    | CLIENT_ID_CONTACTS | PREDICTED | PROBABILITY OF Y (%) |
+
+    |---:|:---:|---:|
+    | 44864 | Y | 99.45 |
+    | 42062 | Y | 99.34 |
+    | 42421 | Y | 99.26 |
+    | 41426 | Y | 97.82 |
+    | 42471 | Y | 96.86 |
+    | 41516 | Y | 96.37 |
+    | 34209 | Y | 93.08 |
+    | 43388 | Y | 92.2 |
+    | 39530 | Y | 86.97 |
+    | 40622 | Y | 86.8 |
+    | 15737 | Y | 86.29 |
+    | 33972 | Y | 84.12 |
+    | 33871 | Y | 82.69 |
+    | 42881 | Y | 68.49 |
+    | 39606 | Y | 67.96 |
+    | 44398 | Y | 64.44 |
+    | 39361 | Y | 63.91 |
+    | 42999 | Y | 61.79 |
+    | 29400 | Y | 60.38 |
+    | 39974 | N | 47.78 |
+    | 7803 | N | 42.63 |
+    | 42271 | N | 41.64 |
+    | 28803 | N | 40.74 |
+    | 34337 | N | 40.11 |
+    | 32365 | N | 38.94 |
+    | 31511 | N | 30.42 |
+    | 29635 | N | 30.16 |
+    | 43021 | N | 28.6 |
+    | 20560 | N | 28.2 |
+    | 28092 | N | 27.29 |
+    | 42756 | N | 25.7 |
+    | 12261 | N | 24.73 |
+    | 13147 | N | 21.18 |
+    | 43531 | N | 20.51 |
+    | 34756 | N | 19.81 |
+    | 28649 | N | 19.25 |
+    | 43691 | N | 18.76 |
+    | 33429 | N | 17.15 |
+    | 35610 | N | 16.55 |
+    | 32596 | N | 15.81 |
+    | 19727 | N | 15.55 |
+    | 13693 | N | 14.16 |
+    | 19884 | N | 14.02 |
+    | 35599 | N | 13.18 |
+    | 19622 | N | 11.07 |
+    | 28653 | N | 9.73 |
+    | 28122 | N | 9.16 |
+    | 8245 | N | 8.01 |
+    | 21997 | N | 7.72 |
+    | 38629 | N | 7.21 |
+    | 11943 | N | 6.54 |
+    | 16154 | N | 6.04 |
+    | 18175 | N | 5.86 |
+    | 19347 | N | 5.84 |
+    | 9371 | N | 5.71 |
+    | 33840 | N | 5.62 |
+    | 13506 | N | 5.26 |
+    | 19187 | N | 5.14 |
+    | 9900 | N | 4.09 |
+    | 38445 | N | 4 |
+    | 21200 | N | 3.89 |
+    | 32507 | N | 3.78 |
+    | 27938 | N | 3.26 |
+    | 5756 | N | 3.01 |
+    | 33168 | N | 2.89 |
+    | 23293 | N | 2.75 |
+    | 27509 | N | 2.25 |
+    | 23692 | N | 2.24 |
+    | 35231 | N | 2.07 |
+    | 12945 | N | 1.87 |
+    | 26416 | N | 1.75 |
+    | 26727 | N | 1.56 |
+    | 18373 | N | 1.45 |
+    | 12686 | N | 1.43 |
+    | 33149 | N | 1.41 |
+    | 11472 | N | 1.34 |
+    | 10157 | N | 1.34 |
+    | 23828 | N | 1.32 |
+    | 5752 | N | 1.21 |
+    | 3122 | N | 1.15 |
+    | 36589 | N | 0.92 |
+    | 1522 | N | 0.66 |
+    | 34440 | N | 0.54 |
+    | 3245 | N | 0.53 |
+    | 19715 | N | 0.48 |
+    | 35627 | N | 0.47 |
+    | 3995 | N | 0.45 |
+    | 4712 | N | 0.35 |
+    | 6609 | N | 0.32 |
+    | 35998 | N | 0.3 |
+    | 34426 | N | 0.25 |
+    | 15421 | N | 0.21 |
+    | 300 | N | 0.15 |
+    | 5346 | N | 0.14 |
+    | 15249 | N | 0.14 |
+    | 23636 | N | 0.14 |
+    | 17138 | N | 0.04 |
+    | 24120 | N | 0.03 |
+    | 38748 | N | 0.01 |
+    | 18254 | N | 0.01 |
     ```
 
 ## Learn More
