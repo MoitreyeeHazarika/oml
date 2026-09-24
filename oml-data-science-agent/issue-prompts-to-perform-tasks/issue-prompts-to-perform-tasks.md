@@ -44,51 +44,84 @@ In this task, continue the `Predict Subscription` conversation you created in La
 
     ```text
     <copy>
-    I'm an analyst without a data science background. Using our client, contact, past campaign, and prospect data, explain what we have and how it could be used to solve a business problem.
+    I'm an analyst without a data science background, interested on running a new marketing campaign.  What data is available and how can it be used?
     </copy>
     ```
 
-    In this example, Data Science Agent summarizes the available tables, describes key columns, and explains how the data can be framed as a supervised machine learning problem.
+    In response to this prompt, Data Science Agent provides an overview of the available data, explains how it can be used in the new marketing campaign, and provides a brief summary of the tables CLIENTS, CONTACTS, PAST_CAMPAIGN, and PROSPECTS. Review the summary of the data in each table and the explanation on how to use this data in the new marketing campaign.
 
-3. Review the summary of the data in each table and the key columns identified by Data Science Agent. Also, review the explanation on how to use this data to solve business problems.
-
-    Data Science Agent lists the four tables - CLIENTS, CONTACTS, PAST_CAMPAIGNS, and PROSPECTS present in your schema. It provides a crisp summary of what data the table contains, and how it can be used to understand and solve a business problem.
-
-    ![Prompt 1 response showing table summaries and key columns](images/t1-p1.png "Prompt 1 and response")
+    ![Prompt 1 response showing table summaries and key columns](images/dsa-ma-p1r1.png "Prompt 1 and response")
 
     > **Note:** The outputs in this lab are examples only. The suffixes, selected algorithm, metrics, and row counts may differ in your environment. Use the object names generated in your session wherever needed.
 
-## Task 2: Create a single modeling table
+3. Scroll down and expand the Object Discovery Summary section. This section provides lists the keys, main attributes and joins in each table.
 
-In this task, you will ask Data Science Agent to create a single view to use it to train a model. A single modeling table or view is useful because model training typically requires one row per training example with the target variable and input features in the same dataset.
+    ![Prompt 1 Object Discovery summary](images/dsa-ma-p1r3a.png "Object Discovery summary")
+
+## Task 2: Data Exploration
+
+In this task, you will ask Data Science Agent to .
 
 1. Enter the following prompt to create a single view by joining the CLIENT, CONTACTS, and PAST_CAMPAIGN data for every client who has been contacted.
 
     ```text
     <copy>
-    Create a single view joining the client, contact, and campaign data for every client who has been contacted, so we can use it to train a model. Exclude DURATION_SECONDS and CONTACT_DATE, since we won't have call duration or a contact date for prospects who haven't been reached yet.
+    I would like to identify which customers would buy a new insurance product we are launching.
     </copy>
     ```
 
-    Here, Data Science Agent creates a view named `DSAGENT$CLIENTS_CONTACTS_CAMPAIGNS_E6B9` by combining client demographics, contact history (excluding call duration and contact date), and past campaign data for every client who has ever been contacted.
+    ![Prompt 2 and response](images/dsa-ma-p2r1.png "Prompt 2 and response")
 
-2. Review the response. Data Science Agent provides a crisp summary of what is included in the view and how you can use it.
+    In response to the prompt, Data Science Agent recommends a workflow based on the available data. It also asks clarifying questions to guide you on the next steps. See screenshot for details.
 
-    ![Prompt 2 response showing the details of the view](images/t2-p1-r1.png "Prompt 2 and response")
+2. Review the response and enter the following prompt:
 
-3. Expand the **Details on Created View** section to view the SQL code that it generates to define the view.
+    ```text
+    <copy>
+    We can focus on customers that have one or more banking products, and want to check customers that responded to a campaign as a proxy.
+    </copy>
+    ```
 
-    ![Attribute Statistic section showing statistical analysis for the associated tables](images/t2-p1-r2.png "Response 2 continued")
+    ![Prompt 3 and response](images/dsa-ma-p3r1.png "Prompt 3 and response")
 
-4. Expand the **Visual Diagram** section to understand the workflow of the view.
+    In response to your input, Data Science Agent suggests a tailored approach based on your data as follows:
+    * Find customers who already have at least one banking product, such as a home loan or personal loan.
+    * Check whether these customers took part in a campaign and focus on those who responded “SUBSCRIBED,” as they are more likely to buy.
+    * Create and study a dataset that combines customer details, banking products, and campaign responses.
 
-    ![Attribute Analysis section showing tabular and graphical analysis](images/t2-p1-r3.png "Response 2")
+    It also asks you to confirm whether to qualify customers (with ) or to include all prior campaign 
+
+## Task 2: Data Preparation
+
+1. Review the response and enter the following prompt:
+
+    ```text
+    <copy>
+    Let's use either product, and use all campaign contacts available
+    </copy>
+    ```
+
+    ![Prompt 4 and response](images/dsa-ma-p4r1.png "Prompt 4 and response")
+
+    In response to the prompt, Data Science Agent creates a view by combining all customers who have either a housing load or a personal loan with their full campaign contact history. This is done to analyze which types of customers are most likely to respond to marketing, and therefore predict likely buyers. 
+
+2. Expand the **Details on Created View** section to review the SQL code used to define the view `DSAGENT$BANKINGPRODUCT_CONTACTS_C4A0`.
+
+    > **Note:** Views and objects created by Data Science Agent have the prefix `DSAGENT$`.
+
+    ![Prompt 4 response (contd)](images/dsa-ma-p4r2.png "Prompt 4 and response")
+
+3. Expand the **Visual Diagram** section to understand the workflow of the view `DSAGENT$BANKINGPRODUCT_CONTACTS_C4A0`
+
+    ![Prompt 4 and response](images/dsa-ma-p4r3.png "Prompt 4 and response")
 
     > **Note:** The outputs in this lab are examples only. The suffixes, selected algorithm, metrics, and row counts may differ in your environment. Use the object names generated in your session wherever needed.
 
 ## Task 3: Explore the dataset
 
 In this task, you will ask Data Science Agent to explain the basic statistics for the view `DSAGENT$CLIENTS_CONTACTS_CAMPAIGNS_E6B9`.
+
+> **Note:** Views and objects created by Data Science Agent have the prefix `DSAGENT$`.
 
 1. Enter the following prompt to explore the dataset and understand the basic statistics.
 
