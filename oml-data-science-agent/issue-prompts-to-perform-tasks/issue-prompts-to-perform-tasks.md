@@ -103,7 +103,7 @@ In this task, you will ask Data Science Agent to .
 
     ![Prompt 4 and response](images/dsa-ma-p4r1.png "Prompt 4 and response")
 
-    In response to the prompt, Data Science Agent creates a view by combining all customers who have either a housing load or a personal loan with their full campaign contact history. This is done to analyze which types of customers are most likely to respond to marketing, and therefore predict likely buyers. 
+    In response to the prompt, Data Science Agent created the view `DSAGENT$BANKINGPRODUCT_CONTACTS_C4A0` by combining all customers who have either a housing load or a personal loan with their full campaign contact history. This is done to analyze which types of customers are most likely to respond to marketing, and therefore predict likely buyers.
 
 2. Expand the **Details on Created View** section to review the SQL code used to define the view `DSAGENT$BANKINGPRODUCT_CONTACTS_C4A0`.
 
@@ -119,7 +119,7 @@ In this task, you will ask Data Science Agent to .
 
 ## Task 3: Explore the dataset
 
-In this task, you will ask Data Science Agent to explain the basic statistics for the view `DSAGENT$CLIENTS_CONTACTS_CAMPAIGNS_E6B9`.
+In this task, you will ask Data Science Agent to explain the characteristics of the customers. In this process, xxx
 
 > **Note:** Views and objects created by Data Science Agent have the prefix `DSAGENT$`.
 
@@ -131,125 +131,132 @@ In this task, you will ask Data Science Agent to explain the basic statistics fo
     </copy>
     ```
 
-    In response to this prompt, Data Science Agent provides a descriptive summary of the datastet. It describes the dataset in the following categories - Demographics, Financials, Contact & Campaigns, Outcomes, and Missing Values. It is a highly imbalanced client marketing dataset that combines demographic, financial, contact-history, and campaign-response features, with substantial missing values in previous campaign information. It is suitable for predicting offer subscription and in analyzing factors associated with campaign success.
+    In response to this prompt, Data Science Agent provides a summary of the characteristics of the customers (who owned at least one banking product and participated in campaign contacts). The main characteristics of the customers are listed out as - Age Balance, Education, Job, Marital Status, Loan Ownership, Credit Default, Contact Method, Contact Frequency, Contact Duration, and Campaign Response. It also provides a full breakdown of the dataset in summary tables and charts for each variable.
 
-    ![Prompt 3 response showing machine learning problem framing and target variable](images/t3-p1-r1.png "Prompt 3 and response")
+    ![Prompt 3 response showing machine learning problem framing and target variable](images/dsa-ma-p5r1.png "Prompt 3 and response")
 
 2. Expand the **Attribute Analysis** section for a detailed description and analysis of the attributes.
 
-    ![Prompt 3 response showing machine learning problem framing and target variable](images/t3-p1-r2.png "Prompt 3 and response")
+    ![Prompt 3 response showing machine learning problem framing and target variable](images/dsa-ma-p5r2.png "Prompt 3 and response")
 
-3. Review the **Attribute Statistics** section for a detailed view of the attributes. For each attribute, it shows the data distribution and statistics, along with a statistical visualization - boxplot, bar chart etc, as applicable. In this example, Data Science Agent depicts the age distribution in a boxplot and it computes these statistics - Mean, Median, Standard Deviation, Minimum value, Maximum value, Quartile 1, Quartile 3, Row counts, and the counts for NON_NULL.
+3. Expand the **Attribute Statistics** section for a detailed view of the attributes. For each attribute, it shows the data distribution and statistics, along with a statistical visualization - boxplot, bar chart etc, as applicable. In this example, Data Science Agent depicts the age distribution in a boxplot and it computes these statistics - Mean, Median, Standard Deviation, Minimum value, Maximum value, Quartile 1, Quartile 3, Row counts, and the counts for NON_NULL.
 
-    ![Response to prompt 3 concluded showing input features and next steps](images/t3-p1-r3.png "Response to prompt 3 concluded")
+    ![Response to prompt 3](images/dsa-ma-p5r3.png "Response to prompt 3")
 
-    The agent also asks if you would like to analyze the relationship between these features and a particular outcome, or proceed to identify the most influential factors for prediction.
+    The agent also asks if you would like to identify the factors that are strongly linked to customers responding to the campaign or to proceed directly to building a predictive model.
 
     > **Note:** The outputs in this lab are examples only. The suffixes, selected algorithm, metrics, and row counts may differ in your environment. Use the object names generated in your session wherever needed.
 
-## Task 4: Perform predictive modeling
+In this task, you will ask Data Science Agent to to identify the factors that are strongly linked to customers responding to the campaign.
 
-In this task, you will ask Data Science Agent to create a predictive model.
-
-1. Enter the following prompt to ask Data Science Agent to create a predictive model.
+4. Enter the following prompt to ask Data Science Agent to .
 
     ```text
     <copy>
-    Proceed to predictive modeling.
+    Let's check the factors linked to responding to campaigns.  Also, we cannot use the call duration in seconds nor the contact date, since these are not known ahead of the campaign.
     </copy>
     ```
 
-    In response to this prompt, Data Science Agent asks you to confirm the target for prediction. It also mentions that the most common business goal here would be to predict whether a contacted client will subscribe (the `SUBSCRIBED` column) to the product being offered during a marketing campaign.
+    In response to this prompt, Data Science Agent lists out the factors that are most strongly linked to positive campaign responses among the customers. It also provides a full  statistical details and charts.
 
-    ![Prompt 4 response showing creation of unified modeling view](images/t4-p1-r1.png "Prompt 4 and response")
+    ![Prompt 6 response showing c](images/dsa-ma-p6r1.png "Prompt 6 and response")
 
-2. Enter the following prompt to confirm:
+5. Expand the **Relationship Analysis** section for a detailed analysis of the relationship between the various attributes and the likelihood of subscription. See screenshot below:
 
-    ![Prompt 4 response showing creation of unified modeling view](images/t4-p1-r2.png "Prompt 4 and response")
+    ![Prompt 6 response showing xxx](images/dsa-ma-p6r2.png "Prompt 6 and response")
+
+6. Expand the **Relationship Statistical** section for a statistical analysis of the relationship between the various attributes and the likelihood of subscription. See screenshot below:
+
+    ![Prompt 6 response showing xxx](images/dsa-ma-p6r3.png "Prompt 6 and response")
+
+    Data Science Agent also asks you if you would like to proceed to building a predictive model that combines these factors to identify the most likely buyers for your insurance product.
+
+## Task 4: Feature Ranking
+
+Based on the suggestion provided by Data Science Agent, in this task you will proceed to build a predictive model.
+
+1. Enter the following prompt to allow Data Science Agent to build a predictive model xxx
 
     ```text
     <copy>
-    Yes, SUBSCRIBED is correct.
+    Yes please, build the model.
     </copy>
     ```
 
-    In this example, Data Science Agent determines the most important features for predicting the likelihood of subscription by using the XGBoost algorithm, and creates the view `DSAGENT$CLIENTS_CONTACTS_CAMPAIGNS_E6B9_TOP_XGB`.
+    ![Prompt 7 response showing xxx](images/dsa-ma-p7r1.png "Prompt 7 and response")
+
+    In response to your prompt, Data Science Agent first ranks the importance of each feature so that the model only uses the most relevant predictors. The agent lists the following algorithms:
+
+    * XGBoost (default)
+    * Random Forest
+    * AI_MDL
+    * CUR Decomposition
+
+    Data Science Agent creates the view `DSAGENT$BANKINGPRODUCT_MODELSET_C4A0`.
 
     > **Note:** Views and objects created by Data Science Agent have the prefix `DSAGENT$`.
 
-    Data Science Agent suggests the next recommended path - to split the data into training and test sets, then train and evaluate a predictive model. It also asks whether to proceed with building and evaluating a single model, or test and compare several modeling algorithms to check their best performance.
+2. Expand the **Details on Created View** section to review the SQL code generated by Data Science Agent to create the view `DSAGENT$BANKINGPRODUCT_MODELSET_C4A0`.
+
+    ![Prompt 7 response showing xxx](images/dsa-ma-p7r2.png "Prompt 7 and response")
+
+3. Expand the **Visual Diagram** section to understand the workflow of the view `DSAGENT$BANKINGPRODUCT_MODELSET_C4A0`.
+
+    ![Prompt 7 response showing xxx](images/dsa-ma-p7r3.png "Prompt 7 and response")
 
     >**Note:**  The outputs in this lab are examples only. The suffixes, selected algorithm, metrics, and row counts may differ in your environment. Use the object names generated in your session wherever needed.
 
-## Task 5: Perform feature engineering for model improvement
+    Data Science Agent also asks for your choice of algorithm for model building. Or else, the agent would proceed with XGBoost.
 
- Feature engineering helps in identifying columns that are suitable for modeling and prepares a clean view for downstream training. In this task, you will ask Data Science Agent to identify features to enhance the model.
+## Task 5: Model Building 
 
-1. Enter the following prompt to proceed with new feature identification and modeling.
+ In this task, you will focus on model building.
 
-    ```text
-    <copy>
-    Before ranking, identify any new features that would improve the model, and remove any that are not useful.
-    </copy>
-    ```
-
-    ![Prompt 5 response](images/t5-p1-r1.png "Prompt 5 and response")
-
-    In response to this prompt, Data Science Agent suggests new features for feature engineering, identifies non-useful features, and lists features with >80 percent missing values. The agent asks whether to proceed with feature engineering or drop all low-importance columns and move forward to model training with the existing lean, high-value feature set.
-2. Review the response and enter the following prompt to ask Data Science Agent to proceed with feature engineering after dropping the low-importance columns.
+1. Enter the following prompt to proceed with model building.
 
     ```text
     <copy>
-    Add the recent contacted indicator, and drop the low-importance columns. Then move forward with model training.
+    Please proceed.
     </copy>
     ```
 
-    ![Prompt 5 response](images/t5-p2-r1.png "Prompt 5 and response")
+    ![Prompt 8 response](images/dsa-ma-p8r1.png "Prompt 8 and response")
 
-    In response to the prompt, Data Science Agent updates the view `DSAGENT$CLIENTS_CONTACTS_CAMPAIGNS_E6B9_FE_E6B9` with only the high-importance predictors, adds the new engineered feature `RECENTLY_CONTACTED`, and relevant columns for clean, focused modeling.
+    In response to this prompt, Data Science Agent builds a modeling dataset containing only the most important features for predicting which customers are likely to respond to the campaign.
 
-3. Expand the **Details on Created View** section to view the SQL code generated by Data Science Agent to create the view `DSAGENT$CLIENTS_CONTACTS_CAMPAIGNS_E6B9_FE_E6B9`.
+    The agent provides you with the following choices:
+    * Train and later evaluate a single predictive model
+    * Compare multiple models to select the best performer
 
-    ![SQL code](images/t5-p2-r2.png "Response 2 continued")
 
-4. Expand the **Visual Diagram** section to understand the workflow of the view `DSAGENT$CLIENTS_CONTACTS_CAMPAIGNS_E6B9_FE_E6B9`.
+## Task 6: Model Comparison and Data Split
 
-    ![Visual diagram](images/t5-p2-r3.png "Response 2")
-
-    Data Science Agent also provides you the next steps: whether to build and evaluate a single model, or to test and compare several modeling algorithms to choose the best performing model.
-
-    >**Note:**  The outputs in this lab are examples only. The view names, suffixes, selected algorithm, metrics, and row counts may differ in your environment. Use the object names generated in your session wherever needed.
-
-## Task 6: Model Evaluation and Training
-
-In this task, you will ask Data Science Agent evaluate the model.
+In this task, you will ask Data Science Agent evaluate the model. In this process, Data Science Agent splits the data into 70% training dataset, 20% test dataset, and 10% validation dataset.
 
 
 1. Enter the following prompt to evaluate the model.
 
     ```text
     <copy>
-    Compare several algorithms and pick the best one.
+    Compare multiple models please.
     </copy>
     ```
 
-    ![Prompt 6 response showing xxx](images/t6-p1-r1.png "Prompt 5 and response")
-    In response to this prompt, Data Science Agent evaluates the model and determines the best model for predicting client subscription. It also splits the data into train set, validation set, test set, and an unlabeled view and presents the following:
-    * An independent test result
-    * An interpretation of the model evaluation, and
-    * The model scorecard
+    ![Prompt 9 response showing xxx](images/dsa-ma-p9r1.png "Prompt9 and response")
 
-2. Expand the **Details on Split** section to review the split created from  `DSAGENT$CLIENTS_CONTACTS_CAMPAIGNS_E6B9_FE_E6B9`
+    In response to this prompt, Data Science Agent evaluates the model and splits the data into:
 
-    ![Prompt 6 response showing data split and model training](images/t6-p1-r2.png "Prompt 6 and response")
+    * 70% Training: Used to learn patterns
+    * 10% Validation: Used to compare models and select the best algorithm
+    * 20% Test: Held back for unbiased final evaluation
 
-3. Expand the **Model Scorecard** to review the scorecard of the model `DSAGENT$SUBSCRIBE_CLASSIFIER_AUTOML_E6B9`:
+2. Expand the **Details on Split** section to review the splits created from the view `DSAGENT$BANKINGPRODUCT_MODELSET_C4A0_TOP_XGB`.
 
-    ![Response 6 concluded showing model scorecard and binary confusion matrix](images/t6-p1-r3.png "Response 6 ")
+    ![Prompt 6 response showing data split and model training](images/dsa-ma-p9r2.png) "Prompt 6 and response"
 
-    >**Note:**  The outputs in this lab are examples only. The view names, model names, suffixes, selected algorithm, metrics, and row counts may differ in your environment. Use the object names generated in your session wherever needed.
 
-## Task 7: Score prospects to predict subscription likelihood
+
+## Task 7: xxxx
 
 In this task, you will ask Data Science Agent to score the prospects for the next campaign.
 
