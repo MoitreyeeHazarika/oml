@@ -250,15 +250,17 @@ In this task, you will ask Data Science Agent evaluate the model. In this proces
     * 10% Validation: Used to compare models and select the best algorithm
     * 20% Test: Held back for unbiased final evaluation
 
-2. Expand the **Details on Split** section to review the splits created from the view `DSAGENT$BANKINGPRODUCT_MODELSET_C4A0_TOP_XGB`.
+2. Expand the **Details on Split** section to review the splits created from the view `DSAGENT$BANKINGPRODUCT_MODELSET_C4A0_TOP_XGB`. See screenshot below:
 
-    ![Prompt 6 response showing data split and model training](images/dsa-ma-p9r2.png) "Prompt 6 and response"
+    ![Prompt 9 response showing xxx](images/dsa-ma-p9r2.png "Prompt9 and response")
+
+    Here, Data Science Agent xxx
 
 
 
-## Task 7: xxxx
+## Task 7: Select Model and perform scoring
 
-In this task, you will ask Data Science Agent to score the prospects for the next campaign.
+In this task, you will suggest Data Science Agent to pick upa model and score the prospects for the next campaign.
 
 >**Note:**  The outputs in this lab are examples only. The view names, model names, suffixes, selected algorithm, metrics, and row counts may differ in your environment. Use the object names generated in your session wherever needed.
 
@@ -266,146 +268,169 @@ In this task, you will ask Data Science Agent to score the prospects for the nex
 
     ```text
     <copy>
-    Score the prospects for our next campaign. Who should we prioritize reaching out to?
+    Default to F1 please
     </copy>
     ```
 
-    ![Prompt 7 response showing scored prospects and prediction probabilities](images/t7-p1-r1.png "Prompt 7 and response")
+    ![Prompt 9 response showing xxx](images/dsa-ma-p10r1.png "Prompt9 and response")
 
-    In this example, Data Science Agent could not perform scoring. It correctly states the reason - it is because the latest view used for modeling excluded the CLIENT_ID column. This column is required to identify and report predictions for the prospects.
+    In this example, Data Science Agent xxx.
 
-2. Prompt "Yes" in your response to the agent's suggestion "Would you like me to update the feature set to include CLIENT_ID and then proceed with scoring your prospect list?"
+2. Prompt "Yes please proceed" in your response to the agent's suggestion "xxxx?"
 
     ```text
     <copy>
-    Yes
+    Yes please proceed
     </copy>
     ```
-    ![Prompt 7 and response](images/t7-p2-r2.png "Prompt 7 and response")
+    ![Prompt 11 and response](images/dsa-ma-p11r1.png "Prompt 11 and response")
 
-    Now, Data Science Agent adds CLIENT_ID into the dataset, then performs scoring using the predictive model, and presents the list of prospects for the next campaign.
+    Now, Data Science Agent measures the performance of the model on an independent test set.
 
-3. Expand the **Details on Created View** section to review the details of the view `DSAGENT$CLIENTS_CONTACTS_CAMPAIGNS_E6B9_FE_SCR_E6B9`.
+3. Expand the **Model Scorecard** section to review the performance score of the model `DSAGENT$INSURANCE_CAMPAIGN_CLASSIFIER_C4A0`.
 
-    ![Prompt 7 response ](images/t7-p2-r3.png "Prompt 7 response concluded")
+    ![Prompt 11 response ](images/dsa-ma-p11r2.png "Prompt 11 response concluded")
 
+4. Scroll down to view the confusion matrix.
 
-4. Expand the **Visual Diagram** section to understand the workflow of the view `DSAGENT$CLIENTS_CONTACTS_CAMPAIGNS_E6B9_FE_SCR_E6B9`.
+    ![Prompt 7 response](images/dsa-ma-p11r3.png "Prompt 11 Confusion Matrix")
 
-    ![Prompt 7 response](images/t7-p2-r4.png "Prompt 7 response concluded")
+## Task 8: View Prediction
 
-5. Expand the **SQL Code for Manual Inference** section to review the SQL query to run the inference manually.
+1. Enter the following prompt to .
 
-    ![Prompt 7 response concluded showing manual inference SQL query](images/t7-p2-r5.png "Prompt 7 response concluded")
+    ```text
+    <copy>
+    Show me a rank of my top customers most likely to respond
+    </copy>
+    ```
 
-6. Review the prediction table showing the probability of subscription for the prospects.
+    ![Prompt 12 response showing scored prospects and prediction probabilities](images/dsa-ma-p12r1.png "Prompt 12 and response")
 
-    ![Prompt 7 response showing scored prospects and prediction probabilities](images/t7-p2-r6.png "Prompt 7 and response")
+2. Expand the **SQL Code for Manual Inference** section to refer to the SQL code to run the inference manually:
 
-    In this example, Data Science Agent returns the probability of subscription for the prospects in the following table:
+    ![Prompt 12 xx](images/dsa-ma-p12r2.png "Prompt 12 and response")
+
+3. Expand the **Details on Created View** section to review the view `DSAGENT$BANKINGPRODUCT_MODELSET_TOP100_C4A0`
+
+    ![Prompt 12 xx](images/dsa-ma-p12r3.png "Prompt 12 and response")
+
+4. Expand the **Visual Diagram** section to review the workflow of the view `DSAGENT$BANKINGPRODUCT_MODELSET_TOP100_C4A0`.
+
+    ![Prompt 12 xx](images/dsa-ma-p12r4.png "Prompt 12 and response")
+
+5. Scroll down to view a copy of the interactive table created by Data Science Agent. 
+
+    ![Prompt 12 xx](images/dsa-ma-p12r5.png "Prompt 12 and response")
 
     | CLIENT_ID | PREDICTED | PROBABILITY OF Y (%) |
 |---:|:---:|---:|
-| 44864 | Y | 84.74 |
-| 41426 | Y | 73.15 |
-| 42062 | Y | 61.62 |
-| 39530 | Y | 61.38 |
-| 42271 | Y | 57.82 |
-| 43388 | Y | 56.27 |
-| 40622 | Y | 54.1 |
-| 42421 | Y | 52 |
-| 41516 | Y | 50.91 |
-| 42999 | N | 47.7 |
-| 34209 | N | 42.11 |
-| 39606 | N | 42.11 |
-| 28649 | N | 34.96 |
-| 39361 | N | 34.12 |
-| 42881 | N | 32.57 |
-| 31511 | N | 32.4 |
-| 42471 | N | 31.01 |
-| 39974 | N | 25.03 |
-| 43021 | N | 24.82 |
-| 28092 | N | 24.81 |
-| 28803 | N | 22.63 |
-| 19884 | N | 21.09 |
-| 9900 | N | 21.09 |
-| 33871 | N | 20.17 |
-| 26416 | N | 19.78 |
-| 28122 | N | 19.19 |
-| 35610 | N | 18.55 |
-| 33972 | N | 18.37 |
-| 34337 | N | 17.81 |
-| 32596 | N | 17.21 |
-| 7803 | N | 16.73 |
-| 9371 | N | 16.73 |
-| 18373 | N | 16.73 |
-| 42756 | N | 16.19 |
-| 38445 | N | 15.96 |
-| 43531 | N | 15.88 |
-| 19187 | N | 15.73 |
-| 19727 | N | 15.41 |
-| 13147 | N | 15.3 |
-| 8245 | N | 14.92 |
-| 43691 | N | 14.92 |
-| 27938 | N | 14.69 |
-| 33429 | N | 14.46 |
-| 29635 | N | 13.72 |
-| 34756 | N | 13.07 |
-| 15737 | N | 12.96 |
-| 44398 | N | 12.4 |
-| 13506 | N | 11.64 |
-| 28653 | N | 10.54 |
-| 18175 | N | 10.28 |
-| 3245 | N | 10.16 |
-| 23636 | N | 9.9 |
-| 13693 | N | 9.57 |
-| 23692 | N | 9.56 |
-| 6609 | N | 9.36 |
-| 19622 | N | 9.11 |
-| 29400 | N | 9.11 |
-| 33840 | N | 9.11 |
-| 19347 | N | 8.62 |
-| 35998 | N | 8.17 |
-| 32365 | N | 8.14 |
-| 34426 | N | 8.14 |
-| 26727 | N | 8.04 |
-| 21997 | N | 7.71 |
-| 10157 | N | 7.69 |
-| 11472 | N | 7.52 |
-| 32507 | N | 7.52 |
-| 12261 | N | 7.25 |
-| 35599 | N | 7.09 |
-| 33168 | N | 7.09 |
-| 27509 | N | 7.09 |
-| 5756 | N | 6.73 |
-| 23828 | N | 6.27 |
-| 36589 | N | 6.1 |
-| 20560 | N | 5.7 |
-| 21200 | N | 5.66 |
-| 11943 | N | 5.47 |
-| 300 | N | 5.06 |
-| 5346 | N | 5.06 |
-| 15421 | N | 4.26 |
-| 18254 | N | 4.25 |
-| 5752 | N | 4.18 |
-| 23293 | N | 4.06 |
-| 3122 | N | 3.8 |
-| 38629 | N | 3.66 |
-| 12945 | N | 3.63 |
-| 24120 | N | 3.44 |
-| 16154 | N | 3.17 |
-| 17138 | N | 3.17 |
-| 19715 | N | 2.56 |
-| 34440 | N | 2.46 |
-| 12686 | N | 2.37 |
-| 4712 | N | 2.37 |
-| 3995 | N | 2.21 |
-| 1522 | N | 2.15 |
-| 35231 | N | 1.93 |
-| 33149 | N | 1.75 |
-| 35627 | N | 1.53 |
-| 38748 | N | 1.09 |
-| 15249 | N | 0.6 |
+| 799 | N | 19.01 |
+| 814 | N | 14.99 |
+| 818 | N | 14.56 |
+| 852 | N | 14.3 |
+| 830 | N | 14.21 |
+| 885 | N | 12.35 |
+| 798 | N | 11.57 |
+| 876 | N | 11.54 |
+| 891 | N | 11.48 |
+| 864 | N | 11.43 |
+| 831 | N | 11.15 |
+| 835 | N | 10.89 |
+| 872 | N | 10.72 |
+| 820 | N | 10.71 |
+| 856 | N | 10.71 |
+| 868 | N | 10.59 |
+| 871 | N | 10.5 |
+| 860 | N | 10.5 |
+| 887 | N | 10.32 |
+| 890 | N | 10.17 |
+| 855 | N | 9.92 |
+| 840 | N | 9.89 |
+| 869 | N | 9.82 |
+| 867 | N | 9.82 |
+| 863 | N | 9.63 |
+| 862 | N | 9.55 |
+| 901 | N | 9.45 |
+| 842 | N | 9.24 |
+| 892 | N | 9.02 |
+| 878 | N | 8.94 |
+| 850 | N | 8.92 |
+| 821 | N | 8.85 |
+| 898 | N | 8.72 |
+| 902 | N | 8.57 |
+| 879 | N | 8.29 |
+| 804 | N | 8.28 |
+| 827 | N | 8.28 |
+| 822 | N | 8.05 |
+| 828 | N | 8.05 |
+| 808 | N | 8.05 |
+| 825 | N | 8.05 |
+| 889 | N | 8.03 |
+| 826 | N | 8.01 |
+| 851 | N | 7.94 |
+| 877 | N | 7.94 |
+| 824 | N | 7.8 |
+| 874 | N | 7.8 |
+| 812 | N | 7.78 |
+| 866 | N | 7.68 |
+| 883 | N | 7.68 |
+| 797 | N | 7.68 |
+| 802 | N | 7.66 |
+| 873 | N | 7.62 |
+| 903 | N | 7.62 |
+| 823 | N | 7.59 |
+| 882 | N | 7.58 |
+| 854 | N | 7.58 |
+| 847 | N | 7.5 |
+| 893 | N | 7.49 |
+| 837 | N | 7.34 |
+| 845 | N | 7.33 |
+| 899 | N | 7.33 |
+| 839 | N | 7.33 |
+| 803 | N | 7.24 |
+| 858 | N | 7.24 |
+| 881 | N | 7.24 |
+| 844 | N | 7.24 |
+| 834 | N | 7.22 |
+| 807 | N | 7.21 |
+| 832 | N | 7.18 |
+| 809 | N | 7.18 |
+| 888 | N | 7.15 |
+| 859 | N | 7.15 |
+| 836 | N | 7.11 |
+| 813 | N | 7.03 |
+| 857 | N | 7.03 |
+| 880 | N | 6.87 |
+| 846 | N | 6.85 |
+| 843 | N | 6.8 |
+| 894 | N | 6.5 |
+| 900 | N | 6.5 |
+| 886 | N | 6.48 |
+| 848 | N | 6.33 |
+| 853 | N | 6.33 |
+| 865 | N | 6.31 |
+| 895 | N | 6.23 |
+| 838 | N | 6.22 |
+| 841 | N | 6.22 |
+| 796 | N | 6.22 |
+| 806 | N | 6.17 |
+| 833 | N | 6.1 |
+| 884 | N | 6.02 |
+| 849 | N | 5.86 |
+| 811 | N | 5.82 |
+| 897 | N | 5.61 |
+| 816 | N | 5.61 |
+| 817 | N | 5.47 |
+| 896 | N | 5.1 |
+| 829 | N | 4.77 |
+| 800 | N | 4.53 |
+
+    In this example, Data Science Agent returns the probability of subscription for the prospects in an interactive table. A copy of the table (in static format) is presented here.
+
+
+
+
 
 >**Note:**  The outputs in this lab are examples only. The view names, model names, suffixes, selected algorithm, metrics, and row counts may differ in your environment. Use the object names generated in your session wherever needed.
 
