@@ -32,7 +32,7 @@ This lab assumes you have:
 
 >**Note:**  The output in this lab are examples. The suffixes, selected algorithm, metrics, row counts, and names of models and views may differ when you run the workshop in your environment. Use the object names generated in your session wherever needed.
 
-## Task 1: Set the conversation goal and context
+## Task 1: Set the conversation goal and context/Define the business problem
 
 In this task, continue the `Predict Subscription` conversation you created in Lab 3: Create a Data Science Conversation. Provide enough context for the agent to understand your role, your experience level, and the data you want to explore. This helps the agent tailor its response and explain the machine learning workflow in an accessible way.
 
@@ -44,7 +44,7 @@ In this task, continue the `Predict Subscription` conversation you created in La
 
     ```text
     <copy>
-    I'm an analyst without a data science background, interested on running a new marketing campaign.  What data is available and how can it be used?
+    I'm an analyst without a data science background, interested on running a new marketing campaign. What data is available and how can it be used?
     </copy>
     ```
 
@@ -54,13 +54,13 @@ In this task, continue the `Predict Subscription` conversation you created in La
 
     > **Note:** The outputs in this lab are examples only. The suffixes, selected algorithm, metrics, and row counts may differ in your environment. Use the object names generated in your session wherever needed.
 
-3. Scroll down and expand the Object Discovery Summary section. This section provides lists the keys, main attributes and joins in each table.
+3. Scroll down and expand the **Object Discovery Summary** section. This is the data discovery stage. Here, Data Science Agent provides a list of the keys, main attributes and joins in each table.
 
     ![Prompt 1 Object Discovery summary](images/dsa-ma-p1r3a.png "Object Discovery summary")
 
 ## Task 2: Data Exploration
 
-In this task, you will ask Data Science Agent to .
+In this task,  .
 
 1. Enter the following prompt to create a single view by joining the CLIENT, CONTACTS, and PAST_CAMPAIGN data for every client who has been contacted.
 
@@ -72,9 +72,11 @@ In this task, you will ask Data Science Agent to .
 
     ![Prompt 2 and response](images/dsa-ma-p2r1.png "Prompt 2 and response")
 
-    In response to the prompt, Data Science Agent recommends a workflow based on the available data. It also asks clarifying questions to guide you on the next steps. See screenshot for details.
+    In response to the prompt, Data Science Agent identifies CLIENTS, CONTACTS, PAST_CAMPAIGNS, PROSPECTS, and retail/sales data. It also mentioned existing ML-ready datasets and models.
+    
+    recommends a workflow based on the available data. It also asks clarifying questions to guide you on the next steps. See screenshot for details.
 
-2. Review the response and enter the following prompt:
+2. In this step, you will ask Data Science Agent to choose _customers who responded to a campaign as a proxy_ because there was no confirmed insurance-purchase history. Enter the following prompt.
 
     ```text
     <copy>
@@ -89,7 +91,7 @@ In this task, you will ask Data Science Agent to .
     * Check whether these customers took part in a campaign and focus on those who responded “SUBSCRIBED,” as they are more likely to buy.
     * Create and study a dataset that combines customer details, banking products, and campaign responses.
 
-    It also asks you to confirm whether to qualify customers (with ) or to include all prior campaign 
+    It also asks you to confirm whether to qualify customers (with) or to include all prior campaign 
 
 ## Task 2: Data Preparation
 
