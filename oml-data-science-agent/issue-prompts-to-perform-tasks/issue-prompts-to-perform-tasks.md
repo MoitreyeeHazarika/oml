@@ -121,7 +121,7 @@ In this task,  .
 
 ## Task 3: Explore the dataset
 
-In this task, you will ask Data Science Agent to explain the characteristics of the customers. In this process, xxx
+In this task, you will ask Data Science Agent to explain the characteristics of the customers. You will also ask Data Science Agent to identify the factors that are strongly linked to customers responding to the campaign.
 
 > **Note:** Views and objects created by Data Science Agent have the prefix `DSAGENT$`.
 
@@ -149,9 +149,7 @@ In this task, you will ask Data Science Agent to explain the characteristics of 
 
     > **Note:** The outputs in this lab are examples only. The suffixes, selected algorithm, metrics, and row counts may differ in your environment. Use the object names generated in your session wherever needed.
 
-In this task, you will ask Data Science Agent to to identify the factors that are strongly linked to customers responding to the campaign.
-
-4. Enter the following prompt to ask Data Science Agent to .
+4. Here, you will identify the factors that are strongly linked to customers responding to the campaign. Enter the following prompt to ask Data Science Agent to .
 
     ```text
     <copy>
@@ -177,7 +175,7 @@ In this task, you will ask Data Science Agent to to identify the factors that ar
 
 Based on the suggestion provided by Data Science Agent, in this task you will proceed to build a predictive model.
 
-1. Enter the following prompt to allow Data Science Agent to build a predictive model xxx
+1. Enter the following prompt to allow Data Science Agent to build a predictive model.
 
     ```text
     <copy>
@@ -208,9 +206,9 @@ Based on the suggestion provided by Data Science Agent, in this task you will pr
 
     >**Note:**  The outputs in this lab are examples only. The suffixes, selected algorithm, metrics, and row counts may differ in your environment. Use the object names generated in your session wherever needed.
 
-    Data Science Agent also asks for your choice of algorithm for model building. Or else, the agent would proceed with XGBoost.
+    Data Science Agent also asks for your choice of algorithm for model building. Or else, the agent would proceed with XGBoost, as it explicitly states.
 
-## Task 5: Model Building 
+## Task 5: Model Building, Model Comparison and Data Split
 
  In this task, you will focus on model building.
 
@@ -227,16 +225,10 @@ Based on the suggestion provided by Data Science Agent, in this task you will pr
     In response to this prompt, Data Science Agent builds a modeling dataset containing only the most important features for predicting which customers are likely to respond to the campaign.
 
     The agent provides you with the following choices:
-    * Train and later evaluate a single predictive model
+    * Train and later evaluate a single predictive model, or
     * Compare multiple models to select the best performer
 
-
-## Task 6: Model Comparison and Data Split
-
-In this task, you will ask Data Science Agent evaluate the model. In this process, Data Science Agent splits the data into 70% training dataset, 20% test dataset, and 10% validation dataset.
-
-
-1. Enter the following prompt to evaluate the model.
+2. Now, you will ask Data Science Agent evaluate and compare multiple models. In this process, Data Science Agent splits the data into 70% training dataset, 20% test dataset, and 10% validation dataset.Enter the following prompt to evaluate the model.
 
     ```text
     <copy>
@@ -258,11 +250,9 @@ In this task, you will ask Data Science Agent evaluate the model. In this proces
 
     Here, Data Science Agent xxx
 
+## Task 6: Select Model and perform scoring
 
-
-## Task 7: Select Model and perform scoring
-
-In this task, you will suggest Data Science Agent to pick upa model and score the prospects for the next campaign.
+In this task, you will suggest Data Science Agent to pick up a model and score the prospects for the next campaign.
 
 >**Note:**  The outputs in this lab are examples only. The view names, model names, suffixes, selected algorithm, metrics, and row counts may differ in your environment. Use the object names generated in your session wherever needed.
 
@@ -276,9 +266,9 @@ In this task, you will suggest Data Science Agent to pick upa model and score th
 
     ![Prompt 9 response showing xxx](images/dsa-ma-p10r1.png "Prompt9 and response")
 
-    In this example, Data Science Agent xxx.
+    Here, Data Science Agent conducts an automated model search and presents the model with best algorithm which is XGBoost. It also suggests the next step which is to evaluate the model on the independent test dataset prior to using it on real campaigns.
 
-2. Prompt "Yes please proceed" in your response to the agent's suggestion "xxxx?"
+2. Prompt "Yes please proceed" in your response to the agent's suggestion to evaluate the model.
 
     ```text
     <copy>
@@ -287,7 +277,9 @@ In this task, you will suggest Data Science Agent to pick upa model and score th
     ```
     ![Prompt 11 and response](images/dsa-ma-p11r1.png "Prompt 11 and response")
 
-    Now, Data Science Agent measures the performance of the model on an independent test set.
+    Now, Data Science Agent measures the performance of the model on an independent test set. It computes the accuracy of the model to be 92%. It also presents the model scorecard and the following interpretation of the model:
+
+    `While the model is precise when it predicts a responder, it only finds a tiny fraction of actual responders. This is typical with extremely imbalanced data; nearly everyone is a non-responder. To improve recall, you might consider different thresholds or alternative modeling techniques, or try combining additional behavioral indicators if available.`
 
 3. Expand the **Model Scorecard** section to review the performance score of the model `DSAGENT$INSURANCE_CAMPAIGN_CLASSIFIER_C4A0`.
 
@@ -297,7 +289,7 @@ In this task, you will suggest Data Science Agent to pick upa model and score th
 
     ![Prompt 7 response](images/dsa-ma-p11r3.png "Prompt 11 Confusion Matrix")
 
-## Task 8: View Prediction
+## Task 7: View Prediction
 
 1. Enter the following prompt to .
 
@@ -447,4 +439,4 @@ In this task, you will suggest Data Science Agent to pick upa model and score th
 
 * **Author** - Moitreyee Hazarika, Consulting User Assistance Developer, Oracle AI Database User Assistance Development
 * **Contributors** - Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Consulting Member of Tech Staff, Machine Learning
-* **Last Updated By/Date** - Moitreyee Hazarika, September 2026
+* **Last Updated By/Date** - Moitreyee Hazarika, October 2026
