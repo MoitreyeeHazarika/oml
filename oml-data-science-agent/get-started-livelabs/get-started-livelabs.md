@@ -24,11 +24,11 @@ In this lab, you will learn how to:
 
 ## Task 1: Create an OCI Compartment (Optional)
 
-[](include:create-oci-compartment.md)
+[](include:oml-create-oci-compartment.md)
 
 ## Task 2: Create Policy to Enable Access to OCI Generative AI
 
-[](include:create-policy.md)
+[](include:oml-create-policy.md)
 
 ## Task 3: Provision an Oracle Autonomous AI Database
 
