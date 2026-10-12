@@ -32,7 +32,7 @@ This lab assumes you have:
 
 >**Note:**  The output in this lab are examples. The suffixes, selected algorithm, metrics, row counts, and names of models and views may differ when you run the workshop in your environment. Use the object names generated in your session wherever needed.
 
-## Task 1: Set the conversation goal and context/Define the business problem
+## Task 1: Set the conversation goal and context/Define the business problem and discover the available data
 
 In this task, continue the `Predict Subscription` conversation you created in Lab 3: Create a Data Science Conversation. Provide enough context for the agent to understand your role, your experience level, and the data you want to explore. This helps the agent tailor its response and explain the machine learning workflow in an accessible way.
 
@@ -50,7 +50,7 @@ In this task, continue the `Predict Subscription` conversation you created in La
 
     In response to this prompt, Data Science Agent provides an overview of the available data, explains how it can be used in the new marketing campaign, and provides a brief summary of the tables CLIENTS, CONTACTS, PAST_CAMPAIGN, and PROSPECTS. Review the summary of the data in each table and the explanation on how to use this data in the new marketing campaign.
 
-    ![Prompt 1 response showing table summaries and key columns](images/dsa-ma-p1r1.png "Prompt 1 and response")
+    ![Prompt 1 response showing table summaries,key columns and object discovery summary](images/dsa-ma-p1r1.png "Prompt 1 and response")
 
     > **Note:** The outputs in this lab are examples only. The suffixes, selected algorithm, metrics, and row counts may differ in your environment. Use the object names generated in your session wherever needed.
 
@@ -58,7 +58,7 @@ In this task, continue the `Predict Subscription` conversation you created in La
 
     ![Prompt 1 Object Discovery summary](images/dsa-ma-p1r3a.png "Object Discovery summary")
 
-## Task 2: Data Exploration
+## Task 2: Data Exploration/Frame the business problem
 
 In this task,  .
 
@@ -93,7 +93,7 @@ In this task,  .
 
     It also asks you to confirm whether to qualify customers (with) or to include all prior campaign 
 
-## Task 2: Data Preparation
+## Task 3: Data Preparation/Analyze the customer cohort and create the analysis view
 
 1. Review the response and enter the following prompt:
 
@@ -119,7 +119,7 @@ In this task,  .
 
     > **Note:** The outputs in this lab are examples only. The suffixes, selected algorithm, metrics, and row counts may differ in your environment. Use the object names generated in your session wherever needed.
 
-## Task 3: Explore the dataset
+## Task 4: Explore the dataset/Describe the analysis data
 
 In this task, you will ask Data Science Agent to explain the characteristics of the customers. You will also ask Data Science Agent to identify the factors that are strongly linked to customers responding to the campaign.
 
@@ -129,27 +129,29 @@ In this task, you will ask Data Science Agent to explain the characteristics of 
 
     ```text
     <copy>
-    Provide the basic statistics for this data..
+    Let's see the characteristics of these customers
     </copy>
     ```
 
     In response to this prompt, Data Science Agent provides a summary of the characteristics of the customers (who owned at least one banking product and participated in campaign contacts). The main characteristics of the customers are listed out as - Age Balance, Education, Job, Marital Status, Loan Ownership, Credit Default, Contact Method, Contact Frequency, Contact Duration, and Campaign Response. It also provides a full breakdown of the dataset in summary tables and charts for each variable.
 
-    ![Prompt 3 response showing machine learning problem framing and target variable](images/dsa-ma-p5r1.png "Prompt 3 and response")
+    ![Prompt 5 and response](images/dsa-ma-p5r1.png "Prompt 5 and response")
 
 2. Expand the **Attribute Analysis** section for a detailed description and analysis of the attributes.
 
-    ![Prompt 3 response showing machine learning problem framing and target variable](images/dsa-ma-p5r2.png "Prompt 3 and response")
+    ![Prompt 5 response showing machine learning problem framing and target variable](images/dsa-ma-p5r2.png "Prompt 3 and response")
 
 3. Expand the **Attribute Statistics** section for a detailed view of the attributes. For each attribute, it shows the data distribution and statistics, along with a statistical visualization - boxplot, bar chart etc, as applicable. In this example, Data Science Agent depicts the age distribution in a boxplot and it computes these statistics - Mean, Median, Standard Deviation, Minimum value, Maximum value, Quartile 1, Quartile 3, Row counts, and the counts for NON_NULL.
 
-    ![Response to prompt 3](images/dsa-ma-p5r3.png "Response to prompt 3")
+    ![Response to prompt 5](images/dsa-ma-p5r3.png "Response to prompt 5")
 
     The agent also asks if you would like to identify the factors that are strongly linked to customers responding to the campaign or to proceed directly to building a predictive model.
 
     > **Note:** The outputs in this lab are examples only. The suffixes, selected algorithm, metrics, and row counts may differ in your environment. Use the object names generated in your session wherever needed.
 
-4. Here, you will identify the factors that are strongly linked to customers responding to the campaign. Enter the following prompt to ask Data Science Agent to .
+## Task 5: Identify useful predictors and avoid data leakage
+
+1. Here, you will identify the factors that are strongly linked to customers responding to the campaign. Enter the following prompt to ask Data Science Agent to .
 
     ```text
     <copy>
@@ -159,19 +161,19 @@ In this task, you will ask Data Science Agent to explain the characteristics of 
 
     In response to this prompt, Data Science Agent lists out the factors that are most strongly linked to positive campaign responses among the customers. It also provides a full  statistical details and charts.
 
-    ![Prompt 6 response showing c](images/dsa-ma-p6r1.png "Prompt 6 and response")
+    ![Prompt 6 and response](images/dsa-ma-p6r1.png "Prompt 6 and response")
 
-5. Expand the **Relationship Analysis** section for a detailed analysis of the relationship between the various attributes and the likelihood of subscription. See screenshot below:
+2. Expand the **Relationship Analysis** section for a detailed analysis of the relationship between the various attributes and the likelihood of subscription. See screenshot below:
 
-    ![Prompt 6 response showing xxx](images/dsa-ma-p6r2.png "Prompt 6 and response")
+    ![Prompt 6 response showing the relationship between the attributes and the likelihood of subscription](images/dsa-ma-p6r2.png "Prompt 6 and response")
 
-6. Expand the **Relationship Statistical** section for a statistical analysis of the relationship between the various attributes and the likelihood of subscription. See screenshot below:
+3. Expand the **Relationship Statistical** section for a statistical analysis of the relationship between the various attributes and the likelihood of subscription. See screenshot below:
 
-    ![Prompt 6 response showing xxx](images/dsa-ma-p6r3.png "Prompt 6 and response")
+    ![Prompt 6 response showing the statistical analysis of the relationship between the attributes and the likelihood of subscription](images/dsa-ma-p6r3.png "Prompt 6 and response")
 
     Data Science Agent also asks you if you would like to proceed to building a predictive model that combines these factors to identify the most likely buyers for your insurance product.
 
-## Task 4: Feature Ranking
+## Task 6: Feature Ranking/Prepare features and build the modeling dataset
 
 Based on the suggestion provided by Data Science Agent, in this task you will proceed to build a predictive model.
 
@@ -208,7 +210,7 @@ Based on the suggestion provided by Data Science Agent, in this task you will pr
 
     Data Science Agent also asks for your choice of algorithm for model building. Or else, the agent would proceed with XGBoost, as it explicitly states.
 
-## Task 5: Model Building, Model Comparison and Data Split
+## Task 7: Build and compare models
 
  In this task, you will focus on model building.
 
@@ -220,7 +222,7 @@ Based on the suggestion provided by Data Science Agent, in this task you will pr
     </copy>
     ```
 
-    ![Prompt 8 response](images/dsa-ma-p8r1.png "Prompt 8 and response")
+    ![Prompt 8 and response](images/dsa-ma-p8r1.png "Prompt 8 and response")
 
     In response to this prompt, Data Science Agent builds a modeling dataset containing only the most important features for predicting which customers are likely to respond to the campaign.
 
@@ -250,7 +252,7 @@ Based on the suggestion provided by Data Science Agent, in this task you will pr
 
     Here, Data Science Agent xxx
 
-## Task 6: Select Model and perform scoring
+## Task 8: Evaluate selected model and perform scoring
 
 In this task, you will suggest Data Science Agent to pick up a model and score the prospects for the next campaign.
 
@@ -264,7 +266,7 @@ In this task, you will suggest Data Science Agent to pick up a model and score t
     </copy>
     ```
 
-    ![Prompt 9 response showing xxx](images/dsa-ma-p10r1.png "Prompt9 and response")
+    ![Prompt 10 response showing xxx](images/dsa-ma-p10r1.png "Prompt 10 and response")
 
     Here, Data Science Agent conducts an automated model search and presents the model with best algorithm which is XGBoost. It also suggests the next step which is to evaluate the model on the independent test dataset prior to using it on real campaigns.
 
@@ -287,9 +289,9 @@ In this task, you will suggest Data Science Agent to pick up a model and score t
 
 4. Scroll down to view the confusion matrix.
 
-    ![Prompt 7 response](images/dsa-ma-p11r3.png "Prompt 11 Confusion Matrix")
+    ![Prompt 11 response](images/dsa-ma-p11r3.png "Prompt 11 Confusion Matrix")
 
-## Task 7: View Prediction
+## Task 9: View Prediction/Score and rank customers for campaign outreach
 
 1. Enter the following prompt to .
 
