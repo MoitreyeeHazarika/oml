@@ -6,6 +6,8 @@
         "oml-create-oml-user.md":"/common/building-blocks/tasks/oml/create-oml-user.md",
         "oml-oml-notebooks-ea.md":"/common/building-blocks/blocks/oml/oml-notebooks-ea/oml-notebooks-ea.md",
         "oml-nb-visualizations.md":"/common/building-blocks/blocks/oml/oml-nb-visualizations/oml-nb-visualizations.md",
+        "oml-create-oci-compartment.md": "/common/building-blocks/tasks/oml/create-oci-compartment.md",
+        "oml-create-policy.md": "/common/building-blocks/tasks/oml/create-policy.md",
         "oml-prov-an-adb.md":"/common/building-blocks/tasks/oml/prov-an-adb.md"
     },
     "tutorials": [
