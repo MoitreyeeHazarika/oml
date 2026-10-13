@@ -315,7 +315,7 @@ In this task, you will suggest Data Science Agent to pick up a model and score t
 
     ![Prompt 12 xx](images/dsa-ma-p12r4.png "Prompt 12 and response")
 
-5. Scroll down to view a copy of the interactive table created by Data Science Agent. 
+5. Scroll down to view a copy of the interactive table created by Data Science Agent.
 
     ![Prompt 12 xx](images/dsa-ma-p12r5.png "Prompt 12 and response")
 

@@ -50,7 +50,7 @@ An AI credential stores authentication details that the database uses to access 
 
 To create an OCI Generative AI credential:
 
-1. Create a notebook and in a `%script` paragraph, run the following command: 
+1. Create a notebook and in a `%script` paragraph, run the following command:
 
     ```sql
     <copy>
@@ -91,8 +91,6 @@ To create an OCI Generative AI credential:
     * `fingerprint`: Specify the fingerprint. After a generated public key is uploaded to your account the fingerprint is displayed in the console. Use the displayed fingerprint for this argument. For more information:
         * See [How to Generate an API Signing Key](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#two)
         * See [How to Get the Key's Fingerprint](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#How3)
-
-
 
 ## Task 2: Create an AI Profile
 
@@ -160,7 +158,6 @@ To create an AI Profile:
     </copy>
     ```
     ![AI Profile created and listed](images/ai-profile-created.png "AI Profile created and listed")
-
 
 ## Task 3: Grant OML_DEVELOPER Role to OML User
 

@@ -1,5 +1,4 @@
 # Set up Your Workshop Environment
-# Set up Your Workshop Environment
 
 ## Introduction
 This lab walks you through the steps to set up your free tier environment that includes provisioning an Oracle Autonomous AI Database, and signing into Oracle Machine Learning user interface.
