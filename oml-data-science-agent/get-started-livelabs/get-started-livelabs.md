@@ -9,11 +9,12 @@ Estimated Time: X
 
 In this lab, you will learn how to:
 
+* Create an OCI compartment (optional task)
+* Create policy to enable access to OCI Generative AI
 * Provision an Oracle Autonomous AI Database
 * Create an OML User
 * Sign into OML User
-* Create an OML User
-* Sign into OML User
+
 
 
 ### Prerequisites
