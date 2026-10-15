@@ -4,7 +4,7 @@
 
 In this lab, you will issue a sequence of prompts to Data Science Agent to perform data science and machine learning tasks. You will run a complete machine learning workflow using natural language, progressing from general questions about the data in the `OMLUSER` schema to model training, model building, evaluation, and scoring.
 
-By the end of this lab, you will see how Data Science Agent supports a novice user in exploring the dataset present in the `OMLUSER` schema and in building and evaluating a machine learning model. You will use natural language to prepare data, generate SQL, create visualizations, train models, interpret model results, and score prospects.
+By the end of this lab, you will see how Data Science Agent helps a novice user explore the dataset in the `OMLUSER` schema, and build and evaluate a machine learning model. Experienced data scientists can also use the agent to complete these tasks more quickly. You will use natural language to prepare data, generate SQL, create visualizations, train models, interpret model results, and score prospects.
 
 >**Note:** This is an agent-driven workflow. Outputs can vary by model, profile, seed, data state, and previous conversation context. Your generated object names and model results may differ. Use the names shown in your response.
 
@@ -32,7 +32,7 @@ This lab assumes you have:
 
 >**Note:**  The output in this lab are examples. The suffixes, selected algorithm, metrics, row counts, and names of models and views may differ when you run the workshop in your environment. Use the object names generated in your session wherever needed.
 
-## Task 1: Set the conversation goal and context/Define the business problem and discover the available data
+## Task 1: Define the business problem and discover the available data
 
 In this task, continue the `Predict Subscription` conversation you created in Lab 3: Create a Data Science Conversation. Provide enough context for the agent to understand your role, your experience level, and the data you want to explore. This helps the agent tailor its response and explain the machine learning workflow in an accessible way.
 
@@ -58,7 +58,7 @@ In this task, continue the `Predict Subscription` conversation you created in La
 
     ![Prompt 1 Object Discovery summary](images/dsa-ma-p1r3a.png "Object Discovery summary")
 
-## Task 2: Data Exploration/Frame the business problem
+## Task 2: Frame the business problem
 
 In this task,  .
 
@@ -73,7 +73,7 @@ In this task,  .
     ![Prompt 2 and response](images/dsa-ma-p2r1.png "Prompt 2 and response")
 
     In response to the prompt, Data Science Agent identifies CLIENTS, CONTACTS, PAST_CAMPAIGNS, PROSPECTS, and retail/sales data. It also mentioned existing ML-ready datasets and models.
-    
+
     recommends a workflow based on the available data. It also asks clarifying questions to guide you on the next steps. See screenshot for details.
 
 2. In this step, you will ask Data Science Agent to choose _customers who responded to a campaign as a proxy_ because there was no confirmed insurance-purchase history. Enter the following prompt.
@@ -93,7 +93,7 @@ In this task,  .
 
     It also asks you to confirm whether to qualify customers (with) or to include all prior campaign 
 
-## Task 3: Data Preparation/Analyze the customer cohort and create the analysis view
+## Task 3: Create the analysis view
 
 1. Review the response and enter the following prompt:
 
@@ -119,7 +119,7 @@ In this task,  .
 
     > **Note:** The outputs in this lab are examples only. The suffixes, selected algorithm, metrics, and row counts may differ in your environment. Use the object names generated in your session wherever needed.
 
-## Task 4: Explore the dataset/Describe the analysis data
+## Task 4: Explore customer characteristics
 
 In this task, you will ask Data Science Agent to explain the characteristics of the customers. You will also ask Data Science Agent to identify the factors that are strongly linked to customers responding to the campaign.
 
@@ -149,7 +149,7 @@ In this task, you will ask Data Science Agent to explain the characteristics of 
 
     > **Note:** The outputs in this lab are examples only. The suffixes, selected algorithm, metrics, and row counts may differ in your environment. Use the object names generated in your session wherever needed.
 
-## Task 5: Identify useful predictors and avoid data leakage
+## Task 5: Identify useful predictors
 
 1. Here, you will identify the factors that are strongly linked to customers responding to the campaign. Enter the following prompt to ask Data Science Agent to .
 
@@ -173,7 +173,7 @@ In this task, you will ask Data Science Agent to explain the characteristics of 
 
     Data Science Agent also asks you if you would like to proceed to building a predictive model that combines these factors to identify the most likely buyers for your insurance product.
 
-## Task 6: Feature Ranking/Prepare features and build the modeling dataset
+## Task 6: Rank features and build the modeling dataset
 
 Based on the suggestion provided by Data Science Agent, in this task you will proceed to build a predictive model.
 
@@ -210,7 +210,7 @@ Based on the suggestion provided by Data Science Agent, in this task you will pr
 
     Data Science Agent also asks for your choice of algorithm for model building. Or else, the agent would proceed with XGBoost, as it explicitly states.
 
-## Task 7: Build and compare models
+## Task 7: Split the data and train candidate models
 
  In this task, you will focus on model building.
 
@@ -252,7 +252,7 @@ Based on the suggestion provided by Data Science Agent, in this task you will pr
 
     Here, Data Science Agent xxx
 
-## Task 8: Evaluate selected model and perform scoring
+## Task 8: Select the best model and evaluate it on test data
 
 In this task, you will suggest Data Science Agent to pick up a model and score the prospects for the next campaign.
 
@@ -269,6 +269,7 @@ In this task, you will suggest Data Science Agent to pick up a model and score t
     ![Prompt 10 response showing xxx](images/dsa-ma-p10r1.png "Prompt 10 and response")
 
     Here, Data Science Agent conducts an automated model search and presents the model with best algorithm which is XGBoost. It also suggests the next step which is to evaluate the model on the independent test dataset prior to using it on real campaigns.
+    Data Science Agent trains models using several algorithms, compares them on the validation set using F1, and selects XGBoost as the best performer. It saves the trained model as `DSAGENT$INSURANCE_CAMPAIGN_CLASSIFIER_C4A0`.
 
 2. Prompt "Yes please proceed" in your response to the agent's suggestion to evaluate the model.
 
@@ -291,7 +292,7 @@ In this task, you will suggest Data Science Agent to pick up a model and score t
 
     ![Prompt 11 response](images/dsa-ma-p11r3.png "Prompt 11 Confusion Matrix")
 
-## Task 9: View Prediction/Score and rank customers for campaign outreach
+## Task 9: Score and rank customers for campaign outreach
 
 1. Enter the following prompt to .
 
