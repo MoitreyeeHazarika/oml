@@ -38,7 +38,7 @@ This workshop requires access to your Oracle Machine Learning UI in Oracle Auton
 
 [](include:oml-dsa-access.md)
 
-## Task 2: Review the recommended models for use with Data Science Agent 
+## Task 2: Review the recommended models for use with Data Science Agent
 
 [](include:oml-dsa-recommended-models.md)
 

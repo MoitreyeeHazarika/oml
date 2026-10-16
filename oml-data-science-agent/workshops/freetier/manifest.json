@@ -8,6 +8,8 @@
         "oml-nb-visualizations.md":"/common/building-blocks/blocks/oml/oml-nb-visualizations/oml-nb-visualizations.md",
         "oml-create-oci-compartment.md": "/common/building-blocks/tasks/oml/create-oci-compartment.md",
         "oml-create-policy.md": "/common/building-blocks/tasks/oml/create-policy.md",
+        "oml-dsa-access.md": "/common/building-blocks/tasks/oml/dsa-access.md",
+        "oml-dsa-recommended-models.md": "/common/building-blocks/tasks/oml/dsa-recommended-models.md",
         "oml-prov-an-adb.md":"/common/building-blocks/tasks/oml/prov-an-adb.md"
     },
     "tutorials": [
