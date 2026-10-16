@@ -27,11 +27,16 @@ This lab assumes you have:
 
 ## Task 1: Access OML Worlfows
 
+To access Workflows:
+
+1. Sign into Oracle Machine Learning UI. 
+
+2. Click **Workflows** on your OML UI home page. Alternatively, you can select **Workflows** under Project on the left navigation menu to open the Workflows page.
 
 
 ## Task 2: Create a Workflow
 
-
+1. The Workflows page lists all the workflows that are created.
 
 ## Learn More
 
