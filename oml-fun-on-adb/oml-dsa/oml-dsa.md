@@ -29,9 +29,18 @@ This lab assumes you have:
 * OML developer role (OML_DEVELOPER)
 * Access to Oracle Machine Learning USER account
 
-## Task 1: 
+## Task 1: Access Oracle Data Science Agent
 
-## Task 2: 
+
+## Task 2: Review the recommended models for use with Data Science Agent
+
+
+## Task 3: Explore Data Science Agent
+
+* [Get Started with Oracle Data Science Agent](https://livelabs.oracle.com/ords/dbpm/r/livelabs/view-workshop?wid=4468)
+* [Recommended Models](https://docs.oracle.com/en/database/oracle/machine-learning/data-science-agent/dsaug/dsa-create-ai-credential-and-profile.html#GUID-FD8053A2-5988-43B9-B024-19EEBA5CD9D4)
+* [Create AI Credential and AI Profile](https://docs.oracle.com/en/database/oracle/machine-learning/data-science-agent/dsaug/dsa-create-ai-credential-and-profile.html#GUID-BEF5D9CD-2CDB-468B-A9D6-76A20D3310E1)
+* [Issue Prompts to Data Science Agent](https://docs.oracle.com/en/database/oracle/machine-learning/data-science-agent/dsaug/dsa-example-model-deploy.html#GUID-BEF5D9CD-2CDB-468B-A9D6-76A20D3310E1)
 
 
 ## Learn More
