@@ -9,6 +9,8 @@
         "oml-oml-monitoring.md":"/common/building-blocks/blocks/oml/oml-monitoring/oml-monitoring.md",
         "oml-nb-visualizations.md":"/common/building-blocks/blocks/oml/oml-nb-visualizations/oml-nb-visualizations.md",
         "oml-automl.md":"/common/building-blocks/blocks/oml/oml-automl/oml-automl.md",
+        "oml-dsa-access.md": "/common/building-blocks/blocks/oml/dsa-access.md",
+        "oml-dsa-recommended-models.md": "/common/building-blocks/blocks/oml/dsa-recommended-models.md",
         "oml-prov-an-adb.md":"/common/building-blocks/tasks/oml/prov-an-adb.md"
     },
     "tutorials": [

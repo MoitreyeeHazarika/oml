@@ -31,9 +31,11 @@ This lab assumes you have:
 
 ## Task 1: Access Oracle Data Science Agent
 
+[](include:oml-dsa-access.md)
 
 ## Task 2: Review the recommended models for use with Data Science Agent
 
+[](include:oml-dsa-recommended-models.md)
 
 ## Task 3: Explore Data Science Agent
 
