@@ -70,18 +70,18 @@
         },
         {
             "title": "Lab 10: Introduction to the Conda Environments in Oracle Machine Learning Notebook",
-            "type": "livelabs",
+            "type": "freetier",
             "filename": "/common/building-blocks/blocks/oml/oml-conda/oml-conda.md"
         },
         {
             "title": "Lab 11: Introduction to Data Science Agent",
-            "type": "livelabs",
-            "filename": "/common/building-blocks/blocks/oml/oml-dsa/oml-dsa.md"
+            "type": "freetier",
+            "filename": "../../oml-dsa/oml-dsa.md"
         },
         {
             "title": "Lab 12: Introduction to Oracle Machine Learning Workflow",
-            "type": "livelabs",
-            "filename": "/common/building-blocks/blocks/oml/oml-workflow/oml-workflow.md"
+            "type": "freetier",
+            "filename": "../../oml-workflow/oml-workflow.md"
         },
         {
             "title": "Need Help?",
