@@ -60,9 +60,9 @@ In this task, continue the `Predict Subscription` conversation you created in La
 
 ## Task 2: Frame the business problem
 
-In this task,  .
+In this task, you will explore your customer data and identify who are ones that are most likely to buy your product.
 
-1. Enter the following prompt to create a single view by joining the CLIENT, CONTACTS, and PAST_CAMPAIGN data for every client who has been contacted.
+1. Enter the following prompt to explore your customers:
 
     ```text
     <copy>
@@ -72,9 +72,7 @@ In this task,  .
 
     ![Prompt 2 and response](images/dsa-ma-p2r1.png "Prompt 2 and response")
 
-    In response to the prompt, Data Science Agent identifies CLIENTS, CONTACTS, PAST_CAMPAIGNS, PROSPECTS, and retail/sales data. It also mentioned existing ML-ready datasets and models.
-
-    recommends a workflow based on the available data. It also asks clarifying questions to guide you on the next steps. See screenshot for details.
+    In response to the prompt, Data Science Agent recommends a workflow based on the available data. It also asks clarifying questions to guide you on the next steps. See screenshot for details.
 
 2. In this step, you will ask Data Science Agent to choose _customers who responded to a campaign as a proxy_ because there was no confirmed insurance-purchase history. Enter the following prompt.
 
@@ -91,9 +89,11 @@ In this task,  .
     * Check whether these customers took part in a campaign and focus on those who responded “SUBSCRIBED,” as they are more likely to buy.
     * Create and study a dataset that combines customer details, banking products, and campaign responses.
 
-    It also asks you to confirm whether to qualify customers (with) or to include all prior campaign 
+    It also asks you to confirm whether to qualify customers (with) or to include all prior campaign.
 
 ## Task 3: Create the analysis view
+
+In continuation to the previous task, here you will one step deep and create the view for analysis. For this, you will create and study a dataset that combines products and all available campaign contacts.
 
 1. Review the response and enter the following prompt:
 
@@ -105,7 +105,9 @@ In this task,  .
 
     ![Prompt 4 and response](images/dsa-ma-p4r1.png "Prompt 4 and response")
 
-    In response to the prompt, Data Science Agent created the view `DSAGENT$BANKINGPRODUCT_CONTACTS_C4A0` by combining all customers who have either a housing load or a personal loan with their full campaign contact history. This is done to analyze which types of customers are most likely to respond to marketing, and therefore predict likely buyers.
+    In response to the prompt, Data Science Agent created the view `DSAGENT$BANKINGPRODUCT_CONTACTS_C4A0` by combining all customers who have either a housing loan or a personal loan with their full campaign contact history. This is done to analyze which types of customers are most likely to respond to marketing, and therefore predict likely buyers.
+
+    >**Note:** The view `DSAGENT$BANKINGPRODUCT_CONTACTS_C4A0` is created for analysis.
 
 2. Expand the **Details on Created View** section to review the SQL code used to define the view `DSAGENT$BANKINGPRODUCT_CONTACTS_C4A0`.
 
@@ -137,11 +139,11 @@ In this task, you will ask Data Science Agent to explain the characteristics of 
 
     ![Prompt 5 and response](images/dsa-ma-p5r1.png "Prompt 5 and response")
 
-2. Expand the **Attribute Analysis** section for a detailed description and analysis of the attributes.
+2. Expand the **Attribute Analysis** section for a detailed description and analysis of each attribute.
 
     ![Prompt 5 response showing machine learning problem framing and target variable](images/dsa-ma-p5r2.png "Prompt 3 and response")
 
-3. Expand the **Attribute Statistics** section for a detailed view of the attributes. For each attribute, it shows the data distribution and statistics, along with a statistical visualization - boxplot, bar chart etc, as applicable. In this example, Data Science Agent depicts the age distribution in a boxplot and it computes these statistics - Mean, Median, Standard Deviation, Minimum value, Maximum value, Quartile 1, Quartile 3, Row counts, and the counts for NON_NULL.
+3. Expand the **Attribute Statistics** section for a detailed view of the attributes. For each attribute, it shows the data distribution and statistics, along with a statistical visualization - boxplot, bar chart etc., as applicable. In this example, Data Science Agent depicts the age distribution in a boxplot and it computes these statistics - Mean, Median, Standard Deviation, Minimum value, Maximum value, Quartile 1, Quartile 3, Row counts, and the counts for NON_NULL.
 
     ![Response to prompt 5](images/dsa-ma-p5r3.png "Response to prompt 5")
 
@@ -151,7 +153,9 @@ In this task, you will ask Data Science Agent to explain the characteristics of 
 
 ## Task 5: Identify useful predictors
 
-1. Here, you will identify the factors that are strongly linked to customers responding to the campaign. Enter the following prompt to ask Data Science Agent to .
+In this task, you will identify the factors that are strongly linked to customers responding to the campaign.
+
+1. Enter the following prompt:
 
     ```text
     <copy>
@@ -167,7 +171,7 @@ In this task, you will ask Data Science Agent to explain the characteristics of 
 
     ![Prompt 6 response showing the relationship between the attributes and the likelihood of subscription](images/dsa-ma-p6r2.png "Prompt 6 and response")
 
-3. Expand the **Relationship Statistical** section for a statistical analysis of the relationship between the various attributes and the likelihood of subscription. See screenshot below:
+3. Expand the **Relationship Statistics** section for a statistical analysis of the relationship between the various attributes and the likelihood of subscription. See screenshot below:
 
     ![Prompt 6 response showing the statistical analysis of the relationship between the attributes and the likelihood of subscription](images/dsa-ma-p6r3.png "Prompt 6 and response")
 
@@ -177,7 +181,7 @@ In this task, you will ask Data Science Agent to explain the characteristics of 
 
 Based on the suggestion provided by Data Science Agent, in this task you will proceed to build a predictive model.
 
-1. Enter the following prompt to allow Data Science Agent to build a predictive model.
+1. Enter the following prompt to allow Data Science Agent to build a predictive model:
 
     ```text
     <copy>
@@ -250,7 +254,7 @@ Based on the suggestion provided by Data Science Agent, in this task you will pr
 
     ![Prompt 9 response showing xxx](images/dsa-ma-p9r2.png "Prompt9 and response")
 
-    Here, Data Science Agent xxx
+    Here, Data Science Agent provides the details on the views created.
 
 ## Task 8: Select the best model and evaluate it on test data
 
@@ -294,7 +298,9 @@ In this task, you will suggest Data Science Agent to pick up a model and score t
 
 ## Task 9: Score and rank customers for campaign outreach
 
-1. Enter the following prompt to .
+In this task, you will focus on scoring with the model and ranking your customers.
+
+1. Enter the following prompt to view your customer ranking:
 
     ```text
     <copy>
