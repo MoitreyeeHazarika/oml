@@ -69,6 +69,16 @@
             "filename": "/common/building-blocks/blocks/oml/oml-conda/oml-conda.md"
         },
         {
+            "title": "Lab 10: Introduction to Data Science Agent",
+            "type": "livelabs",
+            "filename": "/common/building-blocks/blocks/oml/oml-dsa/oml-dsa.md"
+        },
+        {
+            "title": "Lab 11: Introduction to Oracle Machine Learning Workflow",
+            "type": "livelabs",
+            "filename": "/common/building-blocks/blocks/oml/oml-workflow/oml-workflow.md"
+        },
+        {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename":"https://livelabs.oracle.com/cdn/common/labs/need-help/need-help-livelabs.md"
