@@ -1,18 +1,20 @@
-# Introduction to the Conda Environments in Oracle Machine Learning Notebooks
+# Introduction to Oracle Machine Learning Workflows
 
 ## Introduction
 
-This lab walks you through the steps to use  in Oracle Machine Learning Notebooks.
+This lab walks you through the steps to use Oracle Machine Learning Workflows.
 
 Estimated Time: 15 minutes
 
-### About OML Workflows
+### About Oracle Machine Learning Workflows
+
 Workflows enable you to design machine learning processes using a drag-and-drop canvas composed of nodes and connectors. Each node represents a task or step in the machine learning workflow. The connectors define the flow between these steps.
 
 ### Objectives
 
 In this lab, you will learn how to:
-* Access OML Worlflows
+
+* Access Oracle Machine Learning Worlflows
 * Create a Workflow
 
 ### Prerequisites
