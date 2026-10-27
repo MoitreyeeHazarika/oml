@@ -127,11 +127,11 @@ To add and run a Feature Selection node:
 
 1. From the workflow palette, drag and drop the Feature Selection node to the canvas. You may also click the + icon next to the Feature Selection node to add it to the canvas.
 
-   > **Note:** You may also click **Recommend next node** on the Data Source node (upstream node) and then click **Feature Selection**. Using this option automatically connects the nodes.
+      > **Note:** You may also click **Recommend next node** on the Data Source node (upstream node) and then click **Feature Selection**. Using this option automatically connects the nodes.
 
 2. Since we are adding the node manually in this lab, we must establish a connection from the Data Source node (upstream node) to the Feature Selection node (downstream node). For this, click on the connection port indicated by the dot on the Upstream node. A connector appears. Drag the connector to the downstream node to establish the connection.
 
-   > **Note:** The Data Source node has two connection ports. The one on the left is for Train dataset, and the one on the right is for Test dataset.
+      > **Note:** The Data Source node has two connection ports. The one on the left is for Train dataset, and the one on the right is for Test dataset.
 
    ![Connection ports in Data Source node](images/ds-connection-ports.png)
 
@@ -144,7 +144,7 @@ To add and run a Feature Selection node:
    * **Case id column name:** Select `CUST_ID`.
 
 
-> **Note:** If the **Settings** pane is not visible, click the << icon open at the bottom to expand the pane.
+      **Note:** If the **Settings** pane is not visible, click the << icon open at the bottom to expand the pane.
 
 4. Right click on the node or click on the ellipses and then click Run. Once the node runs successfully, it is indicated by the green tick mark. 
 
