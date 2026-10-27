@@ -90,16 +90,16 @@ To create and run a Data Source node:
 
 2. Adding a node automatically opens the settings pane on the right. Define the following settings:
 
-   * **Name:** Enter a name. In this example, it is Data source 1.
-   * **Source Schema:** Click on the drop-down menu to select the schema. Here, SH schema is selected.
-   * **Source table:** Click on the drop-down menu to select the table. Here, `SUPPLEMENTARY_DEMOGRAPHICS` table is selected. Once you select the table, the Features field below displays the columns of the table. 
-   * **Target ID column name:** From the drop-down menu, select a target. This is the target for your prediction. Select `AFFINITY_CARD`.
-   * **Features:** This field displays all the columns of the selected table, and has all of them selected. You may deselect any column.
-   * **Split Data:** By default, this option is selected and 20% is allotted for test data. You can edit this field.
-   * Compute Descriptive Stats: Select this option to allot a dataset percentage for descriptive statistics computation. The default is `100%`.
-   * **Compute Data Correlation:** Select this option if you want to compute correlation between two variables in the dataset. Correlation is a bivariate analysis that measures the strength of association between two variables and the direction of the relationship. IN this lab, select `pearson`.
+      * **Name:** Enter a name. In this example, it is Data source 1.
+      * **Source Schema:** Click on the drop-down menu to select the schema. Here, SH schema is selected.
+      * **Source table:** Click on the drop-down menu to select the table. Here, `SUPPLEMENTARY_DEMOGRAPHICS` table is selected. Once you select the table, the Features field below displays the columns of the table. 
+      * **Target ID column name:** From the drop-down menu, select a target. This is the target for your prediction. Select `AFFINITY_CARD`.
+      * **Features:** This field displays all the columns of the selected table, and has all of them selected. You may deselect any column.
+      * **Split Data:** By default, this option is selected and 20% is allotted for test data. You can edit this field.
+      * Compute Descriptive Stats: Select this option to allot a dataset percentage for descriptive statistics computation. The default is `100%`.
+      * **Compute Data Correlation:** Select this option if you want to compute correlation between two variables in the dataset. Correlation is a bivariate analysis that measures the strength of association between two variables and the direction of the relationship. IN this lab, select `pearson`.
 
-      ![Data Source node settings](images/settings-data-source.png)
+         ![Data Source node settings](images/settings-data-source.png)
 
 3. After defining the node, click on the ellipses on the node or right-click to open the menu. Click **Run**. Once the node runs successfully, it is indicated by the green tick icon.
 
@@ -148,12 +148,42 @@ To add and run a Feature Selection node:
 
 4. Right click on the node or click on the ellipses and then click Run. Once the node runs successfully, it is indicated by the green tick mark. 
 
-   ![Feature Selection node](images/fs-feature-selection.png)
+   ![Feature Selection node](images/wf-feature-selection.png)
 
 2. Once the node is run successfully, right-click on the node and then click **Results** to view the results.
 
 ## Task 5: Add a Model Build node
 
+The Model Build node builds and trains machine learning or statistical models using supported algorithms.
+To add and run a Model Build node:
+
+1. On the Workflow editor, drag and drop a Model Build node from the palette to the canvas.
+
+2. From the Upstream node (Feature Selection node), establish a connection to the Model Build node. For this, click on the connection port indicated by the dot on the Upstream node. A connector appears. Drag the connector to the downstream node to establish the connection.
+
+   ![Model Build node](images/wf-model-build.png)
+
+3. After connecting the nodes, define the settings. Click on the Model Build node to open the settings pane on the right. Define the following settings:
+
+      * **Name:** Enter `Model Build 1`
+      * **Target id column name:** The value is set to `AFFINITY_CARD`.
+      * **Mining Function:** The value is set to `Classification`.
+      * **Case id column name:** The value is set to `CUST_ID`.
+      * **Algorithms:** The selected algorithms are Decision Tree, Naive Bayes, Neural Network, and Random Forest.
+      * **Sampling:** Retain the default which is `100%`.
+      * **Partitioning columns:**Select `YRS_RESIDENCE`.
+      * **Mining function:** The selection of the mining function is automatic. It depends on the target you selected. However, you can override it.
+
+      ![Model Build node settings](images/settings-model-build.png)
+
+
+4. Right click on the node or click on the ellipses, and then click **Run**. Once the node runs successfully, it is indicated by the green tick mark.
+
+5. Once the node is run successfully, right-click on the node and then click **Results** to view the results. The results computed by the selected algorithms are displayed in respective tabs. 
+
+   ![Model Build node Results](images/results-model-build.png)
+
+   The results for each algorithm are displayed in separate tabs. In this example, the results are displayed in separate tabs by the name - **Random Forest**, **Neural Network**, **Naive Bayes**, and **Decision Tree**. These are the algorithm selected in the settings for this node. Each tab displays the **Model Details** (model name, algorithm, mining function), **Model Settings** for the specific algorithm, and **Global Statistics** containing the attributes and attribute values.
 
 ## Task 6: Add a Model Evaluation node
 
