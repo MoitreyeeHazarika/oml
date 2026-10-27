@@ -54,8 +54,8 @@ To create a workflow:
 
 2. In the Create Workflow dialog, enter these details:
 
-      * Enter a name for the workflow. For this lab, use **Predict**.
-      * Optionally, you may enter a comment.
+      * **Name:** Enter a name for the workflow. For this lab, use **Predict**.
+      * **Comment:** You may enter a comment here. This is optional.
       * Click **OK**.
 
       ![Create Workflow dialog](images/create-workflow-dialog.png)
