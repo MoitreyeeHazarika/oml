@@ -28,58 +28,46 @@ This lab assumes you have:
 
 A data source is not required to create the workflow in this lab. To configure or run a Data Source node, you will also need access to a database schema and table.
 
-## Task 1: Access OML Workflow
+## Task 1: Access OML Workflows
 
 To access Workflows:
 
-1. Open the Oracle Machine Learning user interface URL provided by your administrator, and sign in with your OML credentials.
+1. Sign into Oracle Machine Learning UI with your OML credentials.
+
+2. On the Oracle Machine Learning UI home page, click **Workflows** in the Quick Actions section. Alternatively, open the left navigation menu, expand **Project**, and click **Workflows**.
 
    ![OML homepage highlighting Workflows](images/oml-homepage-wf.png)
 
-2. On the OML home page, select **Workflows** from Quick Actions.
+3. This opens the Workflows listing page. The page lists the available workflows and provides actions such as **Create**, **Edit**, **Duplicate**, **Delete**, Start and Stop status.
 
-   Alternatively, open the left navigation menu, expand **Project**, and select **Workflows**.
-
-   ![OML homepage highlighting Workflows](images/oml-homepage.png)
-
-3. Confirm that the Workflows page opens. The page lists workflows available to you and provides actions such as **Create**, **Edit**, **Duplicate**, and **Delete**, subject to your access and the workflow status.
-
-   ![OML homepage highlighting Workflows](images/oml-homepage.png)
+   ![Workflows listing page](images/workflows-page.png)
 
 ## Task 2: Create a Workflow
 
-Here, you will use all the workflow nodes to create a workflow to predict xxx
+A workflow is a collection of interconnected machine learning tasks or operations, represented by workflow nodes. Each node represents a distinct computational task—such as data import, data transformation, feature selection, model training, model evaluation, or model scoring—within the workflow. Connectors define the sequence and dependencies between nodes.
 
 To create a workflow:
 
-1. On the Workflows page, select **Create**.
+1. On the Workflows page, select **Create**. The Create Workflow dialog opens.
 
    ![Create Workflow](images/wf-create.png)
 
-2. In the Create Workflow dialog:
+2. In the Create Workflow dialog, enter these details:
 
-   [Create Workflow](images/create-workflow-dialog.png)
-   * Enter a name for the workflow. For this lab, use **Predict**.
-   * Optionally, you may enter a comment.
-   * Click **OK**.
+      * Enter a name for the workflow. For this lab, use **Predict**.
+      * Optionally, you may enter a comment.
+      * Click **OK**.
+
+      ![Create Workflow dialog](images/create-workflow-dialog.png)
 
 3. Confirm that the blank workflow opens in the workflow editor.
 
-   ![OML homepage highlighting Workflows](images/oml-homepage.png)
+   ![Workflows canvas](images/oml-homepage.png)
 
 4. Identify the main areas of the editor:
    * **Workflow Nodes palette** on the left: contains nodes that you can add to the workflow.
    * **Canvas** in the center: where you arrange nodes and their connections.
    * **Settings pane** on the right: displays settings for the selected node. It is collapsed by default; select the expand control to open it.
-
-5. Add a starting node to the canvas:
-   * From the Workflow Nodes palette, drag and drop a **Data Source** node onto the canvas. You can also use the node's Add control.
-   * Select the node and notice that its settings are available in the Settings pane on the right.
-
-   ![OML homepage highlighting Workflows](images/oml-homepage.png)
-
-   You do not need to configure or run the node for this lab. To run a complete workflow, configure each node and its connections first; you can then run an individual node or select **Run All**.
-
 
 ## Task 3: Add a Data Source node
 
@@ -107,15 +95,15 @@ To create and run a Data Source node:
 
 4. Click on the ellipses on the node or right click on the node and click **Results** to to view the results.
 
-   * The Data Statistics tab displays the basic statistics computed for the selected features (columns). The computed statistics are Distinct Count, Number of Unique values, Top N, Frequent values, Mean, Std deviation, Min, 25, 50, 75 quantiles, and Max.
+   * The **Data Statistics** tab displays the basic statistics computed for the selected features (columns). The computed statistics are Distinct Count, Number of Unique values, Top N, Frequent values, Mean, Std deviation, Min, 25, 50, 75 quantiles, and Max.
 
    ![Data Source node settings added to the workflow](images/ds-data-stats.png)
 
-   * The Data Correlation tab displays the correlation level between the columns. Positive values indicate positive correlation, and the different shades of red indicate the different levels of positive correlation. Negative values indicate negative correlation, and the different shades of blue indicate the levels of negative correlation. A value of 1 indicates perfect positive correlation and a value of -1 indicates perfect negative correlation.
+   * The **Data Correlation** tab displays the correlation level between the columns. Positive values indicate positive correlation, and the different shades of red indicate the different levels of positive correlation. Negative values indicate negative correlation, and the different shades of blue indicate the levels of negative correlation. A value of 1 indicates perfect positive correlation and a value of -1 indicates perfect negative correlation.
 
    ![Data Source node settings added to the workflow](images/ds-data-correlation.png)
 
-   * The Data Preview tab shows the preview of the data set used for the workflow.
+   * The **Data Preview** tab shows the preview of the data set used for the workflow.
 
    ![Data Source node settings added to the workflow](images/ds-data-preview.png)
 
@@ -133,20 +121,21 @@ To add and run a Feature Selection node:
 
 2. Since we are adding the node manually in this lab, we must establish a connection from the Data Source node (upstream node) to the Feature Selection node (downstream node). For this, click on the connection port indicated by the dot on the Upstream node. A connector appears. Drag the connector to the downstream node to establish the connection.
 
-      > **Note:** The Data Source node has two connection ports. The one on the left is for Train dataset, and the one on the right is for Test dataset.
+      > **Note:** The Data Source node has two connection ports. The one on the left is for the Train dataset, and the one on the right is for the Test dataset.
 
    ![Connection ports in Data Source node](images/ds-connection-ports.png)
 
-3. After connecting the nodes, click on the **Feature Selection** node to open the settings. Select these details: 
+3. After connecting the nodes, click on the **Feature Selection** node to open the settings and provide these details: 
 
-   * **Name:** Enter `Feature Selection 1`.
-   * **Target id column name:** Select `AFFINITY_CARD`.
-   * **Mining Function:** The Mining function selected is **Classification**.
-      >**Note**: The selection of mining function is automatic. It depends on the target you selected. However, you can override it.
-   * **Case id column name:** Select `CUST_ID`.
+      * **Name:** Enter `Feature Selection 1`.
+      * **Target id column name:** Select `AFFINITY_CARD`.
+      * **Mining Function:** The Mining function selected is **Classification**.
 
+         >**Note**: The selection of mining function is automatic. It depends on the target you selected. However, you can override it.
+      * **Case id column name:** Select `CUST_ID`.
+`
 
-      **Note:** If the **Settings** pane is not visible, click the << icon open at the bottom to expand the pane.
+   >**Note:** If the **Settings** pane is not visible, click the << icon open at the bottom to expand the pane.
 
 4. Right click on the node or click on the ellipses and then click Run. Once the node runs successfully, it is indicated by the green tick mark.
 
