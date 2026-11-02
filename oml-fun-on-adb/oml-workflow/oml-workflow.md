@@ -56,18 +56,18 @@ To create a workflow:
 
       * **Name:** Enter a name for the workflow. For this lab, use **Predict**.
       * **Comment:** You may enter a comment here. This is optional.
-      * Click **OK**.
+      * Click **OK**. This opens the blank workflow in the editor.
 
       ![Create Workflow dialog](images/create-workflow-dialog.png)
 
-3. Confirm that the blank workflow opens in the workflow editor.
+3. Confirm that the blank workflow named `Predict` opens in the workflow editor.
 
    ![Workflows canvas](images/pallete-canvas.png)
 
-   Identify the main areas of the editor:
-   * **Workflow Nodes palette:** This is on the left and contains nodes that you can add to the workflow.
-   * **Canvas:** This is in the center, where you arrange nodes and their connections.
-   * **Settings pane:** This is on the right. It displays settings for the selected node. It is collapsed by default. Click on the expand control << to open it.
+   Identify the main areas of the workflow editor:
+   * **Workflow palette:** This is on the left and contains all the nodes that you can add to the workflow. You can collapse it by clicking on **<<** on the lower left corner.
+   * **Canvas:** This is in the center where you build a workflow by adding nodes and defining their connections.
+   * **Settings pane:** This is on the right. It displays settings for the selected node. By default, it is collapsed. Click on the expand control **<<** to open it.
 
 ## Task 3: Add a Data Source node
 
@@ -226,15 +226,15 @@ To add and run a model apply node:
 
    ![Model Apply node](images/wf-model-apply.png)
 
-3. After connecting the nodes, define the settings. Under Settings, 
+3. After connecting the nodes, define the settings. Under Settings,
 
-   * **Apply Outputs:** Select all the algorithms.
-   * **Supplemental Columns:** Select `AFFINITY_CARD` and `CUST_ID`.
+      * **Apply Outputs:** Select all the algorithms.
+      * **Supplemental Columns:** Select `AFFINITY_CARD` and `CUST_ID`.
 
-5. Right click on the node or click on the ellipses and then click Run. Once the node runs successfully, it is indicated by the green check mark.
+4. Right click on the node or click on the ellipses and then click Run. Once the node runs successfully, it is indicated by the green check mark.
    ![Model Apply node](images/wf-model-apply-01.png)
 
-6. Once the node is run successfully, right-click on the node and then click **Results** to view the results.
+5. Once the node is run successfully, right-click on the node and then click **Results** to view the results.
 
    ![Model Apply node Results](images/results-model-apply-01.png)
 
@@ -277,7 +277,6 @@ To deploy a model:
 
 This completes the task of deploying a model.
 
-**Expected result:** The Workflows page contains the new **Predict** workflow, and the workflow editor displays a Data Source node on its canvas.
 
 ## Learn More
 
