@@ -62,12 +62,12 @@ To create a workflow:
 
 3. Confirm that the blank workflow opens in the workflow editor.
 
-   ![Workflows canvas](images/oml-homepage.png)
+   ![Workflows canvas](images/pallete-canvas.png)
 
-4. Identify the main areas of the editor:
-   * **Workflow Nodes palette** on the left: contains nodes that you can add to the workflow.
-   * **Canvas** in the center: where you arrange nodes and their connections.
-   * **Settings pane** on the right: displays settings for the selected node. It is collapsed by default; select the expand control to open it.
+   Identify the main areas of the editor:
+   * **Workflow Nodes palette:** This is on the left and contains nodes that you can add to the workflow.
+   * **Canvas:** This is in the center, where you arrange nodes and their connections.
+   * **Settings pane:** This is on the right. It displays settings for the selected node. It is collapsed by default. Click on the expand control << to open it.
 
 ## Task 3: Add a Data Source node
 
@@ -78,13 +78,13 @@ To create and run a Data Source node:
 
 2. Adding a node automatically opens the settings pane on the right. Define the following settings:
 
-      * **Name:** Enter a name. In this example, it is Data source 1.
+      * **Name:** Enter a name. In this example, it is `Data source 1`.
       * **Source Schema:** Click on the drop-down menu to select the schema. Here, SH schema is selected.
-      * **Source table:** Click on the drop-down menu to select the table. Here, `SUPPLEMENTARY_DEMOGRAPHICS` table is selected. Once you select the table, the Features field below displays the columns of the table. 
+      * **Source table:** Click on the drop-down menu to select the table. Here, `SUPPLEMENTARY_DEMOGRAPHICS` table is selected. Once you select the table, the Features field below displays the columns of the table.
       * **Target ID column name:** From the drop-down menu, select a target. This is the target for your prediction. Select `AFFINITY_CARD`.
       * **Features:** This field displays all the columns of the selected table, and has all of them selected. You may deselect any column.
       * **Split Data:** By default, this option is selected and 20% is allotted for test data. You can edit this field.
-      * Compute Descriptive Stats: Select this option to allot a dataset percentage for descriptive statistics computation. The default is `100%`.
+      * **Compute Descriptive Stats:** Select this option to allot a dataset percentage for descriptive statistics computation. The default is `100%`.
       * **Compute Data Correlation:** Select this option if you want to compute correlation between two variables in the dataset. Correlation is a bivariate analysis that measures the strength of association between two variables and the direction of the relationship. IN this lab, select `pearson`.
 
          ![Data Source node settings](images/settings-data-source.png)
@@ -125,7 +125,7 @@ To add and run a Feature Selection node:
 
    ![Connection ports in Data Source node](images/ds-connection-ports.png)
 
-3. After connecting the nodes, click on the **Feature Selection** node to open the settings and provide these details: 
+3. After connecting the nodes, click on the **Feature Selection** node to open the settings and provide these details:
 
       * **Name:** Enter `Feature Selection 1`.
       * **Target id column name:** Select `AFFINITY_CARD`.
@@ -190,11 +190,9 @@ To add and run a Model Evaluation node:
 
 2. From the Model Build node, establish a connection to the Model Evaluation node. If you are adding it manually, establish a connection from the Upstream node (Model Build node) to the Downstream node (Model Evaluation node). For this, click on the connection port indicated by the dot on the Upstream node. A connector appears. Drag the connector to the downstream node to establish the connection.
 
+      ![Model Evaluate node settings](images/wf-model-eval.png)
 
       >**Note:** The Model Evaluation node is a terminal node. You cannot add any downstream nodes to it.
-
-3. Drag and drop another Data Source node and establish a connection to the Model Evaluation node. Define the second Data Source node with the same settings.
-   ![Model Evaluate node settings](images/settings-model-eval.png)
 
 
 4. After connecting the nodes, define the settings.
