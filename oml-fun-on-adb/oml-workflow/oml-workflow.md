@@ -190,20 +190,28 @@ To add and run a Model Evaluation node:
 
 2. From the Model Build node, establish a connection to the Model Evaluation node. If you are adding it manually, establish a connection from the Upstream node (Model Build node) to the Downstream node (Model Evaluation node). For this, click on the connection port indicated by the dot on the Upstream node. A connector appears. Drag the connector to the downstream node to establish the connection.
 
-      ![Model Evaluate node settings](images/wf-model-eval.png)
+      ![Model Evaluation node](images/wf-model-eval.png)
 
       >**Note:** The Model Evaluation node is a terminal node. You cannot add any downstream nodes to it.
 
+3. After connecting the nodes, define the settings.
 
-4. After connecting the nodes, define the settings.
+   ![Model Evaluate node settings](images/settings-model-eval.png)
 
+4. Right click on the node or click on the ellipses and then click **Run**. Once the node runs successfully, it is indicated by the green check mark.
 
-5. Right click on the node or click on the ellipses and then click **Run**. Once the node runs successfully, it is indicated by the green check mark.
-
-6. Once the node is run successfully, right-click on the node and then click **Results** to view the results.
+5. Once the node is run successfully, right-click on the node and then click **Results** to view the results.
 
    ![Model Evaluate node Results](images/results-model-eval.png)
 
+   In the **Confusion Matrix** section, you may drag the **Show Percentage** slider to view the values in percentage. In the example here, assuming class 1 is the positive class, the confusion matrix for random forest can be interpreted as:
+
+      * True Negative (TN): 73.63% — actual 0, predicted 0. That is, 73.63% were actually class 0, and the model correctly predicted 0.
+      * False Positive (FP): 4.38% — actual 0, predicted 1. In other words, 4.38% were actually class 0, but the model predicted 1.
+      * False Negative (FN): 8.08% — actual 1, predicted 0. Similarly, 8.08% were actually class 1, but the model predicted 0.
+      * True Positive (TP): 13.92% — actual 1, predicted 1. And finally, 13.92% were actually class 1, and the model correctly predicted 1.
+
+   So the model correctly classified 87.55% overall. These percentages are of all cases.
 
 This completes the task of adding a Model Evaluation node to the workflow.
 
@@ -214,27 +222,24 @@ To add and run a model apply node:
 
 1. From the workflow palette, drag and drop the Model Apply node to the canvas. Alternatively, you may also click addon the node on the palette.
 
+2. From the Model Build node (Upstream node), establish a connection to the Model Apply node (Downstream node). Also, from the Data Source node, establish another connection (from the first port meant for Train data) to the Model Apply node. For this, click on the connection port indicated by the dot on the upstream node to the Model Apply node.
 
-2. From the Model Build node, establish a connection from the Upstream node (Model Build node) to the Downstream node (Model Apply node). For this, click on the connection port indicated by the dot on the source node to the child node.
+   ![Model Apply node](images/wf-model-apply.png)
 
+3. After connecting the nodes, define the settings. Under Settings, 
 
-3. Drag and drop another Data Source node to the palette. Establish a connection from the Upstream node (Data Source node) to the Downstream node (Model Apply node). You may add additional Data Source nodes for test and train datasets.
-
-   ![Model Apply node](images/model-apply-node-01.png)
-
-
-4. Once you connect the nodes, define the settings.
-
+   * **Apply Outputs:** Select all the algorithms.
+   * **Supplemental Columns:** Select `AFFINITY_CARD` and `CUST_ID`.
 
 5. Right click on the node or click on the ellipses and then click Run. Once the node runs successfully, it is indicated by the green check mark.
-   ![Model Apply node](images/model-apply-node.png)
+   ![Model Apply node](images/wf-model-apply-01.png)
 
 6. Once the node is run successfully, right-click on the node and then click **Results** to view the results.
 
-   ![Model Apply node Results](images/results-model-apply.png)
-
+   ![Model Apply node Results](images/results-model-apply-01.png)
 
 This completes the task of adding a Model Apply node to the workflow.
+
 ## Task 8: Deploy a model
 
 Deploying a model creates an Oracle Machine Learning Services endpoint that can be used for scoring. You can deploy a model directly from the Model Build node in the Oracle Machine Learning workflow.
@@ -263,10 +268,12 @@ To deploy a model:
       * Click **OK**.
 
 
-5. After a model is successfully deployed, it is listed in the Deployments tab on the Models page.
+5. After a model is successfully deployed, it is listed in the Deployments tab on the Models page. Here, you can view all the model deployment details.
 
+      ![Deployed Model on the Deployments tab](images/deployed-model.png)
 
-
+   The Models 
+      [User Models tab](images/user-models.png)
 
 This completes the task of deploying a model.
 
