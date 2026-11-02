@@ -273,7 +273,7 @@ To deploy a model:
       ![Deployed Model on the Deployments tab](images/deployed-model.png)
 
    The Models 
-      [User Models tab](images/user-models.png)
+      ![User Models tab](images/user-models.png)
 
 This completes the task of deploying a model.
 
