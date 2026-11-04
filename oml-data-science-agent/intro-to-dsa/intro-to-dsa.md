@@ -57,4 +57,4 @@ Use these links to get more information about Oracle Machine Learning and Oracle
 ## Acknowledgements
 * **Author** : Moitreyee Hazarika, Consulting User Assistance Developer, Database User Assistance Development
 * **Contributors**: Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Consulting Member of Tech Staff, Machine Learning
-* **Last Updated By/Date**: Moitreyee Hazarika, July 2026
+* **Last Updated By/Date**: Moitreyee Hazarika, November 2026
