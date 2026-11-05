@@ -41,12 +41,7 @@ This lab assumes you have:
 * `fingerprint`
 * `private_key`
 
-    >**Security Note:** Never include real private keys in notebooks. Before sharing or exporting a notebook, remove any keys from its code, outputs, and metadata. Use an approved secrets manager or environment variables instead. If a key has been exposed, revoke or rotate it immediately.
-
-
-
-
-
+    >**Security Note:** Never include real private keys in notebooks. Before sharing or exporting a notebook, remove any keys from its code, outputs, and metadata. Use an approved secrets manager or environment variables instead. If a key has been exposed, revoke it immediately.
 
 ## Task 1: Create an AI Credential
 
@@ -101,6 +96,8 @@ To create an AI credential:
         * See [How to Generate an API Signing Key](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#two)
         * See [How to Get the Key's Fingerprint](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#How3)
 
+> **Note:** Create the credential once. If you need to replace it, explicitly drop the existing credential before recreating it. The `DBMS_CLOUD.DROP_CREDENTIAL` procedure does not offer the `force => TRUE` benefit that `DBMS_CLOUD_AI.DROP_PROFILE` procedure offers.
+
 ## Task 2: Create an AI Profile
 
 An AI Profile is a named configuration that specifies how Select AI accesses and uses an LLM, including the provider, credential, model, and optional attributes such as `temperature` and `max_tokens`. Data Science Agent uses the AI profile selected for a conversation to determine the LLM that powers the agent.
@@ -143,7 +140,7 @@ To create an AI Profile:
 
     * `profile_name`: A name for the AI profile. The profile name must follow the naming rules of Oracle SQL identifier. The maximum profile name length is 125 characters.
     * `credential_name`: This is the name of the credential used to authenticate requests to the selected AI provider.
-    * `model`: The name of the AI model being used to generate responses in the conversation. In this example, it is xai.grok-4.3. For more information, see Recommended Models.
+    * `model`: The name of the AI model being used to generate responses in the conversation. In this example, it is xai.grok-4.3. For more information, see **Recommended Models**.
     * `provider`: This is the provider of the model. It is a mandatory field. Supported providers are:
         * openai
         * cohere
@@ -154,7 +151,8 @@ To create an AI Profile:
         * anthropic
         * huggingface
         * aws
-    * `max_tokens`: Specify the maximum number of tokens (words and pieces of words) in the response. Prevents overly long outputs and manages cost.
+    * `max_tokens`: Specify the maximum number of tokens (words and pieces of words) in the response. Prevents overly long outputs and manages cost. Recommended value for these examples is `8192`.
+    * `temperature`: Recommended value for Data Science Agent examples is `1`.
     * `oci_compartment_id`: This is the OCID of the compartment you are permitted to access when calling the OCI Generative AI service. The compartment ID can contain alphanumeric characters, hyphens and dots.
 
 2. Check the status of the profile creation by running the following in a `%sql` paragraph in a notebook:
