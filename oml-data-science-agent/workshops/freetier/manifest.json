@@ -34,7 +34,7 @@
             "filename": "../../intro-to-dsa/intro-to-dsa.md"
         },
         {
-            "title": "Lab 3: Create AI Credential and AI Profile for use with Data Science Agent",
+            "title": "Lab 3: Configure Data Science Agent with OCI Generative AI",
             "type": "freetier",
             "filename": "../../define-ai-profile/define-ai-profile.md"
         },

@@ -34,13 +34,19 @@ This lab assumes you have:
 * An OML user with the `OML_DEVELOPER` role granted
 * A configured credential for the model provider, such as `openai_cred`
 * `DBMS_CLOUD_AI` package
+    
     > **Note:** The administrator must grant `EXECUTE` on `DBMS_CLOUD_AI`.
 * `user_ocid`
 * `tenancy_ocid`
-* `private_key`
 * `fingerprint`
+* `private_key`
 
     >**Security Note:** Never include real private keys in notebooks. Before sharing or exporting a notebook, remove any keys from its code, outputs, and metadata. Use an approved secrets manager or environment variables instead. If a key has been exposed, revoke or rotate it immediately.
+
+
+
+
+
 
 ## Task 1: Create an AI Credential
 
@@ -111,7 +117,7 @@ To create an AI Profile:
     <copy>
 
     DECLARE
-        profile_name VARCHAR2(128) := 'GROK_4_3_PROFILE';
+        profile_name VARCHAR2(125) := 'GROK_4_3_PROFILE';
     BEGIN
         dbms_cloud_ai.drop_profile(
             profile_name,
