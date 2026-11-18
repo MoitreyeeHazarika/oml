@@ -48,15 +48,15 @@ This lab assumes you have:
 
 ## Task 4: Add Objects to your Conversation
 
-[](include:oml-add-objects.md)
+[](include:oml-dsa-add-objects.md)
 
 ## Task 5: Manage AI Profile and Service Level of Data Science Conversation
 
-[](include:oml-manage-profile-settings.md)
+[](include:oml-dsa-manage-profile-settings.md)
 
 ## Task 6: Start Chatting with Data Science Agent
 
-[](include:oml-start-chat.md)
+[](include:oml-dsa-start-chat.md)
 
 ## Task 7: Explore Data Science Agent
 
