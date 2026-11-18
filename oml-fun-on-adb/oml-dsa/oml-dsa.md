@@ -37,7 +37,24 @@ This lab assumes you have:
 
 [](include:oml-dsa-recommended-models.md)
 
-## Task 3: Explore Data Science Agent
+## Task 3: Create a Data Science Agent conversation
+
+[](include:oml-dsa-create-conversation.md)
+
+
+## Task 4: Add Objects to your Conversation
+
+[](include:oml-add-objects.md)
+
+## Task 5: Manage AI Profile and Service Level of Data Science Conversation
+
+[](include:oml-manage-profile-settings.md)
+
+## Task 6: Start Chatting with Data Science Agent
+
+[](include:oml-start-chat.md)
+
+## Task 7: Explore Data Science Agent
 
 * [Get Started with Oracle Data Science Agent](https://livelabs.oracle.com/ords/dbpm/r/livelabs/view-workshop?wid=4468)
 * [Recommended Models](https://docs.oracle.com/en/database/oracle/machine-learning/data-science-agent/dsaug/dsa-create-ai-credential-and-profile.html#GUID-FD8053A2-5988-43B9-B024-19EEBA5CD9D4)
