@@ -61,7 +61,7 @@ This lab assumes you have:
 
 1. This lab uses OCI Cloud Shell. To access the OCI Cloud Shell, select your compartment and click on the Cloud Shell icon.
 
-    	 ![Autonomous AI Database instance](images/oci-cloud-shell-1-new1.png)
+    ![Autonomous AI Database instance](images/oci-cloud-shell-1-new1.png)
 
     On clicking the Cloud Shell icon, the OCI Cloud Shell command prompt is displayed in the lower half of the console as illustrated in the image below.
 
