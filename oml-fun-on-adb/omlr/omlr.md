@@ -40,17 +40,17 @@ In this step, the `iris` data set is used for illustrative purposes to create a 
 
 1. To use OML4R, you must first import the `ORE` package. To use the overloaded `dplyr` functions (`OREdplyr`) they also must be explicitly loaded. Run the following scripts to import the `ORE`, `OREdplyr` packages, and set the display options:
 
-    ```
+	```
 	<copy>
-    %r
+	%r
 
-    library(ORE)
-    library(OREdplyr)
-    options(ore.warn.order=FALSE)
-    options(width = 200)
+	library(ORE)
+	library(OREdplyr)
+	options(ore.warn.order=FALSE)
+	options(width = 200)
 
-    </copy>
-    ```
+	</copy>
+	```
 
 2. Use the `ore.push()` function to load an R data.frame object to the database, which creates a temporary table  and returns a proxy object, assigned to the variable `IRIS_TMP`.
 
