@@ -1,4 +1,4 @@
-# Work with GitHub Notebooks in Oracle Machine Learning UI
+# Introduction to GitHub Notebooks in Oracle Machine Learning UI
 
 ## Introduction
 
