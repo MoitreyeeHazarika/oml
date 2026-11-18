@@ -46,9 +46,11 @@ This lab assumes you have:
 
 [](include:oml-dsa-create-conversation.md)
 
+
 ## Task 4: Add Objects to your Conversation
 
 [](include:oml-dsa-add-objects.md)
+
 
 ## Task 5: Manage AI Profile and Service Level of Data Science Conversation
 
