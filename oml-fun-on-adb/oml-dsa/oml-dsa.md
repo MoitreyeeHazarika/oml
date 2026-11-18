@@ -46,7 +46,6 @@ This lab assumes you have:
 
 [](include:oml-dsa-create-conversation.md)
 
-
 ## Task 4: Add Objects to your Conversation
 
 [](include:oml-add-objects.md)
