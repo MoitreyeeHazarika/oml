@@ -34,6 +34,31 @@ This lab assumes you have:
 * OML developer role (OML_DEVELOPER)
 * Access to Oracle Machine Learning USER account
 
+## Task 1: Access Oracle Data Science Agent
+
+[](include:oml-dsa-access.md)
+
+## Task 2: Review the recommended models for use with Data Science Agent
+
+[](include:oml-dsa-recommended-models.md)
+
+## Task 3: Create a Data Science Agent conversation
+
+[](include:oml-dsa-create-conversation.md)
+
+## Task 4: Add Objects to your Conversation
+
+[](include:oml-dsa-add-objects.md)
+
+## Task 5: Manage AI Profile and Service Level of Data Science Conversation
+
+[](include:oml-dsa-manage-profile-settings.md)
+
+## Task 6: Start Chatting with Data Science Agent
+
+[](include:oml-dsa-start-chat.md)
+
+
 ## Task 7: Explore Data Science Agent
 
 * [Get Started with Oracle Data Science Agent](https://livelabs.oracle.com/ords/dbpm/r/livelabs/view-workshop?wid=4468)
