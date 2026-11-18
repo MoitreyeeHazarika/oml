@@ -4,22 +4,27 @@
 
 This lab walks you through the steps to use Data Science Agent in Oracle Machine Learning UI.
 
-Estimated Time: 15 minutes
+Estimated Time: X
 
 ### About Data Science Agent
 Data Science Agent is an intelligent built-in conversational chatbot integrated with Oracle Machine Learning UI included in your Oracle Autonomous AI Database subscription. You must provide the LLM, specified through your AI profile, whether from a third-party AI provider, OCI GenAI Service, or one you privately host. You can run complete data science workflows using natural language in the Data Science Agent chat.
 
-As a human-in-the-loop chatbot, Data Science Agent requires your intervention and approval in the following areas:
+Data Science Agent helps you explore data, create views, build and deploy machine learning models through conversation, while giving you control over the objects, conversation context, and the AI profile it uses.
 
-* **Object association:** Objects must be associated or approved before the agent creates views that use them; other supported operations may still use accessible objects based on the user's database privileges. Associating database objects with a conversation improves precision and efficiency.
-* **Conversation management:** The scope of Data Science Agent is limited to the active conversation context only. You must create, manage, and delete your conversations.
-* **Profile selection:** You must select an AI profile and, therefore, the LLM that powers the agent. You can choose an existing profile or create and select your own. You can also switch profiles mid-conversation.
-* **Approval for object viewing:** During a conversation, Data Science Agent compares the requested objects with those already associated with the active conversation. If a required table or view is not in the approved set, the agent pauses and asks for your approval to add it. If you approve, the object is associated with the conversation and the agent continues. If you do not approve, the request is canceled and no view is created.
+* **Choose the data for your conversation:** Associate relevant database objects to give the agent context and help it work more precisely and efficiently. Before creating a view, the objects it uses must be associated with the conversation or approved by you. Other supported operations can use objects available under your database privileges.
+* **Manage your conversations:** Each conversation has its own context. Create conversations for your work, manage them as needed, and delete them when you’re done.
+* **Select your AI profile:** Choose the AI profile, and therefore, the LLM that powers the agent. You can also switch profiles mid-conversation.
+* **Approve objects for a view:** If a view requires tables or views that aren’t yet associated with the conversation, the agent will identify them and ask you to approve adding them. If you approve, the association is recorded and the agent continues. If you decline, the operation is canceled.
 
 ### Objectives
 
 In this lab, you will learn how to:
-* Create 
+
+* Access and use the Oracle Machine Learning Data Science Agent
+* Create a Data Science Conversation
+* Use the Data Science Agent chat interface
+* Add objects to your conversation
+
 
 ### Prerequisites
 
