@@ -26,13 +26,7 @@ This lab assumes you have:
 * A configured and enabled AI profile named `GROK_4_3_PROFILE`
 * Database user credentials for the OML workspace
 
-## Task 1: Create a Data Science Agent conversation
 
-[](include:oml-dsa-create-conversation.md)
-
-## Task 2: Start Chatting with Data Science Agent
-
-[](include:oml-dsa-start-chat.md)
 
 You may now **proceed to the next lab**.
 
