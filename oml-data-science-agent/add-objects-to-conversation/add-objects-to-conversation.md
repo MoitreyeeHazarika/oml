@@ -28,7 +28,13 @@ This lab assumes you have:
 
 > **Note:** To import the bank marketing dataset, import and run the following notebook: [Bank Marketing Dataset](https://adwc4pm.objectstorage.us-ashburn-1.oci.customer-oci.com/p/sqs5Pe9KKWcOrgDvXMnJWkWOh9JFc8WLQlkbrItFpJ2AhMw3P83Ht2a8JQDF38ZQ/n/adwc4pm/b/OML-Resources/o/Create%20Bank%20Marketing%20Tables.dsnb).
 
+## Task 1: Add Objects to your Conversation
 
+[](include:oml-dsa-add-objects.md)
+
+## Task 2: Manage AI Profile and Service Level of Data Science Conversation
+
+[](include:oml-dsa-manage-profile-settings.md)
 
 You may now **proceed to the next lab**.
 
