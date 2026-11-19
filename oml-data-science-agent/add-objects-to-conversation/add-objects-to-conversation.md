@@ -32,12 +32,9 @@ This lab assumes you have:
 
 [](include:oml-dsa-add-objects.md)
 
-
 ## Task 2: Manage AI Profile and Service Level of Data Science Conversation
 
 [](include:oml-dsa-manage-profile-settings.md)
-
-
 
 You may now **proceed to the next lab**.
 

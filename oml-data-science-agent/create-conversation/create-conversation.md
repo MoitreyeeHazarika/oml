@@ -34,7 +34,6 @@ This lab assumes you have:
 
 [](include:oml-dsa-start-chat.md)
 
-
 You may now **proceed to the next lab**.
 
 ## Learn More
